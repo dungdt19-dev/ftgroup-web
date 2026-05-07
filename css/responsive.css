@@ -22,6 +22,11 @@
   }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .footer-grid > *:first-child { grid-column: 1 / -1; }
+  .company-intro-wrap,
+  .about-grid { grid-template-columns: 1fr; }
+  .values-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .process-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .team-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (max-width: 768px) {
@@ -61,6 +66,12 @@
   .gallery-tabs { gap: 6px; }
   .gallery-tab { padding: 8px 14px; font-size: 0.7rem; }
   .reel-title { font-size: 0.85rem; }
+  .company-intro-stats { grid-template-columns: 1fr; }
+  .vision-grid,
+  .values-grid,
+  .process-grid,
+  .team-grid { grid-template-columns: 1fr; }
+  .team-card img { height: 240px; }
 }
 
 @media (max-width: 420px) {

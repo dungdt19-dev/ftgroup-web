@@ -1234,6 +1234,198 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 .lightbox-close:hover { background: var(--grad-red); transform: rotate(90deg); }
 
 /* =====================================================================
+   RED BALANCE OVERRIDES + NEW BRAND SECTIONS
+   ===================================================================== */
+.section-red {
+  background:
+    radial-gradient(circle at 20% 25%, rgba(143, 34, 50, 0.45) 0%, transparent 50%),
+    radial-gradient(circle at 80% 75%, rgba(109, 22, 36, 0.35) 0%, transparent 56%),
+    linear-gradient(140deg, #6d1624 0%, #7a1f2b 45%, #5a1620 100%);
+}
+.section-red-soft {
+  background:
+    linear-gradient(130deg, rgba(122, 31, 43, 0.95) 0%, rgba(109, 22, 36, 0.92) 45%, rgba(31, 31, 31, 0.95) 100%);
+}
+.section-black-red {
+  background:
+    radial-gradient(circle at 78% 30%, rgba(159, 42, 60, 0.28) 0%, transparent 48%),
+    linear-gradient(170deg, #171717 0%, #1f1f1f 48%, #6d1624 100%);
+}
+.section-dark {
+  background:
+    radial-gradient(circle at 90% 10%, rgba(122, 31, 43, 0.22) 0%, transparent 45%),
+    var(--color-black);
+}
+.section-darker {
+  background:
+    radial-gradient(circle at 10% 80%, rgba(143, 34, 50, 0.2) 0%, transparent 48%),
+    var(--color-black-2);
+}
+.section-title .accent { color: var(--color-red-bright); }
+.section-eyebrow {
+  border-color: rgba(234, 234, 234, 0.26);
+  background: rgba(159, 42, 60, 0.2);
+  color: var(--color-white);
+}
+
+.company-intro-wrap,
+.about-grid {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 28px;
+  align-items: center;
+}
+.company-intro-content .section-lede { margin: 0; color: rgba(245,245,245,0.9); }
+.company-intro-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 24px;
+}
+.company-mini-card {
+  background: rgba(15,15,16,0.45);
+  border: 1px solid rgba(245,245,245,0.15);
+  border-radius: 14px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.company-mini-card strong {
+  color: var(--color-white);
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  line-height: 1;
+}
+.company-mini-card span { color: var(--color-white-dim); font-size: 0.8rem; }
+.company-intro-visual img,
+.about-media img {
+  width: 100%;
+  border-radius: 22px;
+  border: 1px solid rgba(245,245,245,0.12);
+  box-shadow: var(--shadow-lg), 0 0 60px rgba(122,31,43,0.35);
+}
+.about-content p { color: var(--color-white-dim); margin-bottom: 12px; }
+.about-list { margin-top: 12px; padding-left: 18px; color: var(--color-white); }
+.about-list li { margin-bottom: 8px; }
+
+.vision-grid,
+.values-grid,
+.process-grid,
+.team-grid {
+  max-width: var(--maxw);
+  margin: 0 auto;
+}
+.vision-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+.vision-card,
+.value-card,
+.process-step,
+.team-card {
+  border-radius: 20px;
+  border: 1px solid rgba(245,245,245,0.14);
+  background: rgba(15,15,16,0.46);
+  backdrop-filter: blur(8px);
+  transition: transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease), border-color var(--dur) var(--ease);
+}
+.vision-card { padding: 28px; }
+.vision-card h3,
+.value-card h3,
+.process-step h3,
+.team-info h3 { color: var(--color-white); font-family: var(--font-display); margin-bottom: 8px; }
+.vision-card p,
+.value-card p,
+.process-step p { color: var(--color-white-dim); }
+.vision-card:hover,
+.value-card:hover,
+.process-step:hover,
+.team-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(245,245,245,0.35);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.45), 0 0 38px rgba(143,34,50,0.35);
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+.value-card {
+  padding: 24px;
+  background: linear-gradient(170deg, rgba(122,31,43,0.28) 0%, rgba(15,15,16,0.5) 100%);
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  position: relative;
+}
+.process-step {
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+}
+.process-step::after {
+  content: '';
+  position: absolute;
+  inset: auto -30% 0 -30%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(155,35,53,0.75), transparent);
+}
+.step-no {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  margin-bottom: 12px;
+  background: var(--grad-red);
+  color: var(--color-white);
+  font-family: var(--font-display);
+  font-size: 1rem;
+  box-shadow: 0 0 24px rgba(143,34,50,0.5);
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+.team-card {
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(122,31,43,0.2) 0%, rgba(15,15,16,0.55) 100%);
+}
+.team-card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+.team-info { padding: 16px; }
+.team-info p { color: var(--color-white-dim); font-size: 0.9rem; }
+
+.gallery-item-overlay {
+  background: linear-gradient(180deg, transparent 0%, rgba(122,31,43,0.25) 55%, rgba(15,15,16,0.92) 100%);
+}
+.gallery-item-cat,
+.reel-tag { color: var(--color-white); }
+.cta::before {
+  background:
+    radial-gradient(ellipse at 30% 50%, rgba(159, 42, 60, 0.58) 0%, transparent 60%),
+    linear-gradient(135deg, #7a1f2b 0%, #6d1624 48%, #0f0f10 100%);
+}
+.btn-primary,
+.nav-cta,
+.plan-cta-filled,
+.float-call { background: var(--grad-red-dark); }
+
+/* =====================================================================
    SECTION DIVIDERS & MISC
    ===================================================================== */
 .divider {
