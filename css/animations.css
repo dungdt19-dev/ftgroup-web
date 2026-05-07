@@ -34,6 +34,14 @@
 }
 .reveal-left.is-visible { opacity: 1; transform: translateX(0); }
 
+.reveal-right {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: opacity var(--dur-slow) var(--ease-snap),
+              transform var(--dur-slow) var(--ease-snap);
+}
+.reveal-right.is-visible { opacity: 1; transform: translateX(0); }
+
 /* Stagger delays */
 .reveal[data-delay="1"] { transition-delay: 0.08s; }
 .reveal[data-delay="2"] { transition-delay: 0.16s; }
@@ -98,5 +106,5 @@
     transition-duration: 0.001s !important;
     scroll-behavior: auto !important;
   }
-  .reveal, .reveal-fade, .reveal-scale, .reveal-left { opacity: 1; transform: none; }
+  .reveal, .reveal-fade, .reveal-scale, .reveal-left, .reveal-right { opacity: 1; transform: none; }
 }

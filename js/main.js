@@ -1,5 +1,55 @@
 /* =====================================================================
-   MAIN — YouTube facade loader, lightbox, init orchestration
+   ANIMATIONS — Scroll reveal & counters (IntersectionObserver)
+   ===================================================================== */
+(function () {
+  'use strict';
+
+  if (!('IntersectionObserver' in window)) {
+    document.querySelectorAll('.reveal, .reveal-fade, .reveal-scale, .reveal-left, .reveal-right')
+      .forEach(el => el.classList.add('is-visible'));
+    return;
+  }
+
+  const revealObserver = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.14, rootMargin: '0px 0px -60px 0px' });
+
+  document.querySelectorAll('.reveal, .reveal-fade, .reveal-scale, .reveal-left, .reveal-right')
+    .forEach(el => revealObserver.observe(el));
+
+  function animateCounter(el) {
+    const target = parseInt(el.dataset.target, 10) || 0;
+    const duration = 1600;
+    const start = performance.now();
+    const suffix = el.dataset.suffix || '';
+    function tick(now) {
+      const t = Math.min(1, (now - start) / duration);
+      const eased = 1 - Math.pow(1 - t, 3);
+      el.textContent = Math.floor(target * eased).toLocaleString('vi-VN') + suffix;
+      if (t < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+
+  const counterObserver = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCounter(entry.target);
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.4 });
+
+  document.querySelectorAll('[data-counter]').forEach(el => counterObserver.observe(el));
+})();
+
+/* =====================================================================
+   MAIN — YouTube facade loader, lightbox, init
    ===================================================================== */
 (function () {
   'use strict';
@@ -8,7 +58,6 @@
   const lightboxFrame   = document.getElementById('lightboxFrame');
   const lightboxClose   = document.querySelector('.lightbox-close');
 
-  /* ---------- Build YouTube embed URL ---------- */
   function buildEmbedUrl(videoId, autoplay) {
     const params = new URLSearchParams({
       autoplay: autoplay ? '1' : '0',
@@ -19,12 +68,10 @@
     return `https://www.youtube-nocookie.com/embed/${videoId}?${params.toString()}`;
   }
 
-  /* ---------- YouTube facade — replace poster with iframe on click ---------- */
   document.querySelectorAll('.yt-facade').forEach(el => {
     el.addEventListener('click', () => {
       const id = el.dataset.youtubeId;
       if (!id) return;
-      // Inline play (used by hero/intro). When data-lightbox=true, open modal instead.
       if (el.dataset.lightbox === 'true') {
         openLightbox(id);
         return;
@@ -40,7 +87,6 @@
     }, { once: true });
   });
 
-  /* ---------- Lightbox ---------- */
   function openLightbox(videoId) {
     if (!lightbox || !lightboxFrame) return;
     lightboxFrame.src = buildEmbedUrl(videoId, true);
@@ -59,7 +105,6 @@
   if (lightbox) lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
 
-  // Open lightbox from any [data-open-video]
   document.querySelectorAll('[data-open-video]').forEach(btn => {
     btn.addEventListener('click', e => {
       e.preventDefault();
@@ -67,7 +112,6 @@
     });
   });
 
-  // Open lightbox from reels (delegated)
   document.querySelectorAll('.reel[data-youtube-id]').forEach(reel => {
     reel.addEventListener('click', () => openLightbox(reel.dataset.youtubeId));
     reel.setAttribute('role', 'button');
@@ -80,7 +124,6 @@
     });
   });
 
-  /* ---------- Image error fallback (if Unsplash 404s) ---------- */
   document.querySelectorAll('img[data-fallback]').forEach((img, i) => {
     img.addEventListener('error', function once() {
       img.removeEventListener('error', once);
@@ -88,7 +131,6 @@
     });
   });
 
-  /* ---------- Current year ---------- */
   const yr = document.getElementById('currentYear');
   if (yr) yr.textContent = new Date().getFullYear();
 })();
