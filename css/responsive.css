@@ -1,0 +1,72 @@
+/* =====================================================================
+   RESPONSIVE — Mobile-first breakpoint overrides
+   Breakpoints: 1280, 1024, 768, 560, 420
+   ===================================================================== */
+
+@media (max-width: 1280px) {
+  :root { --space-3xl: 110px; }
+  .footer-grid { grid-template-columns: 1.6fr 1fr 1fr 1.4fr; gap: var(--space-lg); }
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --space-3xl: 96px;
+    --space-2xl: 72px;
+  }
+  .gallery-masonry { column-count: 3; }
+  .reels-grid { grid-template-columns: repeat(3, 1fr); }
+  .stats { grid-template-columns: repeat(2, 1fr); }
+  .stat:nth-child(2) { border-right: none; }
+  .stat:nth-child(1), .stat:nth-child(2) {
+    border-bottom: 1px solid var(--glass-border);
+  }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .footer-grid > *:first-child { grid-column: 1 / -1; }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --gutter: 6%;
+    --space-3xl: 72px;
+    --space-2xl: 56px;
+    --space-xl: 44px;
+  }
+  .nav-links, .nav-cta { display: none; }
+  .nav-toggle { display: flex; }
+  .gallery-masonry { column-count: 2; column-gap: 10px; }
+  .gallery-item { margin-bottom: 10px; border-radius: var(--radius-sm); }
+  .reels-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .testimonial { width: 300px; }
+  .hero-trust-divider { display: none; }
+  .hero-trust { gap: 14px; }
+  .gallery-featured { min-height: 320px; }
+  .gallery-featured-content { padding: var(--space-lg) var(--space-md); }
+  .play-btn { width: 92px; height: 92px; }
+  .play-btn svg { width: 30px; height: 30px; }
+  .footer-bottom { flex-direction: column; text-align: center; gap: 12px; }
+  .lightbox-close { top: -48px; }
+  .float-stack { right: 16px; bottom: 16px; gap: 10px; }
+  .float-btn { width: 48px; height: 48px; }
+}
+
+@media (max-width: 560px) {
+  :root {
+    --gutter: 5%;
+    --space-3xl: 60px;
+  }
+  .footer-grid { grid-template-columns: 1fr; }
+  .stats { grid-template-columns: 1fr 1fr; }
+  .hero-actions .btn { flex: 1 1 auto; justify-content: center; }
+  .cta-actions .btn { width: 100%; max-width: 320px; justify-content: center; }
+  .gallery-tabs { gap: 6px; }
+  .gallery-tab { padding: 8px 14px; font-size: 0.7rem; }
+  .reel-title { font-size: 0.85rem; }
+}
+
+@media (max-width: 420px) {
+  .gallery-masonry { column-count: 1; }
+  .reels-grid { grid-template-columns: 1fr 1fr; }
+  .testimonial { width: 280px; padding: var(--space-md); }
+  .intro-meta { gap: 8px; }
+  .intro-meta-chip { padding: 7px 14px; font-size: 0.68rem; }
+}
