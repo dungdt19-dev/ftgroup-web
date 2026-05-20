@@ -34,7 +34,7 @@ const PROCESS = [
   { t: 'Hoạch định', d: 'Khảo sát địa điểm, bản vẽ sơ bộ và rundown với khách hàng.' },
   { t: 'Lắp đặt', d: 'Truss, âm thanh, ánh sáng — kiểm tra tải điện &amp; an toàn.' },
   { t: 'Duyệt chương trình', d: 'Dry-run MC, timing, cue ánh sáng &amp; video.' },
-  { t: 'Vận hành sự kiện', d: 'Điều phối hiện trường, xử lý linh hoạt tình huống.' },
+  { t: 'Vận hành sự kiện', d: 'Điều phối tại sự kiện, xử lý linh hoạt tình huống.' },
   { t: 'Bàn giao', d: 'Hạ hình, thu dọn, nghiệm thu &amp; ghi nhận phản hồi.' },
 ];
 

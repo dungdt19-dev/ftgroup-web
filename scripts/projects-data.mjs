@@ -348,7 +348,7 @@ export const PROJECTS = [
       place: 'S&acirc;n trường / hội trường',
       time: 'Ni&ecirc;n học',
       scale: 'Học sinh + phụ huynh',
-      services: 'Kịch bản game, &acirc;m thanh vừa phải, đạo cụ, nh&acirc;n sự hiện trường',
+      services: 'Kịch bản game, &acirc;m thanh vừa phải, đạo cụ, nh&acirc;n sự sự kiện',
     },
     intros: [
       { h: 'Mục ti&ecirc;u', p: 'R&egrave;n th&oacute;i quen qua tr&ograve; chơi &mdash; kh&ocirc;ng gay cấn, ph&ugrave; hợp lứa tuổi.' },
@@ -427,7 +427,7 @@ export const PROJECTS = [
     cite: 'Ban gi&aacute;m hiệu',
     results: ['Kh&ocirc;ng sự cố', 'Phản hồi tốt', 'Lặp lại hằng năm'],
     experienceBullets: ['Ảnh kỉ niệm ướt &aacute;o đồng phục', 'Bé th&iacute;ch trạm phun nước'],
-    feedback: 'Đội hiện trường chuy&ecirc;n nghiệp.',
+    feedback: 'Đội triển khai chuy&ecirc;n nghiệp.',
     related: ['chuong-trinh-le-hoi-nuoc-2.html', 'ngay-hoi-trai-nghiem-chien-si-nhi.html', 'ngay-hoi-cung-con-kham-pha.html'],
   }),
 

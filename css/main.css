@@ -1782,161 +1782,117 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 }
 
 .process-timeline-section { position: relative; overflow: hidden; }
+
 .process-timeline {
   list-style: none;
-  max-width: 900px;
+  max-width: var(--maxw, 1200px);
   margin: var(--space-lg) auto 0;
   padding: 0;
-  position: relative;
-}
-.process-timeline::before {
-  content: '';
-  position: absolute;
-  left: 50%;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  transform: translateX(-50%);
-  background: linear-gradient(180deg, rgba(159, 42, 60, 0.15), rgba(159, 42, 60, 0.85), rgba(159, 42, 60, 0.15));
-  box-shadow: 0 0 24px rgba(159, 42, 60, 0.55);
-  border-radius: 2px;
-}
-.process-timeline-step {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0;
-  margin-bottom: var(--space-md);
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
   align-items: stretch;
 }
 
-@media (min-width: 768px) and (max-width: 1023px) {
+.process-timeline-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  min-width: 0;
+}
+
+.pt-step-no {
+  flex-shrink: 0;
+  margin: 0 0 0.65rem;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-white-warm);
+  text-align: center;
+  text-shadow: 0 0 28px rgba(159, 42, 60, 0.65);
+}
+
+.pt-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  min-height: 10rem;
+  padding: var(--space-md) var(--space-md);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(15, 15, 16, 0.45);
+  text-align: center;
+  transition: transform 0.45s var(--ease), box-shadow 0.45s var(--ease);
+}
+
+.process-timeline-step:hover .pt-card {
+  transform: scale(1.02);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45), 0 0 36px rgba(159, 42, 60, 0.25);
+}
+
+.pt-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  margin: 0 0 0.5rem;
+  color: var(--color-white-warm);
+  line-height: 1.35;
+  width: 100%;
+  min-height: 2.75em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.pt-card p {
+  flex: 1;
+  margin: 0;
+  font-size: 0.88rem;
+  color: var(--color-white-dim);
+  line-height: 1.6;
+  text-align: center;
+}
+
+@media (min-width: 560px) {
   .process-timeline {
-    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 768px) {
+  .process-timeline {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 0.75rem;
-    max-width: var(--maxw, 1200px);
+    gap: 1rem;
   }
 
-  .process-timeline::before {
-    display: none;
-  }
-
-  .process-timeline-step {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 0;
-    direction: ltr !important;
-    padding-left: 0;
-  }
-
-  .process-timeline-step .pt-step-no {
-    margin: 0 0 0.5rem !important;
-    justify-self: center !important;
-  }
-
-  .process-timeline-step .pt-card {
-    max-width: none;
-    width: 100%;
-    min-height: 8.5rem;
-    text-align: center !important;
-    justify-self: stretch !important;
+  .pt-card {
+    min-height: 10.5rem;
+    padding: var(--space-md) var(--space-sm);
   }
 }
 
 @media (min-width: 1024px) {
   .process-timeline {
-    display: grid;
     grid-template-columns: repeat(6, minmax(0, 1fr));
-    gap: 0.75rem;
-    max-width: var(--maxw, 1200px);
-    margin-top: var(--space-lg);
-    padding-top: 0;
   }
 
-  .process-timeline::before {
-    display: none;
+  .pt-step-no {
+    font-size: 1.25rem;
   }
 
-  .process-timeline-step {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 0;
-    direction: ltr !important;
-    text-align: center;
+  .pt-card h3 {
+    font-size: 0.95rem;
   }
 
-  .process-timeline-step:nth-child(even) {
-    direction: ltr;
-  }
-
-  .process-timeline-step .pt-step-no,
-  .process-timeline-step:nth-child(even) .pt-step-no,
-  .process-timeline-step:nth-child(odd) .pt-step-no {
-    justify-self: center;
-    margin: 0 0 0.65rem;
-    font-size: 1.35rem;
-  }
-
-  .process-timeline-step .pt-card,
-  .process-timeline-step:nth-child(even) .pt-card,
-  .process-timeline-step:nth-child(odd) .pt-card {
-    justify-self: stretch;
-    align-self: stretch;
-    text-align: center;
-    max-width: none;
-    width: 100%;
-    min-height: 9.5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-  }
-
-  .process-timeline-step .pt-card h3 {
-    min-height: 2.5em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 0.5rem;
-  }
-
-  .process-timeline-step .pt-card p {
-    flex: 1;
+  .pt-card p {
+    font-size: 0.82rem;
   }
 }
-.process-timeline-step:nth-child(even) {
-  direction: rtl;
-}
-.process-timeline-step:nth-child(even) .pt-step-no,
-.process-timeline-step:nth-child(even) .pt-card {
-  direction: ltr;
-}
-.process-timeline-step:nth-child(odd) .pt-step-no { justify-self: end; margin-right: 20px; }
-.process-timeline-step:nth-child(odd) .pt-card { justify-self: start; }
-.process-timeline-step:nth-child(even) .pt-step-no { justify-self: start; margin-left: 20px; }
-.process-timeline-step:nth-child(even) .pt-card { justify-self: end; text-align: right; }
-.pt-step-no {
-  font-family: var(--font-display);
-  font-size: 1.75rem;
-  font-weight: 700;
-  color: var(--color-white-warm);
-  text-shadow: 0 0 28px rgba(159, 42, 60, 0.65);
-}
-.pt-card {
-  padding: var(--space-md) var(--space-lg);
-  border-radius: var(--radius-md);
-  border: 1px solid rgba(255,255,255,0.14);
-  background: rgba(15,15,16,0.45);
-  max-width: 360px;
-  transition: transform 0.45s var(--ease), box-shadow 0.45s var(--ease);
-}
-.process-timeline-step:hover .pt-card {
-  transform: scale(1.02);
-  box-shadow: 0 12px 40px rgba(0,0,0,0.45), 0 0 36px rgba(159, 42, 60, 0.25);
-}
-.pt-card h3 { font-family: var(--font-display); font-size: 1.1rem; margin-bottom: 8px; color: var(--color-white-warm); }
-.pt-card p { font-size: 0.92rem; color: var(--color-white-dim); line-height: 1.65; }
 
 /* =====================================================================
    TEAM SECTION PREMIUM — cinematic agency layout

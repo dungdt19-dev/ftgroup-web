@@ -74,24 +74,6 @@
   .lightbox-close { top: -48px; }
   .intro-stat-row { grid-template-columns: 1fr 1fr; }
   .intro-play-banner { flex-direction: column; align-items: flex-start; }
-  .process-timeline::before { left: 14px; transform: none; }
-  .process-timeline-step {
-    grid-template-columns: 1fr;
-    direction: ltr !important;
-    padding-left: 36px;
-  }
-  .process-timeline-step:nth-child(even) .pt-step-no,
-  .process-timeline-step:nth-child(even) .pt-card { direction: ltr; }
-  .process-timeline-step .pt-step-no {
-    justify-self: start !important;
-    margin: 0 0 8px 0 !important;
-    font-size: 1.35rem;
-  }
-  .process-timeline-step .pt-card {
-    max-width: none;
-    text-align: left !important;
-    justify-self: stretch !important;
-  }
   .highlight-cards-grid { grid-template-columns: 1fr; }
   .team-premium-grid--mgmt {
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;

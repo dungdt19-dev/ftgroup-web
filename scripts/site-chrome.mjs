@@ -78,7 +78,7 @@ export function renderSiteFooter({ depth = 0 } = {}) {
     </div>
 
     <div class="footer-col">
-      <h4>Menu</h4>
+      <h4>Điều hướng</h4>
       <ul>
         <li><a href="${index}#home">Trang chủ</a></li>
         <li><a href="${index}#service-highlight">Dịch vụ</a></li>

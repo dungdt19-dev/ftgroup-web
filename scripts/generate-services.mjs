@@ -35,10 +35,10 @@ const COMMON_KEYWORDS =
   'FT GROUP E&E, tổ chức sự kiện Hà Nội, sự kiện miền Bắc, âm thanh ánh sáng, cho thuê thiết bị sự kiện';
 
 const PROCESS = [
-  { t: 'Tư vấn &amp; khảo sát', p: 'Lắng nghe mục tiêu, ngân sách và đặc thù địa điểm; hiện trường &amp; timeline rõ ràng.' },
+  { t: 'Tư vấn &amp; khảo sát', p: 'Lắng nghe mục tiêu, ngân sách và đặc thù địa điểm; khảo sát địa điểm &amp; timeline rõ ràng.' },
   { t: 'Lập kế hoạch &amp; kịch bản', p: 'Concept, rundown, phân luồng nhân sự — bản vẽ sân khấu &amp; danh mục thiết bị minh bạch.' },
   { t: 'Chuẩn bị &amp; setup', p: 'Thiết bị, decor, âm thanh — kiểm tra kỹ thuật, dry-run theo checklist an toàn.' },
-  { t: 'Vận hành sự kiện', p: 'Điều phối hiện trường, xử lý sự cố, đồng bộ MC — kỹ thuật và nội dung chương trình.' },
+  { t: 'Vận hành sự kiện', p: 'Điều phối tại sự kiện, xử lý sự cố, đồng bộ MC — kỹ thuật và nội dung chương trình.' },
   { t: 'Đánh giá &amp; bàn giao', p: 'Tổng kết, hạ màn, thu dọn — đề xuất tối ưu cho lần tiếp theo.' },
 ];
 
@@ -58,7 +58,7 @@ const SERVICES = [
     introH2: 'Giới thiệu dịch vụ khai trương',
     introP: [
       'Lễ khai trương là điểm chạm đầu tiên với khách hàng và đối tác. FT GROUP E&amp;E thiết kế trải nghiệm có nhịp — từ welcome, ribbon cutting đến mini show — sao cho thương hiệu được nhớ và chia sẻ.',
-      'Chúng tôi phối hợp trang trí, âm thanh, ánh sáng và nhân sự hiện trường theo một quy trình chuẩn, hạn chế rủi ro và tối ưu thời lượng khoảnh khắc trọng điểm cho báo chí &amp; mạng xã hội.',
+      'Chúng tôi phối hợp trang trí, âm thanh, ánh sáng và nhân sự sự kiện theo một quy trình chuẩn, hạn chế rủi ro và tối ưu thời lượng khoảnh khắc trọng điểm cho báo chí &amp; mạng xã hội.',
     ],
     benefits: [
       { t: 'Ấn tượng thương hiệu', d: 'Câu chuyện trên sân khấu, backdrop và ánh sáng nhấn đúng key visual.' },
@@ -160,7 +160,7 @@ const SERVICES = [
       'FT GROUP E&amp;E cung cấp bản vẽ bố trí thiết bị, micro không dây đa kênh, màn hình LED hoặc projector mapping theo sơ đồ hội trường.',
     ],
     benefits: [
-      { t: 'Uy tín hiện trường', d: 'Kỹ thuật viên túc trực, xử lý nhanh feedback và chuyển tiết mục.' },
+      { t: 'Uy tín triển khai', d: 'Kỹ thuật viên túc trực, xử lý nhanh feedback và chuyển tiết mục.' },
       { t: 'Rõ ràng &amp; minh bạch', d: 'Danh mục thiết bị, timeline setup trước giờ khai mạc.' },
       { t: 'Đồng bộ thương hiệu', d: 'Backdrop, signage dẫn lối, ánh sáng chụp ảnh đại biểu.' },
     ],
@@ -319,7 +319,7 @@ const SERVICES = [
     heroImg:
       'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1920&q=80',
     keywords: `${COMMON_KEYWORDS}, cung cấp nhân sự sự kiện, PG sự kiện Hà Nội`,
-    introH2: 'Nhân sự hiện trường',
+    introH2: 'Nhân sự sự kiện',
     introP: [
       'Cung cấp nhân sự sự kiện theo role: điều phối chương trình, quản lý sân khấu, hỗ trợ lễ tân, vận hành micro/queue.',
       'Chúng tôi training nhanh theo brief khách — checklist từ lúc setup đến hạ màn; phối hợp một cửa với đội kỹ thuật FT.',
@@ -345,17 +345,17 @@ const SERVICES = [
     file: 'to-chuc-su-kien.html',
     title: 'Tổ chức sự kiện trọn gói | FT GROUP E&amp;E',
     desc:
-      'Tổ chức sự kiện trọn gói miền Bắc: concept, kịch bản, sân khấu, âm thanh ánh sáng, vận hành hiện trường. FT GROUP E&amp;E — Trao giá trị, tạo niềm tin.',
+      'Tổ chức sự kiện trọn gói miền Bắc: concept, kịch bản, sân khấu, âm thanh ánh sáng, vận hành sự kiện. FT GROUP E&amp;E — Trao giá trị, tạo niềm tin.',
     h1: 'Tổ chức sự kiện trọn gói',
     heroLede:
-      'Một đầu mối cho toàn hành trình: tư vấn concept, kịch bản, sân khấu — âm thanh, ánh sáng — đội ngũ hiện trường và hậu kỳ trong phạm vi miền Bắc.',
+      'Một đầu mối cho toàn hành trình: tư vấn concept, kịch bản, sân khấu — âm thanh, ánh sáng — đội ngũ sự kiện và hậu kỳ trong phạm vi miền Bắc.',
     heroImg:
       'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1920&q=80',
     keywords: `${COMMON_KEYWORDS}, tổ chức sự kiện trọn gói`,
     introH2: 'Tổ chức sự kiện theo mục tiêu thương hiệu',
     introP: [
       'Chúng tôi đồng hành từ giai đoạn chào thầu ý tưởng đến giờ diễn ra: dàn dựng không gian, điều phối rundown, xử lý sự cố kỹ thuật và đảm bảo trải nghiệm khách mời nhất quán với key visual.',
-      'Phương án có thể triển khai trọn gói hoặc tách module theo ngân sách — luôn có báo giá theo hạng mục, timeline rõ ràng và checklist an toàn hiện trường.',
+      'Phương án có thể triển khai trọn gói hoặc tách module theo ngân sách — luôn có báo giá theo hạng mục, timeline rõ ràng và checklist an toàn tại địa điểm.',
     ],
     benefits: [
       { t: 'Kịch bản &amp; sân khấu', d: 'Rundown, bản vẽ bố cục, ánh sáng nhấn đúng thông điệp.' },
@@ -365,7 +365,7 @@ const SERVICES = [
     features: [
       { t: 'Concept &amp; kịch bản', d: 'Brief → storyboard → rundown minute-by-minute.' },
       { t: 'Sân khấu &amp; thiết bị', d: 'Âm thanh, ánh sáng, LED — catalog minh bạch.' },
-      { t: 'Nhân sự hiện trường', d: 'Điều phối, MC, kỹ thuật — briefing trước giờ diễn ra.' },
+      { t: 'Nhân sự sự kiện', d: 'Điều phối, MC, kỹ thuật — briefing trước giờ diễn ra.' },
       { t: 'Setup &amp; rehearsal', d: 'Soundcheck, dry-run, checklist an toàn.' },
       { t: 'Vận hành show', d: 'Showcaller, xử lý sự cố, đồng bộ creative &amp; kỹ thuật.' },
       { t: 'Hậu kỳ', d: 'Hạ màn, thu dọn, debrief cải tiến lần sau.' },
@@ -457,7 +457,7 @@ const SERVICES = [
     introH2: 'Chọn cấu hình thiết bị theo không gian &amp; thể loại sự kiện',
     introP: [
       'FT GROUP E&amp;E tính toán tải loa, góc phủ, pixel pitch LED và phân bổ nguồn điện — bàn giao rundown kỹ thuật cho MC và đạo diễn chương trình.',
-      'Có thể kết hợp với gói tổ chức trọn gói hoặc chỉ cung cấp thiết bị + kỹ sư hiện trường theo ngày chạy show.',
+      'Có thể kết hợp với gói tổ chức trọn gói hoặc chỉ cung cấp thiết bị + kỹ thuật viên tại chỗ theo ngày chạy show.',
     ],
     benefits: [
       { t: 'Âm thanh', d: 'Line array, sub, mixer digital, micro không dây.' },
@@ -465,7 +465,7 @@ const SERVICES = [
       { t: 'Vận hành', d: 'Setup, ca máy, fly cue — đồng bộ với ban tổ chức.' },
     ],
     features: [
-      { t: 'Khảo sát hiện trường', d: 'Sơ đồ, tải điện, điểm treo — báo cáo kỹ thuật.' },
+      { t: 'Khảo sát địa điểm', d: 'Sơ đồ, tải điện, điểm treo — báo cáo kỹ thuật.' },
       { t: 'Catalog thiết bị', d: 'Model, số lượng — báo giá minh bạch.' },
       { t: 'Lắp đặt', d: 'Truss, LED, focus đèn — checklist an toàn.' },
       { t: 'Soundcheck', d: 'Test mic, playback, monitor cho band.' },
@@ -522,7 +522,7 @@ const SERVICES = [
     heroImg:
       'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1920&q=80',
     keywords: `${COMMON_KEYWORDS}, sản xuất đạo cụ sự kiện`,
-    introH2: 'Từ bản vẽ đến lắp ráp hiện trường',
+    introH2: 'Từ bản vẽ đến lắp ráp tại địa điểm',
     introP: [
       'FT GROUP E&amp;E hỗ trợ chọn vật liệu theo điều kiện indoor/outdoor, trọng lượng treo – đặt và yêu cầu an toàn cháy nổ khi cần.',
       'Quy trình: duyệt mockup — sản xuất — kiểm tra bàn giao — giao đến venue hoặc kho lưu theo kế hoạch sự kiện.',
