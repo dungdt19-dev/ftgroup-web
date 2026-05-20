@@ -540,40 +540,48 @@ body.project-subpage .site-header {
   margin-bottom: 0;
 }
 
-/* ---------- Gallery: masonry + lightbox triggers ---------- */
+/* ---------- Gallery: 3×3 grid + lightbox triggers ---------- */
 .pd-gallery-section {
-  padding: var(--space-xl) var(--space-md);
-  max-width: 1400px;
+  padding: var(--space-lg) var(--space-md);
+  max-width: 1200px;
   margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
 }
 
+.pd-gallery-grid,
 .pd-gallery-masonry {
-  column-count: 1;
-  column-gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  width: 100%;
 }
 
-@media (min-width: 560px) {
+@media (max-width: 720px) {
+  .pd-gallery-grid,
   .pd-gallery-masonry {
-    column-count: 2;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
-@media (min-width: 900px) {
+@media (max-width: 420px) {
+  .pd-gallery-grid,
   .pd-gallery-masonry {
-    column-count: 3;
+    grid-template-columns: 1fr;
   }
 }
 
 .pd-gl-item {
-  break-inside: avoid;
   display: block;
-  margin-bottom: 1rem;
-  border-radius: var(--radius-md);
+  margin: 0;
+  border-radius: var(--radius-sm);
   overflow: hidden;
   border: 1px solid var(--glass-border);
   cursor: zoom-in;
   position: relative;
   background: var(--color-black-3);
+  aspect-ratio: 3 / 2;
+  max-height: min(32vh, 260px);
   transition: transform 0.45s ease, box-shadow 0.45s ease;
 }
 
@@ -586,19 +594,14 @@ body.project-subpage .site-header {
 .pd-gl-item img {
   display: block;
   width: 100%;
-  height: auto;
-  vertical-align: middle;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
   transition: transform 0.55s ease;
 }
 
 .pd-gl-item:hover img {
-  transform: scale(1.06);
-}
-
-@media (max-width: 559px) {
-  .pd-gallery-masonry {
-    column-count: 1;
-  }
+  transform: scale(1.04);
 }
 
 /* ---------- Process timeline ---------- */

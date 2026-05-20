@@ -1,14 +1,29 @@
 import { getGallery, heroFromPool } from './gallery-pools.mjs';
+import {
+  getProjectGalleryImages,
+  getProjectHeroImage,
+  getProjectThumbImage,
+  projectSlugFromFile,
+} from './project-images.mjs';
+
+export const PROJECT_GALLERY_COUNT = 6;
 
 function P(x) {
   const pool = x.pool || 'concert';
-  const gallery = x.gallery || getGallery(pool);
-  const hero = x.hero || heroFromPool(pool);
+  const slug = projectSlugFromFile(x.file);
+  const localGallery = getProjectGalleryImages(slug, PROJECT_GALLERY_COUNT);
+  const gallery =
+    x.gallery ||
+    (localGallery.length
+      ? localGallery
+      : getGallery(pool).slice(0, PROJECT_GALLERY_COUNT));
+  const hero = x.hero || getProjectHeroImage(slug) || heroFromPool(pool);
+  const thumb = x.thumb || getProjectThumbImage(slug) || hero;
   return {
     ...x,
     hero,
     gallery,
-    thumb: x.thumb || hero,
+    thumb,
   };
 }
 

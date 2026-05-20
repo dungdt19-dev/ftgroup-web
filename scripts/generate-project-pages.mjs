@@ -1,5 +1,5 @@
 import { writeFileSync, mkdirSync } from 'fs';
-import { PROJECTS } from './projects-data.mjs';
+import { PROJECTS, PROJECT_GALLERY_COUNT } from './projects-data.mjs';
 import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
 import {
@@ -74,6 +74,7 @@ function renderPage(p) {
   var h1Plain = stripTags(p.h1);
 
   var galleryHtml = p.gallery
+    .slice(0, PROJECT_GALLERY_COUNT)
     .map(function (url, i) {
       return (
         '<a class="pd-gl-item" href="' +
@@ -84,7 +85,7 @@ function renderPage(p) {
         attr(h1Plain) +
         ' — hình ' +
         (i + 1) +
-        '" width="900" height="1200" loading="lazy" decoding="async"></a>'
+        '" loading="lazy" decoding="async"></a>'
       );
     })
     .join('\n');
@@ -240,26 +241,19 @@ ${renderSiteNav({ depth: 1, activeNav: 'projects' })}
     </div>
   </section>
 
-  <section class="pd-wrap" aria-labelledby="intro-h">
-    <div class="pd-section-head">
-      <span class="eyebrow">Câu chuyện</span>
-      <h2 id="intro-h">Giới thiệu dự án</h2>
-    </div>
-    <div class="pd-intro-grid">
-      <div class="pd-intro-col">${introHtml}</div>
-      <aside>
-        <blockquote class="pd-quote">${t(p.quote)}<cite>${t(p.cite)}</cite></blockquote>
-      </aside>
-    </div>
-  </section>
-
   <section class="pd-gallery-section" aria-labelledby="gal-h">
     <div class="pd-section-head">
       <span class="eyebrow">Thư viện hình</span>
       <h2 id="gal-h">Không gian &amp; cảm xúc sự kiện</h2>
-      <p class="section-lede" style="margin:0;max-width:56ch;color:var(--color-white-dim);">Vuốt xem trên mobile — nhấp ảnh để phóng to (lightbox).</p>
     </div>
-    <div class="pd-gallery-masonry">${galleryHtml}</div>
+    <div class="pd-gallery-grid">${galleryHtml}</div>
+  </section>
+
+  <section class="pd-wrap" aria-labelledby="intro-h">
+    <div class="pd-section-head">
+      <h2 id="intro-h">Giới thiệu dự án</h2>
+    </div>
+    <div class="pd-intro-col">${introHtml}</div>
   </section>
 
   <section class="pd-process" aria-labelledby="proc-h">
