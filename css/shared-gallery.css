@@ -1,0 +1,187 @@
+/* =====================================================================
+   SERVICE DETAIL — Masonry gallery + lightbox
+   ===================================================================== */
+
+.srv-gallery-section {
+  padding: var(--space-xl) var(--space-md);
+  max-width: 1320px;
+  margin: 0 auto;
+  background: linear-gradient(180deg, transparent 0%, rgba(15, 15, 16, 0.6) 40%, var(--color-black) 100%);
+}
+
+.srv-gallery-section--prominent {
+  padding-top: var(--space-md);
+  margin-top: 0;
+  background: var(--color-black);
+}
+
+.srv-gallery-section--prominent .srv-section-head--compact {
+  margin-bottom: var(--space-sm);
+}
+
+.srv-gallery-section .srv-section-head {
+  padding: 0;
+  max-width: none;
+  margin-bottom: var(--space-md);
+}
+
+.srv-gallery-masonry {
+  column-count: 1;
+  column-gap: 1rem;
+}
+
+@media (min-width: 560px) {
+  .srv-gallery-masonry {
+    column-count: 2;
+  }
+}
+
+@media (min-width: 960px) {
+  .srv-gallery-masonry {
+    column-count: 3;
+  }
+}
+
+.srv-gl-item {
+  break-inside: avoid;
+  display: block;
+  margin-bottom: 1rem;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--glass-border);
+  cursor: zoom-in;
+  position: relative;
+  background: var(--color-black-3);
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.45s ease,
+    border-color 0.35s ease;
+}
+
+.srv-gl-item:hover {
+  transform: translateY(-5px) scale(1.015);
+  border-color: rgba(155, 35, 53, 0.45);
+  box-shadow: var(--shadow-md), 0 0 42px rgba(122, 31, 43, 0.28);
+  z-index: 2;
+}
+
+.srv-gl-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  vertical-align: middle;
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.srv-gl-item:hover img {
+  transform: scale(1.07);
+}
+
+.srv-gl-item__overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, transparent 30%, rgba(15, 15, 16, 0.75) 100%);
+  opacity: 0;
+  color: var(--color-white-warm);
+  transition: opacity 0.35s ease;
+}
+
+.srv-gl-item:hover .srv-gl-item__overlay {
+  opacity: 1;
+}
+
+.srv-gl-item--featured {
+  border-color: rgba(122, 31, 43, 0.35);
+}
+
+@media (min-width: 960px) {
+  .srv-gl-item--wide {
+    column-span: all;
+  }
+}
+
+/* ---------- Lightbox ---------- */
+.srv-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-md);
+  background: rgba(8, 8, 9, 0.94);
+  backdrop-filter: blur(12px);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.srv-lightbox.is-open {
+  display: flex;
+  opacity: 1;
+}
+
+.srv-lightbox__inner {
+  position: relative;
+  max-width: min(96vw, 1200px);
+  max-height: 90vh;
+}
+
+.srv-lightbox__inner img {
+  display: block;
+  max-width: 100%;
+  max-height: 88vh;
+  width: auto;
+  height: auto;
+  margin: 0 auto;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-lg), 0 0 60px rgba(122, 31, 43, 0.2);
+}
+
+.srv-lightbox__close,
+.srv-lightbox__prev,
+.srv-lightbox__next {
+  position: absolute;
+  border: 1px solid var(--glass-border-strong);
+  background: rgba(15, 15, 16, 0.82);
+  backdrop-filter: blur(8px);
+  color: var(--color-white-warm);
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.srv-lightbox__close:hover,
+.srv-lightbox__prev:hover,
+.srv-lightbox__next:hover {
+  background: rgba(122, 31, 43, 0.55);
+  box-shadow: 0 0 24px rgba(122, 31, 43, 0.4);
+}
+
+.srv-lightbox__close {
+  top: -2.75rem;
+  right: 0;
+  width: 44px;
+  height: 44px;
+  font-size: 1.25rem;
+}
+
+.srv-lightbox__prev,
+.srv-lightbox__next {
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+}
+
+.srv-lightbox__prev { left: -3.25rem; }
+.srv-lightbox__next { right: -3.25rem; }
+
+@media (max-width: 768px) {
+  .srv-lightbox__prev { left: 0.25rem; }
+  .srv-lightbox__next { right: 0.25rem; }
+  .srv-lightbox__close { top: 0.5rem; right: 0.5rem; }
+}

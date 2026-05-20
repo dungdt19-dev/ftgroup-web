@@ -949,7 +949,19 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 }
 .float-btn:hover { transform: scale(1.1); }
 .float-btn svg { width: 22px; height: 22px; }
-.float-zalo { background: #0068ff; }
+.float-zalo {
+  background: transparent;
+  padding: 0;
+  overflow: visible;
+}
+.float-zalo .zalo-icon--float {
+  width: 54px;
+  height: 54px;
+  object-fit: contain;
+  display: block;
+  border-radius: 50%;
+  box-shadow: var(--shadow-md);
+}
 .float-call {
   background: var(--grad-red);
   animation: redPulse 2.2s var(--ease) infinite;
@@ -1477,9 +1489,9 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
   z-index: 0;
   background-size: cover;
   background-position: center;
-  transform: scale(1.04);
+  transform: scale(1.02);
   transition: transform 0.75s var(--ease-soft), filter 0.5s var(--ease);
-  filter: saturate(1.08) contrast(1.03);
+  filter: saturate(1.14) contrast(1.08) brightness(1.14);
 }
 .highlight-card__overlay {
   position: absolute;
@@ -1487,8 +1499,8 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
   z-index: 1;
   pointer-events: none;
   background:
-    linear-gradient(180deg, rgba(6, 6, 10, 0.38) 0%, rgba(10, 6, 10, 0.62) 42%, rgba(12, 8, 14, 0.94) 100%),
-    radial-gradient(ellipse 120% 100% at 50% 108%, rgba(122, 31, 43, 0.42) 0%, transparent 58%);
+    linear-gradient(180deg, rgba(6, 6, 10, 0.04) 0%, rgba(10, 6, 10, 0.14) 55%, rgba(12, 8, 14, 0.52) 100%),
+    radial-gradient(ellipse 120% 100% at 50% 108%, rgba(122, 31, 43, 0.14) 0%, transparent 58%);
   transition: opacity 0.45s var(--ease);
 }
 .highlight-card__shine {
@@ -1508,7 +1520,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
   z-index: 1;
   pointer-events: none;
   opacity: 0;
-  background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.42) 100%);
+  background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.28) 100%);
   transition: opacity 0.5s var(--ease);
 }
 .highlight-card__content {
@@ -1520,9 +1532,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
   justify-content: flex-end;
   flex: 1;
   min-height: inherit;
-  background: linear-gradient(180deg, transparent 0%, rgba(8, 8, 12, 0.2) 38%, rgba(10, 8, 14, 0.78) 100%);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+  background: linear-gradient(180deg, transparent 0%, transparent 52%, rgba(10, 8, 14, 0.38) 100%);
 }
 .highlight-card--visual .highlight-icon {
   margin-bottom: 12px;
@@ -1534,22 +1544,27 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
   transition: transform 0.5s var(--ease), box-shadow 0.5s var(--ease), border-color 0.4s var(--ease);
 }
 .highlight-card--visual h3 {
-  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.75);
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.9), 0 0 1px rgba(0, 0, 0, 0.8);
 }
 .highlight-card--visual p {
-  text-shadow: 0 1px 16px rgba(0, 0, 0, 0.7);
+  text-shadow: 0 1px 14px rgba(0, 0, 0, 0.85), 0 0 1px rgba(0, 0, 0, 0.75);
 }
 
 /* Khai trương highlight — deeper luxury red, grand-opening mood (same grid & motion) */
 .highlight-card--visual.highlight-card--opening .highlight-card__overlay {
   background:
-    linear-gradient(180deg, rgba(10, 4, 8, 0.4) 0%, rgba(16, 6, 12, 0.66) 42%, rgba(18, 8, 14, 0.95) 100%),
-    radial-gradient(ellipse 125% 100% at 50% 108%, rgba(159, 42, 60, 0.52) 0%, transparent 58%);
+    linear-gradient(180deg, rgba(10, 4, 8, 0.06) 0%, rgba(16, 6, 12, 0.18) 52%, rgba(18, 8, 14, 0.56) 100%),
+    radial-gradient(ellipse 125% 100% at 50% 108%, rgba(159, 42, 60, 0.18) 0%, transparent 58%);
 }
 
 .highlight-card--visual:hover .highlight-card__bg,
 .highlight-card--visual:focus-visible .highlight-card__bg {
-  transform: scale(1.1);
+  transform: scale(1.08);
+  filter: saturate(1.16) contrast(1.1) brightness(1.18);
+}
+.highlight-card--visual:hover .highlight-card__overlay,
+.highlight-card--visual:focus-visible .highlight-card__overlay {
+  opacity: 0.72;
 }
 .highlight-card--visual:hover .highlight-card__shine,
 .highlight-card--visual:focus-visible .highlight-card__shine {
@@ -1791,7 +1806,104 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
   grid-template-columns: 1fr 1fr;
   gap: 0;
   margin-bottom: var(--space-md);
-  align-items: center;
+  align-items: stretch;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .process-timeline {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.75rem;
+    max-width: var(--maxw, 1200px);
+  }
+
+  .process-timeline::before {
+    display: none;
+  }
+
+  .process-timeline-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 0;
+    direction: ltr !important;
+    padding-left: 0;
+  }
+
+  .process-timeline-step .pt-step-no {
+    margin: 0 0 0.5rem !important;
+    justify-self: center !important;
+  }
+
+  .process-timeline-step .pt-card {
+    max-width: none;
+    width: 100%;
+    min-height: 8.5rem;
+    text-align: center !important;
+    justify-self: stretch !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .process-timeline {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 0.75rem;
+    max-width: var(--maxw, 1200px);
+    margin-top: var(--space-lg);
+    padding-top: 0;
+  }
+
+  .process-timeline::before {
+    display: none;
+  }
+
+  .process-timeline-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 0;
+    direction: ltr !important;
+    text-align: center;
+  }
+
+  .process-timeline-step:nth-child(even) {
+    direction: ltr;
+  }
+
+  .process-timeline-step .pt-step-no,
+  .process-timeline-step:nth-child(even) .pt-step-no,
+  .process-timeline-step:nth-child(odd) .pt-step-no {
+    justify-self: center;
+    margin: 0 0 0.65rem;
+    font-size: 1.35rem;
+  }
+
+  .process-timeline-step .pt-card,
+  .process-timeline-step:nth-child(even) .pt-card,
+  .process-timeline-step:nth-child(odd) .pt-card {
+    justify-self: stretch;
+    align-self: stretch;
+    text-align: center;
+    max-width: none;
+    width: 100%;
+    min-height: 9.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .process-timeline-step .pt-card h3 {
+    min-height: 2.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .process-timeline-step .pt-card p {
+    flex: 1;
+  }
 }
 .process-timeline-step:nth-child(even) {
   direction: rtl;

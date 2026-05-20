@@ -2,6 +2,12 @@ import { writeFileSync, mkdirSync } from 'fs';
 import { PROJECTS } from './projects-data.mjs';
 import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
+import {
+  renderSiteNav,
+  renderSiteFooter,
+  renderFloatStack,
+  renderChromeStyles,
+} from './site-chrome.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const outDir = join(__dirname, '..', 'projects');
@@ -176,9 +182,7 @@ function renderPage(p) {
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/variables.css">
   <link rel="stylesheet" href="../css/animations.css">
-  <link rel="stylesheet" href="../css/header.css">
-  <link rel="stylesheet" href="../css/navbar.css">
-  <link rel="stylesheet" href="../css/footer.css">
+${renderChromeStyles(1)}
   <link rel="stylesheet" href="../css/main.css">
   <link rel="stylesheet" href="../css/responsive.css">
   <link rel="stylesheet" href="../css/projects.css">
@@ -201,34 +205,7 @@ function renderPage(p) {
 </head>
 <body class="project-subpage">
 
-<header class="site-header" id="siteHeader">
-  <a href="../index.html#home" class="brand brand-with-logo" aria-label="FT GROUP E&amp;E — về trang chủ">
-    <img class="brand-logo" src="../assets/images/logo.png" width="160" height="48" alt="Logo FT GROUP E&amp;E" loading="eager">
-    <span class="brand-name">FT GROUP <span class="accent">E&amp;E</span></span>
-  </a>
-  <nav aria-label="Main navigation">
-    <ul class="nav-links">
-      <li><a href="../index.html#home">Trang chủ</a></li>
-      <li><a href="../index.html#company-intro">Giới thiệu</a></li>
-      <li><a href="../index.html#service-highlight">Dịch vụ</a></li>
-      <li><a href="../du-an.html" class="nav-link--active">Dự án</a></li>
-      <li><a href="../index.html#team">Đội ngũ</a></li>
-      <li><a href="../index.html#contact">Liên hệ</a></li>
-    </ul>
-  </nav>
-  <a href="tel:+84964236197" class="nav-cta">Gọi Ngay</a>
-  <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu">
-    <span></span><span></span><span></span>
-  </button>
-</header>
-<div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Mobile menu">
-  <a href="../index.html#home">Trang chủ</a>
-  <a href="../index.html#company-intro">Giới thiệu</a>
-  <a href="../index.html#service-highlight">Dịch vụ</a>
-  <a href="../du-an.html" class="nav-link--active">Dự án</a>
-  <a href="../index.html#team">Đội ngũ</a>
-  <a href="../index.html#contact">Liên hệ</a>
-</div>
+${renderSiteNav({ depth: 1, activeNav: 'projects' })}
 
 <main>
 <article>
@@ -340,29 +317,9 @@ function renderPage(p) {
   </div>
 </div>
 
-<footer class="site-footer" id="contact">
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <a href="../index.html#home" class="brand brand-with-logo brand-footer">
-        <img class="brand-logo" src="../assets/images/logo.png" width="160" height="48" alt="Logo FT GROUP E&amp;E" loading="lazy">
-        <span class="brand-name">FT GROUP <span class="accent">E&amp;E</span></span>
-      </a>
-      <p><strong>Công ty TNHH Du lịch Sự kiện và Giáo dục trải nghiệm FT Group</strong> — MST: 0110845698</p>
-    </div>
-    <div class="footer-col">
-      <h4>Liên kết</h4>
-      <ul>
-        <li><a href="../index.html#home">Trang chủ</a></li>
-        <li><a href="../index.html#company-intro">Giới thiệu</a></li>
-        <li><a href="../index.html#service-highlight">Dịch vụ</a></li>
-        <li><a href="../du-an.html">Dự án</a></li>
-        <li><a href="../index.html#team">Đội ngũ</a></li>
-        <li><a href="../index.html#contact">Liên hệ</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom"><div>© <span id="currentYear">2026</span> FT GROUP E&amp;E.</div></div>
-</footer>
+${renderSiteFooter({ depth: 1 })}
+
+${renderFloatStack({ depth: 1 })}
 
 <script src="../js/navbar.js" defer></script>
 <script src="../js/project-detail.js" defer></script>

@@ -603,7 +603,7 @@ body.project-subpage .site-header {
 
 /* ---------- Process timeline ---------- */
 .pd-process {
-  max-width: 900px;
+  max-width: var(--maxw, 1200px);
   margin: 0 auto;
   padding: var(--space-xl) var(--space-md);
 }
@@ -612,23 +612,24 @@ body.project-subpage .site-header {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 0;
+  gap: 0.75rem;
 }
 
 @media (min-width: 768px) {
   .pd-process-track {
-    flex-direction: row;
-    gap: 0;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 0.75rem;
     align-items: stretch;
+    padding-top: 2.5rem;
   }
 
   .pd-process-track::before {
     content: "";
     position: absolute;
-    left: 8%;
-    right: 8%;
-    top: 24px;
+    left: 6%;
+    right: 6%;
+    top: 20px;
     height: 3px;
     background: linear-gradient(90deg, var(--color-red-deep), var(--color-red-bright), var(--color-red-deep));
     box-shadow: 0 0 18px rgba(155, 35, 53, 0.45);
@@ -639,9 +640,17 @@ body.project-subpage .site-header {
 
 .pd-step {
   position: relative;
-  flex: 1;
-  padding: 1rem 0.6rem;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 0 0.25rem;
   z-index: 1;
+}
+
+@media (min-width: 768px) {
+  .pd-step {
+    padding: 0 0.35rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -665,7 +674,13 @@ body.project-subpage .site-header {
 }
 
 .pd-step-card {
-  padding: 1.1rem 0.95rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  min-height: 9.5rem;
+  padding: 1.1rem 0.85rem;
   border-radius: var(--radius-md);
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid var(--glass-border);
@@ -710,6 +725,24 @@ body.project-subpage .site-header {
   font-size: var(--fs-base);
   font-weight: 600;
   color: var(--color-white-warm);
+  line-height: 1.35;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .pd-step-card h3 {
+    min-height: 2.75em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .pd-step-card p {
+    flex: 1;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
 }
 
 .pd-step-card p {

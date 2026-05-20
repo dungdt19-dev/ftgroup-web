@@ -1,6 +1,20 @@
 import { writeFileSync, mkdirSync } from 'fs';
 import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
+import {
+  renderMasonryGallery,
+  renderBenefitsStrip,
+  renderContactCta,
+  renderLightboxMarkup,
+  SERVICE_PAGE_ASSETS,
+  SERVICE_PAGE_SCRIPTS,
+} from './service-shared.mjs';
+import {
+  renderSiteNav,
+  renderSiteFooter,
+  renderFloatStack,
+  renderChromeStyles,
+} from './site-chrome.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const outDir = join(__dirname, '..', 'services');
@@ -24,26 +38,9 @@ const PROCESS = [
   { t: 'Tư vấn &amp; khảo sát', p: 'Lắng nghe mục tiêu, ngân sách và đặc thù địa điểm; hiện trường &amp; timeline rõ ràng.' },
   { t: 'Lập kế hoạch &amp; kịch bản', p: 'Concept, rundown, phân luồng nhân sự — bản vẽ sân khấu &amp; danh mục thiết bị minh bạch.' },
   { t: 'Chuẩn bị &amp; setup', p: 'Thiết bị, decor, âm thanh — kiểm tra kỹ thuật, dry-run theo checklist an toàn.' },
-  { t: 'Vận hành sự kiện', p: 'Điều phối hiện trường, xử lý sự cố, đồng bộ MC — kỹ thuật &amp; creative.' },
+  { t: 'Vận hành sự kiện', p: 'Điều phối hiện trường, xử lý sự cố, đồng bộ MC — kỹ thuật và nội dung chương trình.' },
   { t: 'Đánh giá &amp; bàn giao', p: 'Tổng kết, hạ màn, thu dọn — đề xuất tối ưu cho lần tiếp theo.' },
 ];
-
-const GALLERY_POOL = [
-  'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=900&q=75',
-  'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=900&q=75',
-  'https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=900&q=75',
-  'https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=900&q=75',
-  'https://images.unsplash.com/photo-1598653222000-6b7b7f552368?auto=format&fit=crop&w=900&q=75',
-  'https://images.unsplash.com/photo-1544531586-fde5298cef13?auto=format&fit=crop&w=900&q=75',
-  'https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=900&q=75',
-  'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=900&q=75',
-];
-
-function rotateGallery(seed) {
-  const out = [];
-  for (let i = 0; i < 5; i++) out.push(GALLERY_POOL[(seed + i) % GALLERY_POOL.length]);
-  return out;
-}
 
 const SERVICES = [
   {
@@ -54,25 +51,25 @@ const SERVICES = [
       'Tổ chức khai trương Hà Nội trọn gói: sân khấu, âm thanh ánh sáng, MC, kịch bản cắt băng. FT GROUP E&amp;E — Trao giá trị, tạo niềm tin. Miền Bắc.',
     h1: 'Tổ chức khai trương Hà Nội',
     heroLede:
-      'Khai trương cửa hàng, showroom, chi nhánh — concept ấn tượng, dàn dựng sang trọng, vận hành êm ái trong phạm vi miền Bắc.',
+      'Khai trương cửa hàng, showroom, chi nhánh — concept ấn tượng, dàn dựng sang trọng, vận hành ổn định trong phạm vi miền Bắc.',
     heroImg:
       'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1920&q=80',
     keywords: `${COMMON_KEYWORDS}, tổ chức khai trương Hà Nội`,
     introH2: 'Giới thiệu dịch vụ khai trương',
     introP: [
       'Lễ khai trương là điểm chạm đầu tiên với khách hàng và đối tác. FT GROUP E&amp;E thiết kế trải nghiệm có nhịp — từ welcome, ribbon cutting đến mini show — sao cho thương hiệu được nhớ và chia sẻ.',
-      'Chúng tôi phối hợp trang trí, âm thanh, ánh sáng và nhân sự hiện trường theo một quy trình chuẩn, hạn chế rủi ro và tối ưu thời lượng gold moment cho báo chí &amp; mạng xã hội.',
+      'Chúng tôi phối hợp trang trí, âm thanh, ánh sáng và nhân sự hiện trường theo một quy trình chuẩn, hạn chế rủi ro và tối ưu thời lượng khoảnh khắc trọng điểm cho báo chí &amp; mạng xã hội.',
     ],
     benefits: [
       { t: 'Ấn tượng thương hiệu', d: 'Câu chuyện trên sân khấu, backdrop và ánh sáng nhấn đúng key visual.' },
       { t: 'An toàn &amp; đúng giờ', d: 'Rà soát điện, tải âm thanh, phân luồng khách — kịch bản rõ ràng.' },
-      { t: 'Một đầu mối', d: 'Từ thiết bị đến nhân sự; giao tiếp gọn, báo giá minh bạch.' },
+      { t: 'Một đầu mối', d: 'Từ thiết bị đến nhân sự; giao tiếp rõ ràng, báo giá minh bạch.' },
     ],
     features: [
       { t: 'Thiết bị sân khấu', d: 'Loa line array, mixer, wireless mic, LED backdrop theo quy mô không gian.' },
       { t: 'Nhân sự', d: 'Điều phối, MC/host, hỗ trợ lễ tân và kỹ thuật âm thanh tại chỗ.' },
       { t: 'Kế hoạch sự kiện', d: 'Rundown, phân công, kịch bản ribbon — tối ưu cho không gian hẹp hoặc mở.' },
-      { t: 'Setup &amp; chạy show', d: 'Lắp đặt, soundcheck, rehearsal ngắn trước giờ G.' },
+      { t: 'Setup &amp; chạy show', d: 'Lắp đặt, soundcheck, rehearsal ngắn trước giờ diễn ra.' },
       { t: 'Quy trình chuyên nghiệp', d: 'Checklist kỹ thuật, backup thiết bị theo nhu cầu.' },
       { t: 'Hậu kỳ', d: 'Hạ hình, thu dọn nhanh — cam kết tiến độ bàn giao mặt bằng.' },
     ],
@@ -120,7 +117,7 @@ const SERVICES = [
       'Year-end party, gala dinner, gameshow — concept sáng tạo, sân khấu và ánh sáng đẳng cấp. Tổ chức tiệc cuối năm trọn gói tại Hà Nội &amp; miền Bắc.',
     h1: 'Tiệc cuối năm',
     heroLede:
-      'Đêm gala gắn kết — kịch bản tương tác, ánh sáng cinematic, âm thanh đầy năng lượng cho tập thể.',
+      'Đêm gala gắn kết — kịch bản tương tác, ánh sáng sân khấu, âm thanh đầy năng lượng cho tập thể.',
     heroImg:
       'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1920&q=80',
     keywords: `${COMMON_KEYWORDS}, tiệc cuối năm doanh nghiệp, year end party Hà Nội`,
@@ -140,7 +137,7 @@ const SERVICES = [
       { t: 'Kịch bản', d: 'Gala, awards, live band/DJ — rundown minute-by-minute.' },
       { t: 'Setup sảnh tiệc', d: 'Sân khấu trung tâm, line array, monitor cho ban nhạc.' },
       { t: 'Quy trình', d: 'Rehearsal MC, soundcheck, timing với nhà hàng/khách sạn.' },
-      { t: 'Hậu kỳ', d: 'Thu dọn gọn trong khung giờ bàn giao địa điểm.' },
+      { t: 'Hậu kỳ', d: 'Thu dọn đúng tiến độ trong khung giờ bàn giao địa điểm.' },
     ],
     gallerySeed: 2,
     related: ['hoi-nghi', 'hoi-thao', 'cung-cap-nhan-su'],
@@ -171,7 +168,7 @@ const SERVICES = [
       { t: 'Âm thanh hội trường', d: 'Mixer digital, wireless handheld &amp; headset, processor.' },
       { t: 'Hình ảnh', d: 'LED indoor, switcher, signal path redundant khi cần.' },
       { t: 'Kế hoạch', d: 'Rundown phiên họp, rehearsal đại diễn giả, backup slide.' },
-      { t: 'Setup', d: 'Trước giờ G 1–2 ca — test đủ điều kiện AC và line.' },
+      { t: 'Setup', d: 'Trước giờ diễn ra 1–2 ca — test đủ điều kiện AC và line.' },
       { t: 'Vận hành', d: 'Đồng bộ MC, countdown, chuyển cảnh video.' },
       { t: 'Hybrid', d: 'Tư vấn camera, thu âm phòng họp cho livestream.' },
     ],
@@ -223,9 +220,9 @@ const SERVICES = [
     heroImg:
       'https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=1920&q=80',
     keywords: `${COMMON_KEYWORDS}, ra mắt sản phẩm, launch event Hà Nội`,
-    introH2: 'Launch event đẳng cấp',
+    introH2: 'Sự kiện ra mắt sản phẩm',
     introP: [
-      'Sự kiện ra mắt cần wow moment được dựng có chủ đích: timeline reveal, video product, ánh sáng chase nhịp brand.',
+      'Sự kiện ra mắt cần điểm nhấn chương trình được dựng có chủ đích: timeline reveal, video product, ánh sáng chase nhịp brand.',
       'FT GROUP E&amp;E phối hợp creative và kỹ thuật để đồng bộ âm thanh, LED và hiệu ứng — phù hợp cả họp báo và khách mời VIP.',
     ],
     benefits: [
@@ -285,7 +282,7 @@ const SERVICES = [
       'Cho thuê thiết bị sự kiện: loa, mixer, đèn beam, LED, sân khấu — lắp đặt &amp; vận hành kỹ thuật tại Hà Nội &amp; miền Bắc.',
     h1: 'Cho thuê thiết bị sự kiện',
     heroLede:
-      'Danh mục đa dạng — book theo list hoặc trọn gói với đội kỹ thuật &amp; vận chuyển trong phạm vi miền Bắc.',
+      'Danh mục đa dạng — đặt theo danh mục hoặc trọn gói với đội kỹ thuật &amp; vận chuyển trong phạm vi miền Bắc.',
     heroImg:
       'https://images.unsplash.com/photo-1598653222000-6b7b7f552368?auto=format&fit=crop&w=1920&q=80',
     keywords: `${COMMON_KEYWORDS}, cho thuê thiết bị sự kiện, thuê âm thanh ánh sáng Hà Nội`,
@@ -295,7 +292,7 @@ const SERVICES = [
       'FT GROUP E&amp;E cam kết kiểm tra thiết bị trước xuất kho, dự phòng cable &amp; máy dự phòng theo tier gói.',
     ],
     benefits: [
-      { t: 'Minh bạch catalog', d: 'Model, số lượng, công suất — tránh hidden fee.' },
+      { t: 'Minh bạch catalog', d: 'Model, số lượng, công suất — tránh chi phí phát sinh.' },
       { t: 'Kỹ thuật onsite', d: 'Soundcheck, focus đèn, an toàn treo truss.' },
       { t: 'Miền Bắc', d: 'Logistics trong khu vực theo thỏa thuận.' },
     ],
@@ -318,7 +315,7 @@ const SERVICES = [
       'Cung cấp nhân sự sự kiện: điều phối, MC, PG/PB, kỹ thuật âm thanh ánh sáng — phối hợp đồng bộ onsite. Miền Bắc.',
     h1: 'Cung cấp nhân sự sự kiện',
     heroLede:
-      'Con người là mấu chốt trải nghiệm — đội ngũ được briefing kỹ, đồng phục và attitude chuyên nghiệp trước giờ G.',
+      'Con người là mấu chốt trải nghiệm — đội ngũ được briefing kỹ, đồng phục và phong thái chuyên nghiệp trước giờ diễn ra.',
     heroImg:
       'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1920&q=80',
     keywords: `${COMMON_KEYWORDS}, cung cấp nhân sự sự kiện, PG sự kiện Hà Nội`,
@@ -343,6 +340,210 @@ const SERVICES = [
     gallerySeed: 8,
     related: ['tiec-cuoi-nam', 'hoi-nghi', 'hoi-thao'],
   },
+  {
+    id: 'to-chuc-su-kien',
+    file: 'to-chuc-su-kien.html',
+    title: 'Tổ chức sự kiện trọn gói | FT GROUP E&amp;E',
+    desc:
+      'Tổ chức sự kiện trọn gói miền Bắc: concept, kịch bản, sân khấu, âm thanh ánh sáng, vận hành hiện trường. FT GROUP E&amp;E — Trao giá trị, tạo niềm tin.',
+    h1: 'Tổ chức sự kiện trọn gói',
+    heroLede:
+      'Một đầu mối cho toàn hành trình: tư vấn concept, kịch bản, sân khấu — âm thanh, ánh sáng — đội ngũ hiện trường và hậu kỳ trong phạm vi miền Bắc.',
+    heroImg:
+      'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1920&q=80',
+    keywords: `${COMMON_KEYWORDS}, tổ chức sự kiện trọn gói`,
+    introH2: 'Tổ chức sự kiện theo mục tiêu thương hiệu',
+    introP: [
+      'Chúng tôi đồng hành từ giai đoạn chào thầu ý tưởng đến giờ diễn ra: dàn dựng không gian, điều phối rundown, xử lý sự cố kỹ thuật và đảm bảo trải nghiệm khách mời nhất quán với key visual.',
+      'Phương án có thể triển khai trọn gói hoặc tách module theo ngân sách — luôn có báo giá theo hạng mục, timeline rõ ràng và checklist an toàn hiện trường.',
+    ],
+    benefits: [
+      { t: 'Kịch bản &amp; sân khấu', d: 'Rundown, bản vẽ bố cục, ánh sáng nhấn đúng thông điệp.' },
+      { t: 'Vận hành trọn gói', d: 'Âm thanh, LED, MC/host, kỹ thuật — phối hợp một đầu mối.' },
+      { t: 'Miền Bắc', d: 'Tối ưu logistics thiết bị và nhân sự trong khu vực.' },
+    ],
+    features: [
+      { t: 'Concept &amp; kịch bản', d: 'Brief → storyboard → rundown minute-by-minute.' },
+      { t: 'Sân khấu &amp; thiết bị', d: 'Âm thanh, ánh sáng, LED — catalog minh bạch.' },
+      { t: 'Nhân sự hiện trường', d: 'Điều phối, MC, kỹ thuật — briefing trước giờ diễn ra.' },
+      { t: 'Setup &amp; rehearsal', d: 'Soundcheck, dry-run, checklist an toàn.' },
+      { t: 'Vận hành show', d: 'Showcaller, xử lý sự cố, đồng bộ creative &amp; kỹ thuật.' },
+      { t: 'Hậu kỳ', d: 'Hạ màn, thu dọn, debrief cải tiến lần sau.' },
+    ],
+    related: ['thiet-bi-san-khau', 'in-quang-cao', 'trai-nghiem-tai-truong'],
+    breadcrumbParent: 'Dịch vụ nổi bật',
+    breadcrumbAnchor: '#service-highlight',
+  },
+  {
+    id: 'trai-nghiem-tai-truong',
+    file: 'trai-nghiem-tai-truong.html',
+    title: 'Trải nghiệm tại trường | FT GROUP E&amp;E',
+    desc:
+      'Chương trình giáo dục trải nghiệm tại trường: thiết kế theo cấp học, hoạt động an toàn, gắn kết cộng đồng. FT GROUP E&amp;E — Miền Bắc.',
+    h1: 'Trải nghiệm tại trường',
+    heroLede:
+      'Ngày hội, chuyên đề, hoạt động ngoại khóa — kịch bản phù hợp lứa tuổi, đạo cụ an toàn và nhân sự dẫn chương trình chuyên nghiệp.',
+    heroImg:
+      'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1920&q=80',
+    keywords: `${COMMON_KEYWORDS}, trải nghiệm tại trường, giáo dục trải nghiệm`,
+    introH2: 'Giáo dục trải nghiệm theo từng cấp học',
+    introP: [
+      'FT GROUP E&amp;E thiết kế chương trình gắn mục tiêu giáo dục: kỹ năng mềm, STEM, văn hoá — với timeline rõ và phân luồng học sinh an toàn.',
+      'Đồng bộ đạo cụ, âm thanh nhẹ, MC dẫn chương trình và checklist an toàn sân trường — một đầu mối từ ý tưởng đến thu dọn.',
+    ],
+    benefits: [
+      { t: 'Phù hợp lứa tuổi', d: 'Nội dung &amp; đạo cụ theo mầm non, tiểu học, THCS/THPT.' },
+      { t: 'An toàn học đường', d: 'Phân khu chơi, giám sát, briefing giáo viên.' },
+      { t: 'Gắn kết cộng đồng', d: 'Phụ huynh, tình nguyện — trải nghiệm có ý nghĩa.' },
+    ],
+    features: [
+      { t: 'Thiết kế chương trình', d: 'Chủ đề, trạm trải nghiệm, thời lượng từng khối.' },
+      { t: 'Đạo cụ &amp; decor', d: 'Trang trí sân, booth, vật liệu thân thiện.' },
+      { t: 'Nhân sự dẫn chương trình', d: 'MC, điều phối trạm, hỗ trợ giáo viên.' },
+      { t: 'Âm thanh &amp; sân khấu', d: 'Loa di động, backdrop — phù hợp sân trường.' },
+      { t: 'Vận hành', d: 'Phân luồng lớp, xử lý thời tiết, plan B.' },
+      { t: 'Bàn giao', d: 'Tổng kết, ảnh sự kiện, đề xuất chủ đề lần sau.' },
+    ],
+    related: ['dao-cu-teambuilding', 'to-chuc-su-kien', 'in-quang-cao'],
+    breadcrumbParent: 'Dịch vụ nổi bật',
+    breadcrumbAnchor: '#service-highlight',
+  },
+  {
+    id: 'in-quang-cao',
+    file: 'in-quang-cao.html',
+    title: 'In quảng cáo sự kiện | FT GROUP E&amp;E',
+    desc:
+      'In ấn backdrop, standee, POSM, OOH cho sự kiện — gia công, giao hàng đúng timeline setup. FT GROUP E&amp;E Hà Nội &amp; miền Bắc.',
+    h1: 'In quảng cáo',
+    heroLede:
+      'Ấn phẩm in ấn cho kênh OOH và sự kiện — key visual thống nhất từ backdrop, counter đến tờ rơi và vật phẩm POSM.',
+    heroImg:
+      'https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=1920&q=80',
+    keywords: `${COMMON_KEYWORDS}, in quảng cáo sự kiện, in backdrop`,
+    introH2: 'Chất liệu &amp; gia công theo brand guideline',
+    introP: [
+      'Từ file thiết kế đến in proof, chúng tôi tư vấn khổ cắt, loại giấy, cán màng và gia công sau in để sản phẩm đứng ngoài trời hoặc trong hall bền màu theo thời gian lắp dựng.',
+      'Đặt lịch in theo timeline sự kiện — đồng bộ với đội dựng backdrop &amp; sân khấu để mảng visual thông suốt một đầu mối.',
+    ],
+    benefits: [
+      { t: 'OOH &amp; POSM', d: 'Standee, phông nền, banner lối vào, tờ rơi chương trình.' },
+      { t: 'Gia công', d: 'Cán màng, die-cut, ghép khối theo thiết kế.' },
+      { t: 'Tiến độ', d: 'Đối soát proof và giao hàng trước ngày setup.' },
+    ],
+    features: [
+      { t: 'Backdrop &amp; banner', d: 'Khổ lớn, treo hoặc khung — indoor/outdoor.' },
+      { t: 'POSM &amp; quà tặng', d: 'Túi, thẻ, voucher in theo chiến dịch.' },
+      { t: 'Duyệt mẫu', d: 'Proof màu, chỉnh sửa trước chạy số lượng.' },
+      { t: 'Giao hàng', d: 'Đóng gói, giao venue hoặc kho tập kết.' },
+      { t: 'Phối hợp dựng', d: 'Đồng bộ team sân khấu &amp; decor.' },
+      { t: 'Tái sử dụng', d: 'Tư vấn vật liệu bền cho roadshow.' },
+    ],
+    related: ['san-xuat-dao-cu', 'to-chuc-su-kien', 'thiet-bi-san-khau'],
+    breadcrumbParent: 'Dịch vụ nổi bật',
+    breadcrumbAnchor: '#service-highlight',
+  },
+  {
+    id: 'thiet-bi-san-khau',
+    file: 'thiet-bi-san-khau.html',
+    title: 'Thiết bị sân khấu âm thanh ánh sáng | FT GROUP E&amp;E',
+    desc:
+      'Thiết bị sân khấu: âm thanh, ánh sáng, LED — khảo sát, báo giá và vận hành kỹ thuật tại Hà Nội &amp; miền Bắc.',
+    h1: 'Thiết bị sân khấu',
+    heroLede:
+      'Hệ âm thanh, ánh sáng, LED và cấu trúc sân khấu theo quy mô hội trường — kèm kỹ thuật soundcheck và vận hành suốt chương trình.',
+    heroImg:
+      'https://images.unsplash.com/photo-1598653222000-6b7b7f552368?auto=format&fit=crop&w=1920&q=80',
+    keywords: `${COMMON_KEYWORDS}, thiết bị sân khấu, âm thanh ánh sáng`,
+    introH2: 'Chọn cấu hình thiết bị theo không gian &amp; thể loại sự kiện',
+    introP: [
+      'FT GROUP E&amp;E tính toán tải loa, góc phủ, pixel pitch LED và phân bổ nguồn điện — bàn giao rundown kỹ thuật cho MC và đạo diễn chương trình.',
+      'Có thể kết hợp với gói tổ chức trọn gói hoặc chỉ cung cấp thiết bị + kỹ sư hiện trường theo ngày chạy show.',
+    ],
+    benefits: [
+      { t: 'Âm thanh', d: 'Line array, sub, mixer digital, micro không dây.' },
+      { t: 'Ánh sáng &amp; LED', d: 'Beam/wash, pipe, màn hình LED trong nhà và ngoài trời.' },
+      { t: 'Vận hành', d: 'Setup, ca máy, fly cue — đồng bộ với ban tổ chức.' },
+    ],
+    features: [
+      { t: 'Khảo sát hiện trường', d: 'Sơ đồ, tải điện, điểm treo — báo cáo kỹ thuật.' },
+      { t: 'Catalog thiết bị', d: 'Model, số lượng — báo giá minh bạch.' },
+      { t: 'Lắp đặt', d: 'Truss, LED, focus đèn — checklist an toàn.' },
+      { t: 'Soundcheck', d: 'Test mic, playback, monitor cho band.' },
+      { t: 'Vận hành show', d: 'Kỹ thuật túc trực, backup máy khi cần.' },
+      { t: 'Thu dọn', d: 'Hạ hình đúng slot bàn giao địa điểm.' },
+    ],
+    related: ['cho-thue-thiet-bi', 'to-chuc-su-kien', 'in-quang-cao'],
+    breadcrumbParent: 'Dịch vụ nổi bật',
+    breadcrumbAnchor: '#service-highlight',
+  },
+  {
+    id: 'dao-cu-teambuilding',
+    file: 'dao-cu-teambuilding.html',
+    title: 'Đạo cụ Teambuilding | FT GROUP E&amp;E',
+    desc:
+      'Thiết kế &amp; cung ứng đạo cụ teambuilding: trò chơi nhóm, thiết bị an toàn, concept theo mục tiêu HR. Miền Bắc.',
+    h1: 'Đạo cụ Teambuilding',
+    heroLede:
+      'Bộ trò chơi và đạo cụ phục vụ hoạt động gắn kết nhóm — tập trung an toàn, luật chơi rõ và dễ vận hành trên sân.',
+    heroImg:
+      'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1920&q=80',
+    keywords: `${COMMON_KEYWORDS}, đạo cụ teambuilding, team building`,
+    introH2: 'Concept đồng hành mục tiêu doanh nghiệp',
+    introP: [
+      'Chúng tôi đề xuất format phù hợp văn hoá tổ chức — từ icebreaker ngắn đến roadshow ngoài trời — kèm đạo cụ được kiểm tra trước giờ chơi và hướng dẫn MC/điều phối.',
+      'Có thể kết hợp với sản xuất đạo cụ riêng khi cần branding theo chiến dịch.',
+    ],
+    benefits: [
+      { t: 'An toàn', d: 'Vật liệu &amp; cách chơi phù hợp số lượng người.' },
+      { t: 'Đồng bộ MC', d: 'Kịch bản luật, phân luồng đội — bàn giao tài liệu vận hành.' },
+      { t: 'Mở rộng', d: 'Nối với gói tổ chức trọn gói hoặc sản xuất đạo cụ.' },
+    ],
+    features: [
+      { t: 'Thiết kế game', d: 'Icebreaker, thử thách nhóm, đua checkpoint.' },
+      { t: 'Đạo cụ chuẩn', d: 'Bộ kit kiểm tra trước giờ diễn ra.' },
+      { t: 'Hướng dẫn vận hành', d: 'SOP cho MC và trưởng đội.' },
+      { t: 'Outdoor / indoor', d: 'Phương án theo địa hình &amp; thời tiết.' },
+      { t: 'Branding', d: 'Áo, cờ, vật phẩm mang logo khi cần.' },
+      { t: 'Kết hợp sự kiện', d: 'Gắn year-end party hoặc kick-off.' },
+    ],
+    related: ['san-xuat-dao-cu', 'to-chuc-su-kien', 'trai-nghiem-tai-truong'],
+    breadcrumbParent: 'Dịch vụ nổi bật',
+    breadcrumbAnchor: '#service-highlight',
+  },
+  {
+    id: 'san-xuat-dao-cu',
+    file: 'san-xuat-dao-cu.html',
+    title: 'Sản xuất đạo cụ sự kiện | FT GROUP E&amp;E',
+    desc:
+      'Gia công prop, mô hình trưng bày và đạo cụ chương trình theo file thiết kế — FT GROUP E&amp;E miền Bắc.',
+    h1: 'Sản xuất đạo cụ',
+    heroLede:
+      'Gia công prop, mô hình trưng bày và đạo cụ chương trình theo file thiết kế — bám timeline dựng sân &amp; duyệt mẫu.',
+    heroImg:
+      'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1920&q=80',
+    keywords: `${COMMON_KEYWORDS}, sản xuất đạo cụ sự kiện`,
+    introH2: 'Từ bản vẽ đến lắp ráp hiện trường',
+    introP: [
+      'FT GROUP E&amp;E hỗ trợ chọn vật liệu theo điều kiện indoor/outdoor, trọng lượng treo – đặt và yêu cầu an toàn cháy nổ khi cần.',
+      'Quy trình: duyệt mockup — sản xuất — kiểm tra bàn giao — giao đến venue hoặc kho lưu theo kế hoạch sự kiện.',
+    ],
+    benefits: [
+      { t: 'Đúng brief', d: 'Màu sắc, logo và kích thước theo thiết kế.' },
+      { t: 'Tiến độ', d: 'Milestone rõ cho ngày setup &amp; tổng duyệt.' },
+      { t: 'Đồng bộ dựng', d: 'Phối hợp team sân khấu &amp; âm thanh ánh sáng.' },
+    ],
+    features: [
+      { t: 'Mockup &amp; duyệt mẫu', d: 'Ảnh 3D hoặc mẫu thật trước sản xuất số lượng.' },
+      { t: 'Gia công xưởng', d: 'Mica, gỗ, foam, composite theo spec.' },
+      { t: 'Sơn &amp; hoàn thiện', d: 'Bề mặt bền cho outdoor khi cần.' },
+      { t: 'Vận chuyển', d: 'Đóng kiện, giao venue đúng giờ.' },
+      { t: 'Lắp tại chỗ', d: 'Đội dựng phối hợp kỹ thuật sân khấu.' },
+      { t: 'Lưu kho', d: 'Bảo quản prop tái sử dụng roadshow.' },
+    ],
+    related: ['dao-cu-teambuilding', 'in-quang-cao', 'to-chuc-su-kien'],
+    breadcrumbParent: 'Dịch vụ nổi bật',
+    breadcrumbAnchor: '#service-highlight',
+  },
 ];
 
 const NAME_BY_ID = Object.fromEntries(
@@ -355,19 +556,17 @@ function renderPage(s) {
   const descPlain = decodeEnt(s.desc);
   const kwPlain = decodeEnt(s.keywords);
   const h1Plain = decodeEnt(s.h1.replace(/<[^>]+>/g, ''));
-  const gallery = rotateGallery(s.gallerySeed);
+  const breadcrumbParent = s.breadcrumbParent || 'Dịch vụ';
+  const breadcrumbAnchor = s.breadcrumbAnchor || '#service-highlight';
+  const galleryHtml = renderMasonryGallery(s.id, h1Plain);
+  const glanceHtml = renderBenefitsStrip(s.benefits);
+  const contactHtml = renderContactCta(h1Plain);
   const relatedHtml = s.related
     .map((rid) => {
       const name = NAME_BY_ID[rid] || rid;
       const href = `${rid}.html`;
       return `        <a class="srv-related-card reveal" href="${esc(href)}"><span>Dịch vụ liên quan</span><strong>${esc(name)}</strong></a>`;
     })
-    .join('\n');
-
-  const benefitsHtml = s.benefits
-    .map(
-      (b) => `          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><div><strong>${b.t}</strong><p>${b.d}</p></div></li>`
-    )
     .join('\n');
 
   const featuresHtml = s.features
@@ -389,15 +588,6 @@ function renderPage(s) {
           <p>${st.p}</p>
         </div>`
   ).join('');
-
-  const galleryItems = gallery
-    .map(
-      (url, i) => `
-        <figure class="srv-gallery-item">
-          <img src="${esc(url)}" alt="${esc(h1Plain)} — hình ảnh dự án ${i + 1}" width="420" height="280" loading="lazy" decoding="async">
-        </figure>`
-    )
-    .join('');
 
   return `<!DOCTYPE html>
 <html lang="vi">
@@ -422,9 +612,11 @@ function renderPage(s) {
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/variables.css">
   <link rel="stylesheet" href="../css/animations.css">
+${renderChromeStyles(1)}
   <link rel="stylesheet" href="../css/main.css">
   <link rel="stylesheet" href="../css/responsive.css">
   <link rel="stylesheet" href="../css/services.css">
+${SERVICE_PAGE_ASSETS}
   <link rel="icon" type="image/x-icon" href="../assets/images/logo.ico" sizes="any">
   <script type="application/ld+json">
   ${JSON.stringify(
@@ -448,32 +640,7 @@ function renderPage(s) {
 </head>
 <body class="srv-subpage">
 
-<header class="site-header" id="siteHeader">
-  <a href="../index.html#home" class="brand brand-with-logo" aria-label="FT GROUP E&amp;E — về trang chủ">
-    <img class="brand-logo" src="../assets/images/logo.png" width="160" height="48" alt="Logo FT GROUP E&amp;E" loading="eager">
-    <span class="brand-name">FT GROUP <span class="accent">E&amp;E</span></span>
-  </a>
-  <nav aria-label="Main navigation">
-    <ul class="nav-links">
-      <li><a href="../index.html#gallery">Dự Án</a></li>
-      <li><a href="../index.html#company-intro">Giới Thiệu</a></li>
-      <li><a href="../index.html#danh-sach-dich-vu">Danh Sách Dịch Vụ</a></li>
-      <li><a href="../index.html#vision-mission">Tầm Nhìn</a></li>
-      <li><a href="../index.html#contact">Liên Hệ</a></li>
-    </ul>
-  </nav>
-  <a href="tel:+84964236197" class="nav-cta">Gọi Ngay</a>
-  <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu">
-    <span></span><span></span><span></span>
-  </button>
-</header>
-<div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Mobile menu">
-  <a href="../index.html#gallery">Dự Án</a>
-  <a href="../index.html#company-intro">Giới Thiệu</a>
-  <a href="../index.html#danh-sach-dich-vu">Danh Sách Dịch Vụ</a>
-  <a href="../index.html#vision-mission">Tầm Nhìn</a>
-  <a href="../index.html#contact">Liên Hệ</a>
-</div>
+${renderSiteNav({ depth: 1, activeNav: 'services' })}
 
 <main class="srv-page">
   <article>
@@ -484,7 +651,7 @@ function renderPage(s) {
         <nav class="srv-breadcrumb" aria-label="Breadcrumb">
           <a href="../index.html#home">Trang chủ</a>
           <span aria-hidden="true"> · </span>
-          <a href="../index.html#danh-sach-dich-vu">Danh sách dịch vụ</a>
+          <a href="../index.html${breadcrumbAnchor}">${breadcrumbParent}</a>
           <span aria-hidden="true"> · </span>
           <span aria-current="page">${esc(h1Plain)}</span>
         </nav>
@@ -493,79 +660,46 @@ function renderPage(s) {
       </div>
     </header>
 
-    <section class="srv-section srv-section--alt" aria-labelledby="srv-intro-heading">
-      <div class="srv-intro-grid">
-        <div class="srv-intro-body">
-          <div class="srv-section-head">
-            <span class="srv-section-eyebrow">Tổng quan</span>
-            <h2 id="srv-intro-heading">${s.introH2}</h2>
-          </div>
-          <p>${s.introP[0]}</p>
-          <p>${s.introP[1]}</p>
-          <h3>Vì sao chọn FT GROUP E&amp;E?</h3>
-          <p>Kinh nghiệm triển khai đa định dạng sự kiện giáo dục &amp; doanh nghiệp; quy trình rõ ràng, tư vấn gần gũi và báo giá theo hạng mục — phù hợp mục tiêu truyền thông và ngân sách.</p>
-        </div>
-        <aside aria-labelledby="benefits-heading">
-          <h3 id="benefits-heading" class="visually-hidden">Lợi ích</h3>
-          <ul class="srv-benefits">
-${benefitsHtml}
-          </ul>
-        </aside>
-      </div>
-    </section>
+${glanceHtml}
 
-    <section class="srv-section" aria-labelledby="features-heading">
-      <div class="srv-section-head">
-        <span class="srv-section-eyebrow">Năng lực triển khai</span>
-        <h2 id="features-heading">Hạng mục &amp; quy trình</h2>
-        <p class="srv-section-lede">Thiết bị, nhân sự, tổ chức ý tưởng, lắp đặt và vận hành — gói trọn hoặc tách module theo nhu cầu.</p>
+${galleryHtml}
+
+    <section class="srv-section srv-section--tight" aria-labelledby="features-heading">
+      <div class="srv-section-head srv-section-head--compact">
+        <span class="srv-section-eyebrow">Hạng mục</span>
+        <h2 id="features-heading">Phạm vi triển khai</h2>
       </div>
       <div class="srv-features-grid">
 ${featuresHtml}
       </div>
     </section>
 
-    <section class="srv-portfolio" aria-labelledby="portfolio-heading">
-      <div class="srv-section-head">
-        <span class="srv-section-eyebrow">Portfolio</span>
-        <h2 id="portfolio-heading">Hình ảnh thực chiến</h2>
-        <p class="srv-section-lede">Một số tham chiếu chất lượng hình ảnh &amp; bố cục sân khấu — vuốt hoặc dùng nút để xem tiếp.</p>
-      </div>
-      <div class="srv-gallery-wrap srv-gallery" data-srv-gallery>
-        <button type="button" class="srv-gallery-nav srv-gallery-prev" aria-label="Ảnh trước"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
-        <div class="srv-gallery-rail">
-${galleryItems}
-        </div>
-        <button type="button" class="srv-gallery-nav srv-gallery-next" aria-label="Ảnh sau"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></button>
-      </div>
-    </section>
-
-    <section class="srv-section srv-section--alt" aria-labelledby="process-heading">
-      <div class="srv-section-head">
+    <section class="srv-section srv-section--alt srv-section--tight" aria-labelledby="process-heading">
+      <div class="srv-section-head srv-section-head--compact">
         <span class="srv-section-eyebrow">Quy trình</span>
-        <h2 id="process-heading">Cách chúng tôi làm việc</h2>
-        <p class="srv-section-lede">Năm bước chuẩn agency — minh bạch timeline và trách nhiệm từng bên.</p>
+        <h2 id="process-heading">Quy trình triển khai</h2>
       </div>
       <div class="srv-process-track">
 ${processHtml}
       </div>
     </section>
 
-    <section class="srv-cta reveal" aria-labelledby="cta-heading">
-      <h2 id="cta-heading">Nhận báo giá ngay</h2>
-      <p>Để lại thông tin hoặc gọi trực tiếp — đội ngũ FT GROUP E&amp;E phản hồi tư vấn &amp; phương án sơ bộ trong thời gian sớm nhất.</p>
-      <div class="srv-cta-actions">
-        <a class="srv-btn srv-btn--primary" href="mailto:ftgroup1929@gmail.com?subject=Báo%20giá%20dịch%20vụ">Nhận báo giá ngay</a>
-        <a class="srv-btn srv-btn--ghost" href="https://zalo.me/0964236197" target="_blank" rel="noopener">Chat Zalo</a>
-        <a class="srv-btn srv-btn--ghost" href="tel:+84964236197">Gọi 0964 236 197</a>
+    <details class="srv-more reveal">
+      <summary>Tổng quan chi tiết</summary>
+      <div class="srv-more__body">
+        <h2 id="srv-intro-heading">${s.introH2}</h2>
+        <p>${s.introP[0]}</p>
+        <p>${s.introP[1]}</p>
       </div>
-    </section>
+    </details>
+
+${contactHtml}
 
     <section class="srv-section" aria-labelledby="related-heading">
       <div class="srv-section-head">
         <span class="srv-section-eyebrow">Khác</span>
         <h2 id="related-heading">Dịch vụ liên quan</h2>
-        <p class="srv-section-lede">Liên kết nội bộ giúp bạn khám phá thêm gói phù hợp chiến dịch.</p>
+        <p class="srv-section-lede">Các hạng mục liên quan trong hệ sinh thái dịch vụ FT GROUP E&amp;E.</p>
       </div>
       <div class="srv-related-grid">
 ${relatedHtml}
@@ -574,59 +708,14 @@ ${relatedHtml}
   </article>
 </main>
 
-<footer class="site-footer" id="contact">
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <a href="../index.html#home" class="brand brand-with-logo brand-footer">
-        <img class="brand-logo" src="../assets/images/logo.png" width="160" height="48" alt="Logo FT GROUP E&amp;E" loading="lazy">
-        <span class="brand-name">FT GROUP <span class="accent">E&amp;E</span></span>
-      </a>
-      <p><strong>Công ty TNHH Du lịch Sự kiện và Giáo dục trải nghiệm FT Group</strong> — giáo dục trải nghiệm, tổ chức sự kiện trọn gói và thiết bị sân khấu. <strong>MST:</strong> 0110845698</p>
-      <div class="footer-socials">
-        <a href="mailto:ftgroup1929@gmail.com" class="social-btn" aria-label="Email">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="m22 6-10 7L2 6"/></svg>
-        </a>
-        <a href="https://zalo.me/0964236197" class="social-btn" aria-label="Zalo" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.5 2 2 5.9 2 10.7c0 2.6 1.4 4.9 3.5 6.4-.1.9-.5 2.4-.5 2.6 0 .3.1.4.4.3.2-.1 2.3-1.5 3.2-2.1.9.2 1.9.3 2.9.3 5.5 0 10-3.9 10-8.7C22 5.9 17.5 2 12 2z"/></svg>
-        </a>
-      </div>
-    </div>
-    <div class="footer-col">
-      <h4>Khám phá</h4>
-      <ul>
-        <li><a href="../index.html#gallery">Dự Án</a></li>
-        <li><a href="../index.html#danh-sach-dich-vu">Danh sách dịch vụ</a></li>
-        <li><a href="../index.html#contact">Liên hệ</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Liên hệ</h4>
-      <div class="contact-row">
-        <span>Thôn Đông, Tàm Xá, Đông Anh, Hà Nội</span>
-      </div>
-      <div class="contact-row">
-        <a href="tel:+84964236197">0964 236 197</a> · <a href="tel:+84382032759">0382 032 759</a>
-      </div>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <div>© <span id="currentYear">2026</span> FT GROUP E&amp;E.</div>
-  </div>
-</footer>
+${renderSiteFooter({ depth: 1 })}
 
-<div class="float-stack" aria-label="Liên hệ nhanh">
-  <a href="https://zalo.me/0964236197" class="float-btn float-zalo" target="_blank" rel="noopener" aria-label="Chat Zalo">
-    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.5 2 2 5.9 2 10.7c0 2.6 1.4 4.9 3.5 6.4-.1.9-.5 2.4-.5 2.6 0 .3.1.4.4.3.2-.1 2.3-1.5 3.2-2.1.9.2 1.9.3 2.9.3 5.5 0 10-3.9 10-8.7C22 5.9 17.5 2 12 2z"/></svg>
-    <span class="float-tip">Chat Zalo</span>
-  </a>
-  <a href="tel:+84964236197" class="float-btn float-call" aria-label="Gọi ngay">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.86 19.86 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
-    <span class="float-tip">0964 236 197</span>
-  </a>
-</div>
+${renderLightboxMarkup()}
+
+${renderFloatStack({ depth: 1 })}
 
 <script src="../js/navbar.js" defer></script>
-<script src="../js/service-gallery.js" defer></script>
+${SERVICE_PAGE_SCRIPTS}
 <script src="../js/main.js" defer></script>
 </body>
 </html>`;
