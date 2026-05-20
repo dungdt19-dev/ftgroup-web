@@ -5,6 +5,7 @@ import {
   getProjectThumbImage,
   projectSlugFromFile,
 } from './project-images.mjs';
+import { pickRelatedProjects } from './project-related.mjs';
 
 export const PROJECT_GALLERY_COUNT = 6;
 
@@ -27,7 +28,7 @@ function P(x) {
   };
 }
 
-export const PROJECTS = [
+const PROJECT_LIST = [
   P({
     file: 'dem-hoi-chao-tan-sinh-vien-k69.html',
     pool: 'concert',
@@ -68,7 +69,6 @@ export const PROJECTS = [
     ],
     experienceQuote: 'Đêm như một show lớn ngay tại sân trường.',
     feedback: 'BTC đánh giá cao phần kỹ thuật âm thanh và phối hợp với nghệ sĩ.',
-    related: ['dem-hoi-chao-tan-sinh-vien-k70.html', 'dai-nhac-hoi-chao-tan-sinh-vien-cdltk.html', 'dem-hoi-chao-tan-sinh-vien-khoa-du-lich.html'],
   }),
 
   P({
@@ -102,7 +102,6 @@ export const PROJECTS = [
     results: ['Đúng tiến độ', 'Không cố điện', 'Phản hồi tích cực từ tân K'],
     experienceBullets: ['Khán giả gần sân khấu', 'Không khí đoàn kết khoa'],
     feedback: 'Khoa đồng hành suốt buổi, sinh viên vui và gắn kết.',
-    related: ['dem-hoi-chao-tan-sinh-vien-khoa-kinh-te.html', 'dem-hoi-chao-tan-sinh-vien-k69.html', 'le-ky-niem-ngay-nha-giao-viet-nam.html'],
   }),
 
   P({
@@ -136,7 +135,6 @@ export const PROJECTS = [
     results: ['Vận hành suôn sẻ', 'Sinh viên tham gia đông', 'Kỹ thuật ổn định'],
     experienceBullets: ['Không gian khoa riêng, dễ tương tác'],
     feedback: 'Phối hợp tốt với đại diện khoa và Đoàn.',
-    related: ['dem-hoi-chao-tan-sinh-vien-khoa-du-lich.html', 'dem-hoi-chao-tan-sinh-vien-k69.html', 'ngay-hoi-chung-toi-la-chien-si.html'],
   }),
 
   P({
@@ -170,7 +168,6 @@ export const PROJECTS = [
     results: ['Decor ánh sáng đồng bộ', 'Không gian ảnh đẹp', 'An toàn điện'],
     experienceBullets: ['Backdrop chụp hình đông đảo', 'Nhạc và đèn đúng mood Giáng sinh'],
     feedback: 'Trường hài lòng phần trang trí và timeline.',
-    related: ['dai-nhac-hoi-chao-tan-sinh-vien-cdltk.html', 'ngay-hoi-le-hoi-nuoc.html', 'dem-hoi-chao-tan-sinh-vien-k69.html'],
   }),
 
   P({
@@ -205,7 +202,6 @@ export const PROJECTS = [
     experienceBullets: ['Khán đài đồng thanh ca', 'Không khí xúc động khi đấu giá'],
     experienceQuote: 'Lan tỏa được từ sân khấu đến khán phòng.',
     feedback: 'Đối tác đánh giá cao phần vận hành êm, an toàn.',
-    related: ['dai-nhac-hoi-chao-tan-sinh-vien-cdltk.html', 'dem-hoi-chao-tan-sinh-vien-k69.html', 'le-ky-niem-ngay-nha-giao-viet-nam.html'],
   }),
 
   P({
@@ -239,7 +235,6 @@ export const PROJECTS = [
     results: ['Show chạy đúng rundown', 'Chất lượng âm hình ổn', 'Nghệ sĩ hài lòng monitor'],
     experienceBullets: ['Fan cồng vỗ tay theo nhịp', 'Ánh sáng biến hóa theo từng ca'],
     feedback: 'Nhà trường và sinh viên đánh giá 5 sao phần kỹ thuật.',
-    related: ['dem-hoi-happy-christmas.html', 'dem-hoi-chao-tan-sinh-vien-k70.html', 'dem-nhac-gieo-yeu-thuong.html'],
   }),
 
   P({
@@ -273,7 +268,6 @@ export const PROJECTS = [
     results: ['Ổn định suốt set DJ', 'Rap & vocal balance', 'Khán đài an toàn'],
     experienceBullets: ['Mosh pit tinh thần — không khí festival', 'MC kéo tương tác liên tục'],
     feedback: 'BTC và nghệ sĩ khen crew kỹ thuật.',
-    related: ['dem-hoi-chao-tan-sinh-vien-k69.html', 'dai-nhac-hoi-chao-tan-sinh-vien-cdltk.html', 'dem-hoi-chao-tan-sinh-vien-khoa-du-lich.html'],
   }),
 
   P({
@@ -307,7 +301,6 @@ export const PROJECTS = [
     results: ['Đúng nghi thức', 'Âm thanh rõ lời phát biểu', 'Không gian ấm'],
     experienceBullets: ['Sinh viên tặng hoa, vỗ tay', 'Không khí tri ân'],
     feedback: 'Thầy cô đánh giá cao phần âm thanh và ánh sáng.',
-    related: ['ngay-hoi-chung-toi-la-chien-si.html', 'dem-hoi-chao-tan-sinh-vien-khoa-du-lich.html', 'dem-hoi-happy-christmas.html'],
   }),
 
   P({
@@ -341,7 +334,6 @@ export const PROJECTS = [
     results: ['Nhiều dự án repeat', 'Full package trọn gói', 'Tư vấn concept theo ngành'],
     experienceBullets: ['Khách check-in xếp hàng cổng decor', 'Lễ cắt băng gọn trong slot'],
     feedback: 'Đối tác khen phần MC, trang trí và kỹ thuật.',
-    related: ['thiet-bi-su-kien-showcase.html', 'teambuilding-vietinbank-bac-giang.html', 'dai-nhac-hoi-chao-tan-sinh-vien-cdltk.html'],
   }),
 
   P({
@@ -375,7 +367,6 @@ export const PROJECTS = [
     results: ['Không tai nạn nhỏ', 'Tham gia tích cực', 'Feedback tốt'],
     experienceBullets: ['Phụ huynh chụp ảnh check-in', 'Trẻ tham gia đồng loạt'],
     feedback: 'Trường book lại năm sau.',
-    related: ['ngay-hoi-cung-con-kham-pha.html', 'chuong-trinh-cuoc-dua-ki-thu.html', 'chuong-trinh-le-hoi-nuoc-2.html'],
   }),
 
   P({
@@ -409,7 +400,6 @@ export const PROJECTS = [
     results: ['Kỷ luật tốt', 'Vui', 'Không sự cố'],
     experienceBullets: ['Đồng phục đội rõ màu', 'Khán đài cổ vũ'],
     feedback: 'Nhà trường muốn giữ format cho năm sau.',
-    related: ['ngay-hoi-trai-nghiem-chien-si-nhi.html', 'chuyen-de-phong-chay-chua-chay.html', 'le-ky-niem-ngay-nha-giao-viet-nam.html'],
   }),
 
   P({
@@ -443,7 +433,6 @@ export const PROJECTS = [
     results: ['Không sự cố', 'Phản hồi tốt', 'Lặp lại hằng năm'],
     experienceBullets: ['Ảnh kỉ niệm ướt áo đồng phục', 'Bé thích trạm phun nước'],
     feedback: 'Đội triển khai chuyên nghiệp.',
-    related: ['chuong-trinh-le-hoi-nuoc-2.html', 'ngay-hoi-trai-nghiem-chien-si-nhi.html', 'ngay-hoi-cung-con-kham-pha.html'],
   }),
 
   P({
@@ -477,7 +466,6 @@ export const PROJECTS = [
     results: ['Tương tác cao', 'Ảnh đẹp', 'Thu dọn nhanh'],
     experienceBullets: ['Trạm chơi có hướng dẫn', 'Check-in gia đình'],
     feedback: 'Trường tiếp tục tin tưởng FT.',
-    related: ['ngay-hoi-trai-nghiem-chien-si-nhi.html', 'chuong-trinh-cuoc-dua-ki-thu.html', 'ngay-hoi-le-hoi-nuoc.html'],
   }),
 
   P({
@@ -511,7 +499,6 @@ export const PROJECTS = [
     results: ['Tăng nhận thức', 'Đánh giá sau khảo sát tốt'],
     experienceBullets: ['Thầy cô đồng hành từng lớp', 'Hỏi đáp cuối buổi'],
     feedback: 'Hiệu trưởng muốn lặp lại mỗi năm.',
-    related: ['chuyen-de-gia-dinh-yeu-thuong.html', 'chuyen-de-khoa-hoc-dieu-ki-a.html', 'ngay-hoi-chung-toi-la-chien-si.html'],
   }),
 
   P({
@@ -545,7 +532,6 @@ export const PROJECTS = [
     results: ['Feedback PH tích cực', 'Không quá tải thời lượng'],
     experienceBullets: ['PH ôm con lên stage game nhỏ'],
     feedback: 'BTC muốn giữ format cho khối khác.',
-    related: ['chuyen-de-phong-chay-chua-chay.html', 'chuyen-de-khoa-hoc-dieu-ki-b.html', 'ngay-hoi-cung-con-kham-pha.html'],
   }),
 
   P({
@@ -579,7 +565,6 @@ export const PROJECTS = [
     results: ['Tham gia 100%', 'Hiểu khái niệm cơ bản'],
     experienceBullets: ['Bang màu chữ A', 'Thí nghiệm nước trong khay'],
     feedback: 'Phụ huynh khen phần minh họa.',
-    related: ['chuyen-de-khoa-hoc-dieu-ki-b.html', 'chuyen-de-phong-chay-chua-chay.html', 'chuong-trinh-cuoc-dua-ki-thu.html'],
   }),
 
   P({
@@ -613,7 +598,6 @@ export const PROJECTS = [
     results: ['Điểm tương tác cuối giờ cao'],
     experienceBullets: ['HS thích trạm robot hơn'],
     feedback: 'Nhà trường hài lòng.',
-    related: ['chuyen-de-khoa-hoc-dieu-ki-a.html', 'chuyen-de-gia-dinh-yeu-thuong.html', 'chuyen-de-phong-chay-chua-chay.html'],
   }),
 
   P({
@@ -647,7 +631,6 @@ export const PROJECTS = [
     results: ['0 sự cố', 'Book lại'],
     experienceBullets: ['Cổng check-in nhanh'],
     feedback: 'FT được giới thiệu sang trường bạn.',
-    related: ['ngay-hoi-le-hoi-nuoc.html', 'ngay-hoi-trai-nghiem-chien-si-nhi.html', 'ngay-hoi-cung-con-kham-pha.html'],
   }),
 
   P({
@@ -681,7 +664,6 @@ export const PROJECTS = [
     results: ['Vui', 'An toàn', 'Hình ảnh đẹp'],
     experienceBullets: ['Mascot chụp ảnh cùng bé'],
     feedback: 'Trường muốn giữ mascot cùng concept.',
-    related: ['ngay-hoi-trai-nghiem-chien-si-nhi.html', 'chuong-trinh-le-hoi-nuoc-2.html', 'ngay-hoi-cung-con-kham-pha.html'],
   }),
 
   P({
@@ -715,7 +697,6 @@ export const PROJECTS = [
     results: ['Engagement cao', 'Không chấn thương', 'Survey nội bộ tốt'],
     experienceBullets: ['Ảnh flycam tập thể', 'Trò cười đồng loạt'],
     feedback: 'Phòng nhân sự book lại.',
-    related: ['teambuilding-nha-khoa-nhu-ngoc.html', 'chuong-trinh-khai-truong-tong-hop.html', 'thiet-bi-su-kien-showcase.html'],
   }),
 
   P({
@@ -749,7 +730,6 @@ export const PROJECTS = [
     results: ['Không ảnh hưởng lịch hẹn', 'Team feedback 4.8/5'],
     experienceBullets: ['Chụp ảnh đồng phục đẹp'],
     feedback: 'Giới thiệu cho phòng khám khác.',
-    related: ['teambuilding-vietinbank-bac-giang.html', 'chuong-trinh-khai-truong-tong-hop.html', 'thiet-bi-su-kien-showcase.html'],
   }),
 
   P({
@@ -783,6 +763,10 @@ export const PROJECTS = [
     results: ['Bảo trì trước job', 'Biên bản bàn giao rõ'],
     experienceBullets: ['Khách xem dry-run trước giờ G'],
     feedback: 'Đối tác sản xuất show tin tưởng lineup máy.',
-    related: ['dai-nhac-hoi-chao-tan-sinh-vien-cdltk.html', 'chuong-trinh-khai-truong-tong-hop.html', 'teambuilding-vietinbank-bac-giang.html'],
   }),
 ];
+
+export const PROJECTS = PROJECT_LIST.map((p) => ({
+  ...p,
+  related: pickRelatedProjects(p, PROJECT_LIST, 3),
+}));

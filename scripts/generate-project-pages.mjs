@@ -1,5 +1,6 @@
 import { writeFileSync, mkdirSync } from 'fs';
 import { PROJECTS, PROJECT_GALLERY_COUNT } from './projects-data.mjs';
+import { relatedCardThumb } from './project-related.mjs';
 import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
 import {
@@ -46,7 +47,7 @@ const PROCESS = [
 const RELATED_META = Object.fromEntries(
   PROJECTS.map((p) => [
     p.file,
-    { title: p.cardTitle, cat: p.cat, thumb: p.thumb },
+    { title: p.cardTitle, cat: p.cardCat || p.cat, thumb: relatedCardThumb(p) },
   ])
 );
 
@@ -140,10 +141,13 @@ function renderPage(p) {
         '\n</section>'
       : '';
 
-  var relatedHtml = p.related
+  var relatedHtml = (p.related || [])
+    .filter(function (f) {
+      return f !== p.file && RELATED_META[f];
+    })
+    .slice(0, 3)
     .map(function (f) {
       var m = RELATED_META[f];
-      if (!m) return '';
       return (
         '<a class="pd-related-card" href="' +
         esc(f) +
