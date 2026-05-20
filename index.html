@@ -42,8 +42,13 @@
   <!-- Stylesheets (modular) -->
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/footer.css">
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/services.css">
+  <link rel="stylesheet" href="css/home-showcase.css">
 
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="assets/images/logo.ico" sizes="any">
@@ -57,7 +62,7 @@
     "name": "Công ty TNHH Du lịch Sự kiện và Giáo dục trải nghiệm FT Group",
     "alternateName": ["FT GROUP E&E", "FT Group"],
     "url": "https://ftgroup.vn/",
-    "logo": "https://ftgroup.vn/assets/images/logo.jpg",
+    "logo": "https://ftgroup.vn/assets/images/logo.png",
     "image": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80",
     "description": "Đơn vị vận hành sự kiện giáo dục và trải nghiệm từ 2019; đồng hành mầm non đến THPT, tổ chức sự kiện trọn gói, thiết bị sân khấu, team building. Phục vụ khu vực miền Bắc.",
     "telephone": ["+84-964-236-197", "+84-382-032-759"],
@@ -126,23 +131,18 @@
      HEADER & NAVIGATION
      ===================================================================== -->
 <header class="site-header" id="siteHeader">
-  <a href="#home" class="brand brand-with-logo" aria-label="FT GROUP E&amp;E — về đầu trang">
-    <img class="brand-logo" src="assets/images/logo.jpg" width="160" height="48" alt="Logo FT GROUP E&amp;E" loading="eager" fetchpriority="high">
+  <a href="index.html#home" class="brand brand-with-logo" aria-label="FT GROUP E&amp;E — về trang chủ">
+    <img class="brand-logo" src="assets/images/logo.png" width="160" height="48" alt="Logo FT GROUP E&amp;E" loading="eager" fetchpriority="high">
     <span class="brand-name">FT GROUP <span class="accent">E&amp;E</span></span>
   </a>
 
   <nav aria-label="Main navigation">
     <ul class="nav-links">
-      <li><a href="#gallery">Dự Án</a></li>
-      <li><a href="#company-intro">Giới Thiệu</a></li>
-      <li><a href="#service-highlight">Dịch Vụ</a></li>
-      <li><a href="#vision-mission">Tầm Nhìn</a></li>
-      <li><a href="#core-values">Giá Trị</a></li>
-      <li><a href="#fields">Lĩnh Vực</a></li>
-      <li><a href="#process">Quy Trình</a></li>
-      <li><a href="#team">Đội Ngũ</a></li>
-      <li><a href="#testimonials">Phản Hồi</a></li>
-      <li><a href="#contact">Liên Hệ</a></li>
+      <li><a href="index.html#home">Trang chủ</a></li>
+      <li><a href="index.html#company-intro">Giới thiệu</a></li>
+      <li><a href="index.html#service-highlight">Dịch vụ</a></li>
+      <li><a href="du-an.html">Dự án</a></li>
+      <li><a href="index.html#contact">Liên hệ</a></li>
     </ul>
   </nav>
 
@@ -155,16 +155,11 @@
 
 <!-- Mobile menu -->
 <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Mobile menu">
-  <a href="#gallery">Dự Án Tiêu Biểu</a>
-  <a href="#company-intro">Giới Thiệu</a>
-  <a href="#service-highlight">Dịch Vụ</a>
-  <a href="#vision-mission">Tầm Nhìn</a>
-  <a href="#core-values">Giá Trị</a>
-  <a href="#fields">Lĩnh Vực</a>
-  <a href="#process">Quy Trình</a>
-  <a href="#team">Đội Ngũ</a>
-  <a href="#testimonials">Phản Hồi</a>
-  <a href="#contact">Liên Hệ</a>
+  <a href="index.html#home">Trang chủ</a>
+  <a href="index.html#company-intro">Giới thiệu</a>
+  <a href="index.html#service-highlight">Dịch vụ</a>
+  <a href="du-an.html">Dự án</a>
+  <a href="index.html#contact">Liên hệ</a>
 </div>
 
 <main>
@@ -193,171 +188,118 @@
       <span class="accent">E&amp;E</span>
     </h1>
     <p class="hero-sub">
-      <strong>Trao giá trị — Tạo niềm tin.</strong> Chúng tôi đồng hành cùng
-      <strong>mầm non, tiểu học, THCS, THPT</strong> và doanh nghiệp với chương trình
-      trải nghiệm an toàn, sự kiện trọn gói và thiết bị sân khấu cao cấp — phục vụ
+      <strong>Trao giá trị — Tạo niềm tin.</strong> Chúng tôi mang đến giải pháp tổ chức sự kiện trọn gói và thiết bị sân khấu cao cấp — phục vụ
       <strong>khu vực miền Bắc</strong>.
     </p>
     <div class="hero-actions">
       <a href="#service-highlight" class="btn btn-primary btn-arrow">Khám phá dịch vụ</a>
-      <a href="#gallery" class="btn btn-ghost">Xem dự án</a>
-    </div>
-
-    <div class="hero-trust">
-      <div class="hero-trust-item">
-        <span class="hero-trust-num">7+</span>
-        <span>Năm trải nghiệm<br>giáo dục</span>
-      </div>
-      <span class="hero-trust-divider" aria-hidden="true"></span>
-      <div class="hero-trust-item">
-        <span class="hero-trust-num">2019</span>
-        <span>Khởi đầu<br>vận hành</span>
-      </div>
-      <span class="hero-trust-divider" aria-hidden="true"></span>
-      <div class="hero-trust-item">
-        <span class="hero-trust-num">Miền Bắc</span>
-        <span>Triển khai<br>&amp; giao thiết bị</span>
-      </div>
+      <a href="#visual-showcase" class="btn btn-ghost">Khoảnh khắc sự kiện</a>
     </div>
   </div>
 </section>
 
 <!-- =====================================================================
-     GALLERY — masonry, 24 images (moved up: after hero)
+     KHOẢNH KHẮC SỰ KIỆN — thư viện hình (chỉ cảm xúc, không danh sách dự án)
      ===================================================================== -->
-<section class="section section-dark" id="gallery" aria-label="Dự án tiêu biểu FT GROUP E&amp;E">
-  <div class="section-head">
-    <span class="section-eyebrow reveal">Dự Án Tiêu Biểu</span>
-    <h2 class="section-title reveal" data-delay="1">
-      Hành trình
-      <span class="accent">đồng hành</span>
-    </h2>
-    <p class="section-lede reveal" data-delay="2">
-      Góc nhìn qua những sự kiện giáo dục trải nghiệm, ngày hội trường và chương trình trọn gói mà FT GROUP E&amp;E triển khai cùng nhà trường và doanh nghiệp.
-    </p>
+<section class="section section-dark home-visual-section" id="visual-showcase" aria-label="Khoảnh khắc sự kiện">
+  <div class="section-head section-head--tight">
+    <span class="section-eyebrow reveal">Từ hiện trường</span>
+    <h2 class="section-title reveal" data-delay="1">Cảm xúc &amp; chuyên nghiệp</h2>
+    <p class="section-lede reveal section-lede--minimal" data-delay="2">Thư viện hình ảnh trực quan — nhấp để phóng to. Xem case study đầy đủ tại trang Dự án.</p>
   </div>
-
-  <div class="gallery-tabs reveal-fade">
-    <button class="gallery-tab is-active" type="button" data-filter="all">Tất Cả</button>
-    <button class="gallery-tab" type="button" data-filter="kids">Giáo dục &amp; trẻ em</button>
-    <button class="gallery-tab" type="button" data-filter="stage">Sân khấu &amp; ánh sáng</button>
-    <button class="gallery-tab" type="button" data-filter="opening">Khai trương &amp; doanh nghiệp</button>
-    <button class="gallery-tab" type="button" data-filter="festival">Lễ hội</button>
-    <button class="gallery-tab" type="button" data-filter="mascot">Trang trí &amp; sân khấu</button>
+  <div class="home-showcase-masonry" id="homeShowcaseGrid">
+    <button type="button" class="home-showcase-tile reveal" data-full-src="/assets/images/du-an/am-thanh-anh-sang/3X1A2613.jpg" data-caption="Sân khấu · Ánh sáng" aria-label="Mở ảnh lớn: Sân khấu · Ánh sáng">
+      <img src="/assets/images/du-an/am-thanh-anh-sang/3X1A2613.jpg" alt="" width="900" height="1200" loading="lazy" decoding="async">
+      <span class="home-showcase-tile__scrim" aria-hidden="true"></span>
+      <span class="home-showcase-tile__glow" aria-hidden="true"></span>
+      <span class="home-showcase-tile__cap">Sân khấu · Ánh sáng</span>
+    </button>
+    <button type="button" class="home-showcase-tile reveal" data-full-src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1920&q=82" data-caption="Đại sảnh · Line array" aria-label="Mở ảnh lớn: Đại sảnh · Line array">
+      <span class="home-showcase-tile__scrim" aria-hidden="true"></span>
+      <span class="home-showcase-tile__glow" aria-hidden="true"></span>
+      <span class="home-showcase-tile__cap">Đại sảnh · Line array</span>
+    </button>
+    <button type="button" class="home-showcase-tile reveal" data-full-src="/assets/images/du-an/chung/khong-gian.jpg" data-caption="Không gian concert" aria-label="Mở ảnh lớn: Không gian concert">
+      <img src="/assets/images/du-an/chung/khong-gian.jpg" alt="" width="900" height="1200" loading="lazy" decoding="async">
+      <span class="home-showcase-tile__scrim" aria-hidden="true"></span>
+      <span class="home-showcase-tile__glow" aria-hidden="true"></span>
+      <span class="home-showcase-tile__cap">Không gian concert</span>
+    </button>
+    <button type="button" class="home-showcase-tile reveal" data-full-src="/assets/images/du-an/am-thanh-anh-sang/anh-beam.jpg" data-caption="Ánh sáng beam" aria-label="Mở ảnh lớn: Ánh sáng beam">
+      <img src="/assets/images/du-an/am-thanh-anh-sang/anh-beam.jpg" alt="" width="900" height="1200" loading="lazy" decoding="async">
+      <span class="home-showcase-tile__scrim" aria-hidden="true"></span>
+      <span class="home-showcase-tile__glow" aria-hidden="true"></span>
+      <span class="home-showcase-tile__cap">Ánh sáng beam</span>
+    </button>
+    <button type="button" class="home-showcase-tile reveal" data-full-src="/assets/images/du-an/chung/team-ket-noi.jpg" data-caption="Team · Kết nối" aria-label="Mở ảnh lớn: Team · Kết nối">
+      <img src="/assets/images/du-an/chung/team-ket-noi.jpg" alt="" width="900" height="1200" loading="lazy" decoding="async">
+      <span class="home-showcase-tile__scrim" aria-hidden="true"></span>
+      <span class="home-showcase-tile__glow" aria-hidden="true"></span>
+      <span class="home-showcase-tile__cap">Team · Kết nối</span>
+    </button>
+    <button type="button" class="home-showcase-tile reveal" data-full-src="/assets/images/du-an/chung/truong-hoc-su-kien.jpg" data-caption="Trường học · Sự kiện" aria-label="Mở ảnh lớn: Trường học · Sự kiện">
+      <img src="/assets/images/du-an/chung/truong-hoc-su-kien.jpg" alt="" width="900" height="1200" loading="lazy" decoding="async">
+      <span class="home-showcase-tile__scrim" aria-hidden="true"></span>
+      <span class="home-showcase-tile__glow" aria-hidden="true"></span>
+      <span class="home-showcase-tile__cap">Trường học · Sự kiện</span>
+    </button>
+    <button type="button" class="home-showcase-tile reveal" data-full-src="/assets/images/du-an/chung/khai-truong.jpg" data-caption="Khai trương" aria-label="Mở ảnh lớn: Khai trương">
+      <img src="/assets/images/du-an/chung/khai-truong.jpg" alt="" width="900" height="1200" loading="lazy" decoding="async">
+      <span class="home-showcase-tile__scrim" aria-hidden="true"></span>
+      <span class="home-showcase-tile__glow" aria-hidden="true"></span>
+      <span class="home-showcase-tile__cap">Khai trương</span>
+    </button>
+    <button type="button" class="home-showcase-tile reveal" data-full-src="/assets/images/du-an/am-thanh-anh-sang/led-san-khau.jpg" data-caption="LED & sân khấu" aria-label="Mở ảnh lớn: LED & sân khấu">
+      <img src="/assets/images/du-an/am-thanh-anh-sang/led-san-khau.jpg" alt="" width="900" height="1200" loading="lazy" decoding="async">
+      <span class="home-showcase-tile__scrim" aria-hidden="true"></span>
+      <span class="home-showcase-tile__glow" aria-hidden="true"></span>
+      <span class="home-showcase-tile__cap">LED & sân khấu</span>
+    </button>
+    <button type="button" class="home-showcase-tile reveal" data-full-src="/assets/images/du-an/am-thanh-anh-sang/khan-phong.jpg" data-caption="Khán phòng" aria-label="Mở ảnh lớn: Khán phòng">
+      <img src="/assets/images/du-an/am-thanh-anh-sang/khan-phong.jpg" alt="" width="900" height="1200" loading="lazy" decoding="async">
+      <span class="home-showcase-tile__scrim" aria-hidden="true"></span>
+      <span class="home-showcase-tile__glow" aria-hidden="true"></span>
+      <span class="home-showcase-tile__cap">Khán phòng</span>
+    </button>
+    <button type="button" class="home-showcase-tile reveal" data-full-src="/assets/images/du-an/am-thanh-anh-sang/ngoai-troi.jpg" data-caption="Ngoài trời · Hype" aria-label="Mở ảnh lớn: Ngoài trời · Hype">
+      <img src="/assets/images/du-an/am-thanh-anh-sang/ngoai-troi.jpg" alt="" width="900" height="1200" loading="lazy" decoding="async">
+      <span class="home-showcase-tile__scrim" aria-hidden="true"></span>
+      <span class="home-showcase-tile__glow" aria-hidden="true"></span>
+      <span class="home-showcase-tile__cap">Ngoài trời · Hype</span>
+    </button>
+    <button type="button" class="home-showcase-tile reveal" data-full-src="/assets/images/du-an/chung/thiet-bi-chuyen-nghiep.jpg" data-caption="Thiết bị chuyên nghiệp" aria-label="Mở ảnh lớn: Thiết bị chuyên nghiệp">
+      <img src="/assets/images/du-an/chung/thiet-bi-chuyen-nghiep.jpg" alt="" width="900" height="1200" loading="lazy" decoding="async">
+      <span class="home-showcase-tile__scrim" aria-hidden="true"></span>
+      <span class="home-showcase-tile__glow" aria-hidden="true"></span>
+      <span class="home-showcase-tile__cap">Thiết bị chuyên nghiệp</span>
+    </button>
+    <button type="button" class="home-showcase-tile reveal" data-full-src="/assets/images/du-an/chung/dem-su-kien.jpg" data-caption="Đêm sự kiện" aria-label="Mở ảnh lớn: Đêm sự kiện">
+      <img src="/assets/images/du-an/chung/dem-su-kien.jpg" alt="" width="900" height="1200" loading="lazy" decoding="async">
+      <span class="home-showcase-tile__scrim" aria-hidden="true"></span>
+      <span class="home-showcase-tile__glow" aria-hidden="true"></span>
+      <span class="home-showcase-tile__cap">Đêm sự kiện</span>
+    </button>
   </div>
-
-  <div class="gallery-masonry">
-    <a class="gallery-item reveal" data-cat="stage" href="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1600&q=80" target="_blank" rel="noopener">
-      <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=900&q=80" alt="Ánh sáng sân khấu sự kiện chuyên nghiệp" loading="lazy" data-fallback>
-      <div class="gallery-item-overlay"><span class="gallery-item-cat">Lighting</span><span class="gallery-item-label">Ánh sáng sân khấu</span></div>
-    </a>
-    <a class="gallery-item reveal" data-cat="kids" href="https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=1600&q=80" target="_blank" rel="noopener">
-      <img src="https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=700&q=80" alt="Không gian trải nghiệm cho học sinh" loading="lazy" data-fallback>
-      <div class="gallery-item-overlay"><span class="gallery-item-cat">School</span><span class="gallery-item-label">Ngày hội trường</span></div>
-    </a>
-    <a class="gallery-item reveal" data-cat="festival" href="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1600&q=80" target="_blank" rel="noopener">
-      <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=900&q=80" alt="Lễ hội ngoài trời" loading="lazy" data-fallback>
-      <div class="gallery-item-overlay"><span class="gallery-item-cat">Festival</span><span class="gallery-item-label">Lễ hội</span></div>
-    </a>
-    <a class="gallery-item reveal" data-cat="opening" href="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?auto=format&fit=crop&w=1600&q=80" target="_blank" rel="noopener">
-      <img src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?auto=format&fit=crop&w=900&q=80" alt="Lễ khai trương với sân khấu chuyên nghiệp" loading="lazy" data-fallback>
-      <div class="gallery-item-overlay"><span class="gallery-item-cat">Opening</span><span class="gallery-item-label">Khai trương</span></div>
-    </a>
-    <a class="gallery-item reveal" data-cat="opening" href="https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?auto=format&fit=crop&w=1600&q=80" target="_blank" rel="noopener">
-      <img src="https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?auto=format&fit=crop&w=700&q=80" alt="Teambuilding doanh nghiệp" loading="lazy" data-fallback>
-      <div class="gallery-item-overlay"><span class="gallery-item-cat">Corporate</span><span class="gallery-item-label">Teambuilding</span></div>
-    </a>
-    <a class="gallery-item reveal" data-cat="stage" href="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=1600&q=80" target="_blank" rel="noopener">
-      <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=900&q=80" alt="Sự kiện đêm với ánh sáng cinematic" loading="lazy" data-fallback>
-      <div class="gallery-item-overlay"><span class="gallery-item-cat">Night</span><span class="gallery-item-label">Sự kiện đêm</span></div>
-    </a>
-    <a class="gallery-item reveal" data-cat="stage" href="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1600&q=80" target="_blank" rel="noopener">
-      <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=900&q=80" alt="Không gian âm nhạc live" loading="lazy" data-fallback>
-      <div class="gallery-item-overlay"><span class="gallery-item-cat">Live</span><span class="gallery-item-label">Âm nhạc &amp; sân khấu</span></div>
-    </a>
-    <a class="gallery-item reveal" data-cat="kids" href="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=1600&q=80" target="_blank" rel="noopener">
-      <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=700&q=80" alt="Trẻ em tham gia hoạt động trải nghiệm" loading="lazy" data-fallback>
-      <div class="gallery-item-overlay"><span class="gallery-item-cat">Kids</span><span class="gallery-item-label">Trải nghiệm trẻ em</span></div>
-    </a>
-    <a class="gallery-item reveal" data-cat="mascot" href="https://images.unsplash.com/photo-1530041539828-114de669390e?auto=format&fit=crop&w=1600&q=80" target="_blank" rel="noopener">
-      <img src="https://images.unsplash.com/photo-1530041539828-114de669390e?auto=format&fit=crop&w=900&q=80" alt="Trang trí cổng chào sự kiện" loading="lazy" data-fallback>
-      <div class="gallery-item-overlay"><span class="gallery-item-cat">Decor</span><span class="gallery-item-label">Trang trí sự kiện</span></div>
-    </a>
-    <a class="gallery-item reveal" data-cat="festival" href="https://images.unsplash.com/photo-1543589077-47d81606c1bf?auto=format&fit=crop&w=1600&q=80" target="_blank" rel="noopener">
-      <img src="https://images.unsplash.com/photo-1543589077-47d81606c1bf?auto=format&fit=crop&w=900&q=80" alt="Tiệc cuối năm trang trí ánh sáng" loading="lazy" data-fallback>
-      <div class="gallery-item-overlay"><span class="gallery-item-cat">Gala</span><span class="gallery-item-label">Tiệc &amp; gala</span></div>
-    </a>
-    <a class="gallery-item reveal" data-cat="stage" href="https://images.unsplash.com/photo-1560439514-4e9645039924?auto=format&fit=crop&w=1600&q=80" target="_blank" rel="noopener">
-      <img src="https://images.unsplash.com/photo-1560439514-4e9645039924?auto=format&fit=crop&w=900&q=80" alt="Không gian sân khấu trang trọng" loading="lazy" data-fallback>
-      <div class="gallery-item-overlay"><span class="gallery-item-cat">Stage</span><span class="gallery-item-label">Sân khấu lễ hội</span></div>
-    </a>
-    <a class="gallery-item reveal" data-cat="festival" href="https://images.unsplash.com/photo-1604608672516-0e9c0a8a48a8?auto=format&fit=crop&w=1600&q=80" target="_blank" rel="noopener">
-      <img src="https://images.unsplash.com/photo-1604608672516-0e9c0a8a48a8?auto=format&fit=crop&w=700&q=80" alt="Lễ hội trường cho học sinh" loading="lazy" data-fallback>
-      <div class="gallery-item-overlay"><span class="gallery-item-cat">Mid-Autumn</span><span class="gallery-item-label">Ngày hội trường</span></div>
-    </a>
-    <a class="gallery-item reveal" data-cat="kids" href="https://images.unsplash.com/photo-1535572290543-960a8046f5af?auto=format&fit=crop&w=1600&q=80" target="_blank" rel="noopener">
-      <img src="https://images.unsplash.com/photo-1535572290543-960a8046f5af?auto=format&fit=crop&w=700&q=80" alt="Hoạt động vui chơi có tổ chức" loading="lazy" data-fallback>
-      <div class="gallery-item-overlay"><span class="gallery-item-cat">Activity</span><span class="gallery-item-label">Hoạt động tập thể</span></div>
-    </a>
-    <a class="gallery-item reveal" data-cat="stage" href="https://images.unsplash.com/photo-1505236858219-8359eb29e329?auto=format&fit=crop&w=1600&q=80" target="_blank" rel="noopener">
-      <img src="https://images.unsplash.com/photo-1505236858219-8359eb29e329?auto=format&fit=crop&w=900&q=80" alt="Sân khấu ngoài trời ban đêm" loading="lazy" data-fallback>
-      <div class="gallery-item-overlay"><span class="gallery-item-cat">Outdoor</span><span class="gallery-item-label">Sân khấu ngoài trời</span></div>
-    </a>
-    <a class="gallery-item reveal" data-cat="festival" href="https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?auto=format&fit=crop&w=1600&q=80" target="_blank" rel="noopener">
-      <img src="https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?auto=format&fit=crop&w=900&q=80" alt="Không khí lễ hội sôi động" loading="lazy" data-fallback>
-      <div class="gallery-item-overlay"><span class="gallery-item-cat">Festival</span><span class="gallery-item-label">Khán giả &amp; sân khấu</span></div>
-    </a>
-    <a class="gallery-item reveal" data-cat="mascot" href="https://images.unsplash.com/photo-1522158637959-30385a09e0da?auto=format&fit=crop&w=1600&q=80" target="_blank" rel="noopener">
-      <img src="https://images.unsplash.com/photo-1522158637959-30385a09e0da?auto=format&fit=crop&w=700&q=80" alt="Tiết mục biểu diễn trong sự kiện" loading="lazy" data-fallback>
-      <div class="gallery-item-overlay"><span class="gallery-item-cat">Show</span><span class="gallery-item-label">Tiết mục sân khấu</span></div>
-    </a>
-    <a class="gallery-item reveal" data-cat="stage" href="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=1600&q=80" target="_blank" rel="noopener">
-      <img src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=900&q=80" alt="Hệ thống âm thanh chuyên nghiệp" loading="lazy" data-fallback>
-      <div class="gallery-item-overlay"><span class="gallery-item-cat">Sound</span><span class="gallery-item-label">Âm thanh sự kiện</span></div>
-    </a>
-    <a class="gallery-item reveal" data-cat="kids" href="https://images.unsplash.com/photo-1525268323446-0505b6fe7778?auto=format&fit=crop&w=1600&q=80" target="_blank" rel="noopener">
-      <img src="https://images.unsplash.com/photo-1525268323446-0505b6fe7778?auto=format&fit=crop&w=700&q=80" alt="Lễ hội mầm non" loading="lazy" data-fallback>
-      <div class="gallery-item-overlay"><span class="gallery-item-cat">Kindergarten</span><span class="gallery-item-label">Sự kiện mầm non</span></div>
-    </a>
-    <a class="gallery-item reveal" data-cat="festival" href="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=1600&q=80" target="_blank" rel="noopener">
-      <img src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=900&q=80" alt="Không gian tiệc ánh sáng ấm áp" loading="lazy" data-fallback>
-      <div class="gallery-item-overlay"><span class="gallery-item-cat">Dinner</span><span class="gallery-item-label">Gala &amp; tiệc</span></div>
-    </a>
-    <a class="gallery-item reveal" data-cat="kids" href="https://images.unsplash.com/photo-1517457210348-703079e57d4b?auto=format&fit=crop&w=1600&q=80" target="_blank" rel="noopener">
-      <img src="https://images.unsplash.com/photo-1517457210348-703079e57d4b?auto=format&fit=crop&w=700&q=80" alt="Không khí vui tươi trong chương trình" loading="lazy" data-fallback>
-      <div class="gallery-item-overlay"><span class="gallery-item-cat">Joy</span><span class="gallery-item-label">Niềm vui học đường</span></div>
-    </a>
-    <a class="gallery-item reveal" data-cat="stage" href="https://images.unsplash.com/photo-1559329007-40df8a9345d8?auto=format&fit=crop&w=1600&q=80" target="_blank" rel="noopener">
-      <img src="https://images.unsplash.com/photo-1559329007-40df8a9345d8?auto=format&fit=crop&w=900&q=80" alt="Đèn spotlight sân khấu" loading="lazy" data-fallback>
-      <div class="gallery-item-overlay"><span class="gallery-item-cat">Lighting</span><span class="gallery-item-label">Đèn sân khấu</span></div>
-    </a>
-    <a class="gallery-item reveal" data-cat="festival" href="https://images.unsplash.com/photo-1493676304819-0d7a8d026dcf?auto=format&fit=crop&w=1600&q=80" target="_blank" rel="noopener">
-      <img src="https://images.unsplash.com/photo-1493676304819-0d7a8d026dcf?auto=format&fit=crop&w=700&q=80" alt="Đêm nhạc và ánh sáng" loading="lazy" data-fallback>
-      <div class="gallery-item-overlay"><span class="gallery-item-cat">Night</span><span class="gallery-item-label">Đêm nhạc</span></div>
-    </a>
-    <a class="gallery-item reveal" data-cat="opening" href="https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&w=1600&q=80" target="_blank" rel="noopener">
-      <img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&w=900&q=80" alt="Khoảnh khắc khai trương" loading="lazy" data-fallback>
-      <div class="gallery-item-overlay"><span class="gallery-item-cat">Opening</span><span class="gallery-item-label">Khai trương</span></div>
-    </a>
-    <a class="gallery-item reveal" data-cat="mascot" href="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=1600&q=80" target="_blank" rel="noopener">
-      <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=700&q=80" alt="Cổng chào concept sự kiện" loading="lazy" data-fallback>
-      <div class="gallery-item-overlay"><span class="gallery-item-cat">Entrance</span><span class="gallery-item-label">Cổng chào &amp; booth</span></div>
-    </a>
-  </div>
-
-  <a class="gallery-featured reveal-fade" href="#contact">
-    <img src="https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?auto=format&fit=crop&w=1800&q=80" alt="Sự kiện quy mô lớn với ánh sáng chuyên nghiệp" loading="lazy" data-fallback>
-    <div class="gallery-featured-content">
-      <span class="section-eyebrow">Featured</span>
-      <h3>Chương trình quy mô — vận hành trọn gói</h3>
-      <p>Âm thanh, ánh sáng, LED, sân khấu và nhân sự hiện trường: FT GROUP E&amp;E đồng hành từ ý tưởng đến khi khách dừng lại trước những khoảnh khắc đáng nhớ. Liên hệ để lên kế hoạch phù hợp ngân sách.</p>
-    </div>
-  </a>
+  <p class="home-visual-cta reveal" data-delay="2">
+    <a href="du-an.html" class="btn btn-primary btn-arrow">Danh mục dự án</a>
+  </p>
 </section>
+
+<div class="home-lb" id="homeLightbox" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Xem ảnh lớn">
+  <div class="home-lb__inner">
+    <button type="button" class="home-lb__close" aria-label="Đóng">✕</button>
+    <button type="button" class="home-lb__prev" aria-label="Ảnh trước"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
+    <img class="home-lb__img" src="" alt="">
+    <button type="button" class="home-lb__next" aria-label="Ảnh sau"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></button>
+    <p class="home-lb__cap"></p>
+  </div>
+</div>
+
 
 <!-- =====================================================================
      COMPANY INTRODUCTION — premium multi-block layout
      ===================================================================== -->
+<!--
 <section class="section section-red intro-premium-section" id="company-intro" aria-label="Giới thiệu Công ty FT GROUP E&amp;E">
   <div class="intro-premium-head">
     <span class="section-eyebrow reveal">Giới Thiệu</span>
@@ -417,6 +359,7 @@
     <p class="intro-sign-off">Trân trọng kính chào!</p>
   </div>
 </section>
+-->
 
 <!-- =====================================================================
      SERVICE HIGHLIGHT — “Sự kiện của các bạn cần gì…”
@@ -428,60 +371,275 @@
       Sự kiện của các bạn cần gì,
       <span class="accent">chúng tôi đều có</span>
     </h2>
-    <p class="section-lede reveal" data-delay="2">Từ nhân sự, trọn gói, thiết bị đến giao thiết bị trong phạm vi miền Bắc — gói gọn trong một đối tác duy nhất.</p>
+    <p class="section-lede reveal" data-delay="2">Giải pháp, tư vấn, trọn gói, thiết bị đến giao thiết bị trong phạm vi miền Bắc — gói gọn trong một đối tác duy nhất.</p>
   </div>
   <div class="highlight-cards-grid">
-    <article class="highlight-card reveal" data-delay="1">
-      <div class="highlight-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-      <h3>Nhân sự sự kiện</h3>
-      <p>Đội ngũ hiện trường, điều phối và hỗ trợ chuyên nghiệp.</p>
-    </article>
-    <article class="highlight-card reveal" data-delay="2">
-      <div class="highlight-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg></div>
-      <h3>Tổ chức sự kiện trọn gói</h3>
-      <p>Từ ý tưởng, kịch bản đến vận hành và hậu kỳ.</p>
-    </article>
-    <article class="highlight-card reveal" data-delay="3">
-      <div class="highlight-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
-      <h3>Trải nghiệm tại trường</h3>
-      <p>Chương trình giáo dục trải nghiệm theo từng cấp học.</p>
-    </article>
-    <article class="highlight-card reveal" data-delay="1">
-      <div class="highlight-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v4M8 4h8M6 12h12l2 8H4l2-8z"/><path d="M10 12v8M14 12v8"/></svg></div>
-      <h3>Thiết bị sân khấu</h3>
-      <p>Âm thanh, ánh sáng, LED — đa dạng &amp; cao cấp.</p>
-    </article>
-    <article class="highlight-card reveal" data-delay="2">
-      <div class="highlight-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></svg></div>
-      <h3>Đạo cụ Teambuilding</h3>
-      <p>Thiết kế &amp; cung ứng đạo cụ chơi nhóm, sân chơi an toàn.</p>
-    </article>
-    <article class="highlight-card reveal" data-delay="3">
-      <div class="highlight-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
-      <h3>Chi phí tối ưu</h3>
-      <p>Phương án linh hoạt, minh bạch theo mục tiêu ngân sách.</p>
-    </article>
-    <article class="highlight-card reveal" data-delay="1">
-      <div class="highlight-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 3h15v13H1zM16 8h5l3 5v5H16"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
-      <h3>Giao thiết bị miền Bắc</h3>
-      <p>Vận chuyển thiết bị &amp; đạo cụ tới địa điểm trong khu vực miền Bắc.</p>
-    </article>
-    <article class="highlight-card reveal" data-delay="2">
-      <div class="highlight-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
-      <h3>Tư vấn miễn phí</h3>
-      <p>Lắng nghe, đề xuất concept và phương án sơ bộ.</p>
-    </article>
-    <article class="highlight-card reveal" data-delay="3">
-      <div class="highlight-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
-      <h3>Sản xuất đạo cụ</h3>
-      <p>Gia công theo yêu cầu riêng của chương trình.</p>
-    </article>
+    <a class="highlight-card highlight-card--visual reveal" href="services/to-chuc-su-kien.html" data-delay="1">
+      <span class="highlight-card__bg" style="background-image:url('/assets/images/du-an/chung/to-chuc-chon-goi.jpg');" role="img" aria-hidden="true"></span>
+      <span class="highlight-card__overlay" aria-hidden="true"></span>
+      <span class="highlight-card__shine" aria-hidden="true"></span>
+      <div class="highlight-card__content">
+        <div class="highlight-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg></div>
+        <h3>Tổ chức sự kiện trọn gói</h3>
+        <p>Từ ý tưởng, kịch bản đến vận hành sân khấu &amp; hậu kỳ.</p>
+      </div>
+    </a>
+    <a class="highlight-card highlight-card--visual highlight-card--opening reveal" href="services/khai-truong.html" data-delay="2">
+      <span class="highlight-card__bg" style="background-image:url('/assets/images/du-an/chung/khai-truong.jpg');" role="img" aria-hidden="true"></span>
+      <span class="highlight-card__overlay" aria-hidden="true"></span>
+      <span class="highlight-card__shine" aria-hidden="true"></span>
+      <div class="highlight-card__content">
+        <div class="highlight-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.12 15.88M14.47 14.48 20 20M8.12 8.12 12 12"/></svg></div>
+        <h3>Khai trương</h3>
+        <p>Cắt băng khánh thành, sân khấu &amp; thảm đỏ — trang trí &amp; không khí khai trương đẳng cấp.</p>
+      </div>
+    </a>
+    <a class="highlight-card highlight-card--visual reveal" href="services/trai-nghiem-tai-truong.html" data-delay="3">
+      <span class="highlight-card__bg" style="background-image:url('/assets/images/du-an/chung/trai-nghiem-tai-truong.jpg');" role="img" aria-hidden="true"></span>
+      <span class="highlight-card__overlay" aria-hidden="true"></span>
+      <span class="highlight-card__shine" aria-hidden="true"></span>
+      <div class="highlight-card__content">
+        <div class="highlight-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+        <h3>Trải nghiệm tại trường</h3>
+        <p>Chương trình giáo dục trải nghiệm theo từng cấp học.</p>
+      </div>
+    </a>
+    <a class="highlight-card highlight-card--visual reveal" href="services/in-quang-cao.html" data-delay="1">
+      <span class="highlight-card__bg" style="background-image:url('/assets/images/du-an/chung/in-quang-cao.jpg');" role="img" aria-hidden="true"></span>
+      <span class="highlight-card__overlay" aria-hidden="true"></span>
+      <span class="highlight-card__shine" aria-hidden="true"></span>
+      <div class="highlight-card__content">
+        <div class="highlight-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg></div>
+        <h3>In quảng cáo</h3>
+        <p>In ấn, POSM, backdrop &amp; ấn phẩm truyền thông sự kiện.</p>
+      </div>
+    </a>
+    <a class="highlight-card highlight-card--visual reveal" href="services/thiet-bi-san-khau.html" data-delay="2">
+      <span class="highlight-card__bg" style="background-image:url('/assets/images/du-an/am-thanh-anh-sang/led-san-khau.jpg');" role="img" aria-hidden="true"></span>
+      <span class="highlight-card__overlay" aria-hidden="true"></span>
+      <span class="highlight-card__shine" aria-hidden="true"></span>
+      <div class="highlight-card__content">
+        <div class="highlight-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v4M8 4h8M6 12h12l2 8H4l2-8z"/><path d="M10 12v8M14 12v8"/></svg></div>
+        <h3>Thiết bị sân khấu</h3>
+        <p>Âm thanh, ánh sáng, LED — lắp đặt &amp; vận hành kỹ thuật.</p>
+      </div>
+    </a>
+    <a class="highlight-card highlight-card--visual reveal" href="services/dao-cu-teambuilding.html" data-delay="3">
+      <span class="highlight-card__bg" style="background-image:url('/assets/images/du-an/chung/dao-cu.jpg');" role="img" aria-hidden="true"></span>
+      <span class="highlight-card__overlay" aria-hidden="true"></span>
+      <span class="highlight-card__shine" aria-hidden="true"></span>
+      <div class="highlight-card__content">
+        <div class="highlight-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></svg></div>
+        <h3>Đạo cụ Teambuilding</h3>
+        <p>Thiết kế &amp; cung ứng đạo cụ chơi nhóm, an toàn &amp; sáng tạo.</p>
+      </div>
+    </a>
   </div>
 </section>
 
 <!-- =====================================================================
-     VISION & MISSION — cinematic split
+     DANH SÁCH DỊCH VỤ — premium visual catalog
      ===================================================================== -->
+<!--<section class="section service-catalog-section" id="danh-sach-dich-vu" aria-label="Danh sách dịch vụ FT GROUP E&amp;E">-->
+<!--  <div class="section-head">-->
+<!--    <span class="section-eyebrow reveal">Trọn Gói &amp; Tùy Chỉnh</span>-->
+<!--    <h2 class="section-title reveal" data-delay="1">-->
+<!--      Danh sách <span class="accent">dịch vụ</span>-->
+<!--    </h2>-->
+<!--    <p class="section-lede reveal" data-delay="2">Khám phá các gói tổ chức sự kiện theo từng kịch bản — sân khấu, âm thanh, ánh sáng, nhân sự và vận hành hiện trường trong phạm vi miền Bắc. Nhấp từng thẻ để xem chi tiết.</p>-->
+<!--  </div>-->
+
+<!--  <div class="service-visual-grid">-->
+<!--    <a href="services/khai-truong.html" class="service-visual-card reveal" data-delay="1">-->
+<!--      <span class="service-visual-card__bg" style="background-image:url('https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&amp;fit=crop&amp;w=1400&amp;q=80');"></span>-->
+<!--      <span class="service-visual-card__overlay" aria-hidden="true"></span>-->
+<!--      <span class="service-visual-card__glow" aria-hidden="true"></span>-->
+<!--      <div class="service-visual-card__glass">-->
+<!--        <span class="service-visual-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2l8 4v6c0 5-3.4 9.2-8 10-4.6-.8-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg></span>-->
+<!--        <div class="service-visual-card__text">-->
+<!--          <h3 class="service-visual-card__title">Khai trương</h3>-->
+<!--          <p class="service-visual-card__sub">Lễ cắt băng, sân khấu mini, âm thanh &amp; ánh sáng trọn gói.</p>-->
+<!--        </div>-->
+<!--        <svg class="service-visual-card__chevron" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>-->
+<!--      </div>-->
+<!--    </a>-->
+
+<!--    <a href="services/khoi-cong-khanh-thanh.html" class="service-visual-card reveal" data-delay="2">-->
+<!--      <span class="service-visual-card__bg" style="background-image:url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&amp;fit=crop&amp;w=1200&amp;q=80');"></span>-->
+<!--      <span class="service-visual-card__overlay" aria-hidden="true"></span>-->
+<!--      <span class="service-visual-card__glow" aria-hidden="true"></span>-->
+<!--      <div class="service-visual-card__glass">-->
+<!--        <span class="service-visual-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 21h18M6 21V7l6-4 6 4v14"/><path d="M10 9h4M10 13h4M10 17h2"/></svg></span>-->
+<!--        <div class="service-visual-card__text">-->
+<!--          <h3 class="service-visual-card__title">Khởi công · Khánh thành</h3>-->
+<!--          <p class="service-visual-card__sub">Nghi thức trang trọng, backdrop &amp; dàn dựng chuyên nghiệp.</p>-->
+<!--        </div>-->
+<!--        <svg class="service-visual-card__chevron" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>-->
+<!--      </div>-->
+<!--    </a>-->
+
+<!--    <a href="services/tiec-cuoi-nam.html" class="service-visual-card reveal" data-delay="3">-->
+<!--      <span class="service-visual-card__bg" style="background-image:url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&amp;fit=crop&amp;w=1200&amp;q=80');"></span>-->
+<!--      <span class="service-visual-card__overlay" aria-hidden="true"></span>-->
+<!--      <span class="service-visual-card__glow" aria-hidden="true"></span>-->
+<!--      <div class="service-visual-card__glass">-->
+<!--        <span class="service-visual-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>-->
+<!--        <div class="service-visual-card__text">-->
+<!--          <h3 class="service-visual-card__title">Tiệc cuối năm</h3>-->
+<!--          <p class="service-visual-card__sub">Year-end party — concept, gameshow, gala &amp; trải nghiệm gắn kết.</p>-->
+<!--        </div>-->
+<!--        <svg class="service-visual-card__chevron" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>-->
+<!--      </div>-->
+<!--    </a>-->
+
+<!--    <a href="services/hoi-nghi.html" class="service-visual-card reveal" data-delay="1">-->
+<!--      <span class="service-visual-card__bg" style="background-image:url('https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&amp;fit=crop&amp;w=1200&amp;q=80');"></span>-->
+<!--      <span class="service-visual-card__overlay" aria-hidden="true"></span>-->
+<!--      <span class="service-visual-card__glow" aria-hidden="true"></span>-->
+<!--      <div class="service-visual-card__glass">-->
+<!--        <span class="service-visual-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M7 8h10M7 12h6M17 18l3 3"/></svg></span>-->
+<!--        <div class="service-visual-card__text">-->
+<!--          <h3 class="service-visual-card__title">Hội nghị</h3>-->
+<!--          <p class="service-visual-card__sub">Hội nghị khách hàng, đại hội cổ đông — vận hành bài bản.</p>-->
+<!--        </div>-->
+<!--        <svg class="service-visual-card__chevron" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>-->
+<!--      </div>-->
+<!--    </a>-->
+
+<!--    <a href="services/hoi-thao.html" class="service-visual-card reveal" data-delay="2">-->
+<!--      <span class="service-visual-card__bg" style="background-image:url('https://images.unsplash.com/photo-1544531586-fde5298cef13?auto=format&amp;fit=crop&amp;w=1200&amp;q=80');"></span>-->
+<!--      <span class="service-visual-card__overlay" aria-hidden="true"></span>-->
+<!--      <span class="service-visual-card__glow" aria-hidden="true"></span>-->
+<!--      <div class="service-visual-card__glass">-->
+<!--        <span class="service-visual-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><path d="M12 7v10M8 12h8"/></svg></span>-->
+<!--        <div class="service-visual-card__text">-->
+<!--          <h3 class="service-visual-card__title">Hội thảo</h3>-->
+<!--          <p class="service-visual-card__sub">Không gian học tập &amp; networking — micro &amp; màn hình chuyên dụng.</p>-->
+<!--        </div>-->
+<!--        <svg class="service-visual-card__chevron" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>-->
+<!--      </div>-->
+<!--    </a>-->
+
+<!--    <a href="services/ra-mat-san-pham.html" class="service-visual-card reveal" data-delay="3">-->
+<!--      <span class="service-visual-card__bg" style="background-image:url('https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&amp;fit=crop&amp;w=1200&amp;q=80');"></span>-->
+<!--      <span class="service-visual-card__overlay" aria-hidden="true"></span>-->
+<!--      <span class="service-visual-card__glow" aria-hidden="true"></span>-->
+<!--      <div class="service-visual-card__glass">-->
+<!--        <span class="service-visual-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 7h10v10H7z"/><path d="M12 3v4M12 17v4M3 12h4M17 12h4"/></svg></span>-->
+<!--        <div class="service-visual-card__text">-->
+<!--          <h3 class="service-visual-card__title">Ra mắt sản phẩm</h3>-->
+<!--          <p class="service-visual-card__sub">Launch event — concept, runway, mapping &amp; media wall.</p>-->
+<!--        </div>-->
+<!--        <svg class="service-visual-card__chevron" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>-->
+<!--      </div>-->
+<!--    </a>-->
+
+<!--    <a href="services/ky-niem-thanh-lap.html" class="service-visual-card reveal" data-delay="1">-->
+<!--      <span class="service-visual-card__bg" style="background-image:url('https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&amp;fit=crop&amp;w=1200&amp;q=80');"></span>-->
+<!--      <span class="service-visual-card__overlay" aria-hidden="true"></span>-->
+<!--      <span class="service-visual-card__glow" aria-hidden="true"></span>-->
+<!--      <div class="service-visual-card__glass">-->
+<!--        <span class="service-visual-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>-->
+<!--        <div class="service-visual-card__text">-->
+<!--          <h3 class="service-visual-card__title">Kỷ niệm thành lập</h3>-->
+<!--          <p class="service-visual-card__sub">Kỷ niệm milestone — storytelling sân khấu &amp; ấn tượng thương hiệu.</p>-->
+<!--        </div>-->
+<!--        <svg class="service-visual-card__chevron" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>-->
+<!--      </div>-->
+<!--    </a>-->
+
+<!--    <a href="services/cho-thue-thiet-bi.html" class="service-visual-card reveal" data-delay="2">-->
+<!--      <span class="service-visual-card__bg" style="background-image:url('https://images.unsplash.com/photo-1598653222000-6b7b7f552368?auto=format&amp;fit=crop&amp;w=1200&amp;q=80');"></span>-->
+<!--      <span class="service-visual-card__overlay" aria-hidden="true"></span>-->
+<!--      <span class="service-visual-card__glow" aria-hidden="true"></span>-->
+<!--      <div class="service-visual-card__glass">-->
+<!--        <span class="service-visual-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2v4M8 4h8M6 12h12l2 8H4l2-8z"/><path d="M10 12v8M14 12v8"/></svg></span>-->
+<!--        <div class="service-visual-card__text">-->
+<!--          <h3 class="service-visual-card__title">Cho thuê thiết bị</h3>-->
+<!--          <p class="service-visual-card__sub">Âm thanh, ánh sáng, LED — lắp đặt &amp; vận hành kỹ thuật.</p>-->
+<!--        </div>-->
+<!--        <svg class="service-visual-card__chevron" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>-->
+<!--      </div>-->
+<!--    </a>-->
+
+<!--    <a href="services/cung-cap-nhan-su.html" class="service-visual-card reveal" data-delay="3">-->
+<!--      <span class="service-visual-card__bg" style="background-image:url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&amp;fit=crop&amp;w=1200&amp;q=80');"></span>-->
+<!--      <span class="service-visual-card__overlay" aria-hidden="true"></span>-->
+<!--      <span class="service-visual-card__glow" aria-hidden="true"></span>-->
+<!--      <div class="service-visual-card__glass">-->
+<!--        <span class="service-visual-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>-->
+<!--        <div class="service-visual-card__text">-->
+<!--          <h3 class="service-visual-card__title">Cung cấp nhân sự</h3>-->
+<!--          <p class="service-visual-card__sub">Điều phối, MC, PG/PB, kỹ thuật — phối hợp đồng bộ hiện trường.</p>-->
+<!--        </div>-->
+<!--        <svg class="service-visual-card__chevron" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>-->
+<!--      </div>-->
+<!--    </a>-->
+<!--  </div>-->
+<!--</section>-->
+
+
+<!-- =====================================================================
+   WORKING PROCESS — timeline
+   ===================================================================== -->
+<section class="section section-red process-timeline-section" id="process" aria-label="Quy trình làm việc">
+  <div class="section-head">
+    <span class="section-eyebrow reveal">Quy Trình Làm Việc</span>
+    <h2 class="section-title reveal" data-delay="1">
+      Sáu bước
+      <span class="accent">trải nghiệm chuyên nghiệp</span>
+    </h2>
+  </div>
+  <ol class="process-timeline">
+    <li class="process-timeline-step reveal" data-delay="1">
+      <span class="pt-step-no">01</span>
+      <div class="pt-card">
+        <h3>Tiếp nhận yêu cầu</h3>
+        <p>Lắng nghe mục tiêu, quy mô và mong đợi của khách hàng.</p>
+      </div>
+    </li>
+    <li class="process-timeline-step reveal" data-delay="2">
+      <span class="pt-step-no">02</span>
+      <div class="pt-card">
+        <h3>Tư vấn &amp; đề xuất ý tưởng</h3>
+        <p>Đề xuất concept, định hướng kịch bản và trải nghiệm phù hợp.</p>
+      </div>
+    </li>
+    <li class="process-timeline-step reveal" data-delay="3">
+      <span class="pt-step-no">03</span>
+      <div class="pt-card">
+        <h3>Lập kế hoạch &amp; báo giá</h3>
+        <p>Timeline rõ ràng, báo giá minh bạch theo từng hạng mục.</p>
+      </div>
+    </li>
+    <li class="process-timeline-step reveal" data-delay="4">
+      <span class="pt-step-no">04</span>
+      <div class="pt-card">
+        <h3>Thiết kế &amp; chuẩn bị</h3>
+        <p>Thiết kế sân khấu, thiết bị, nhân sự và đạo cụ trước giờ G.</p>
+      </div>
+    </li>
+    <li class="process-timeline-step reveal" data-delay="5">
+      <span class="pt-step-no">05</span>
+      <div class="pt-card">
+        <h3>Triển khai &amp; vận hành sự kiện</h3>
+        <p>Vận hành trọn quy trình, giám sát chất lượng hiện trường.</p>
+      </div>
+    </li>
+    <li class="process-timeline-step reveal" data-delay="6">
+      <span class="pt-step-no">06</span>
+      <div class="pt-card">
+        <h3>Nghiệm thu &amp; đánh giá</h3>
+        <p>Tổng kết, bàn giao và ghi nhận để hoàn thiện lần sau.</p>
+      </div>
+    </li>
+  </ol>
+</section>
+
+
+  <!-- =====================================================================
+       VISION & MISSION — cinematic split
+       ===================================================================== -->
 <section class="section vision-mission-premium" id="vision-mission" aria-label="Tầm nhìn và sứ mệnh">
   <div class="vision-premium-bg" aria-hidden="true"></div>
   <div class="vision-premium-inner">
@@ -546,364 +704,308 @@
 <!-- =====================================================================
      FIELD OF OPERATION
      ===================================================================== -->
-<section class="section section-red-soft fields-section" id="fields" aria-label="Lĩnh vực hoạt động">
-  <div class="section-head">
-    <span class="section-eyebrow reveal">Năng Lực</span>
-    <h2 class="section-title reveal" data-delay="1">
-      Lĩnh vực <span class="accent">hoạt động</span>
-    </h2>
-  </div>
-  <div class="fields-grid">
-    <article class="fields-card reveal" data-delay="1">
-      <span class="fields-num">1</span>
-      <h3>Tổ chức sự kiện trọn gói</h3>
-      <ul>
-        <li>Lễ khai trương – khánh thành</li>
-        <li>Hội nghị – hội thảo</li>
-        <li>Gala dinner – tiệc tất niên</li>
-        <li>Teambuilding doanh nghiệp</li>
-        <li>Sự kiện trường học – ngày hội trải nghiệm</li>
-      </ul>
-    </article>
-    <article class="fields-card reveal" data-delay="2">
-      <span class="fields-num">2</span>
-      <h3>Cung cấp thiết bị sự kiện</h3>
-      <ul>
-        <li>Âm thanh chuyên nghiệp</li>
-        <li>Ánh sáng sân khấu</li>
-        <li>Màn hình LED</li>
-      </ul>
-    </article>
-    <article class="fields-card reveal" data-delay="3">
-      <span class="fields-num">3</span>
-      <h3>Thi công sân khấu — dàn dựng</h3>
-      <ul>
-        <li>Sân khấu, backdrop, booth</li>
-        <li>Cổng chào, gian hàng</li>
-        <li>Trang trí theo concept</li>
-      </ul>
-    </article>
-    <article class="fields-card reveal" data-delay="4">
-      <span class="fields-num">4</span>
-      <h3>Nhân sự &amp; nội dung chương trình</h3>
-      <ul>
-        <li>MC, ca sĩ, band nhạc</li>
-        <li>PG, hoạt náo viên</li>
-        <li>Biên kịch, đạo diễn</li>
-      </ul>
-    </article>
-  </div>
-</section>
+<!--<section class="section section-red-soft fields-section" id="fields" aria-label="Lĩnh vực hoạt động">-->
+<!--  <div class="section-head">-->
+<!--    <span class="section-eyebrow reveal">Năng Lực</span>-->
+<!--    <h2 class="section-title reveal" data-delay="1">-->
+<!--      Lĩnh vực <span class="accent">hoạt động</span>-->
+<!--    </h2>-->
+<!--  </div>-->
+<!--  <div class="fields-grid">-->
+<!--    <article class="fields-card reveal" data-delay="1">-->
+<!--      <span class="fields-num">1</span>-->
+<!--      <h3>Tổ chức sự kiện trọn gói</h3>-->
+<!--      <ul>-->
+<!--        <li>Lễ khai trương – khánh thành</li>-->
+<!--        <li>Hội nghị – hội thảo</li>-->
+<!--        <li>Gala dinner – tiệc tất niên</li>-->
+<!--        <li>Teambuilding doanh nghiệp</li>-->
+<!--        <li>Sự kiện trường học – ngày hội trải nghiệm</li>-->
+<!--      </ul>-->
+<!--    </article>-->
+<!--    <article class="fields-card reveal" data-delay="2">-->
+<!--      <span class="fields-num">2</span>-->
+<!--      <h3>Cung cấp thiết bị sự kiện</h3>-->
+<!--      <ul>-->
+<!--        <li>Âm thanh chuyên nghiệp</li>-->
+<!--        <li>Ánh sáng sân khấu</li>-->
+<!--        <li>Màn hình LED</li>-->
+<!--      </ul>-->
+<!--    </article>-->
+<!--    <article class="fields-card reveal" data-delay="3">-->
+<!--      <span class="fields-num">3</span>-->
+<!--      <h3>Thi công sân khấu — dàn dựng</h3>-->
+<!--      <ul>-->
+<!--        <li>Sân khấu, backdrop, booth</li>-->
+<!--        <li>Cổng chào, gian hàng</li>-->
+<!--        <li>Trang trí theo concept</li>-->
+<!--      </ul>-->
+<!--    </article>-->
+<!--    <article class="fields-card reveal" data-delay="4">-->
+<!--      <span class="fields-num">4</span>-->
+<!--      <h3>Nhân sự &amp; nội dung chương trình</h3>-->
+<!--      <ul>-->
+<!--        <li>MC, ca sĩ, band nhạc</li>-->
+<!--        <li>PG, hoạt náo viên</li>-->
+<!--        <li>Biên kịch, đạo diễn</li>-->
+<!--      </ul>-->
+<!--    </article>-->
+<!--  </div>-->
+<!--</section>-->
 
-<!-- =====================================================================
-     WORKING PROCESS — timeline
-     ===================================================================== -->
-<section class="section section-red process-timeline-section" id="process" aria-label="Quy trình làm việc">
-  <div class="section-head">
-    <span class="section-eyebrow reveal">Quy Trình Làm Việc</span>
-    <h2 class="section-title reveal" data-delay="1">
-      Sáu bước
-      <span class="accent">trải nghiệm chuyên nghiệp</span>
-    </h2>
-  </div>
-  <ol class="process-timeline">
-    <li class="process-timeline-step reveal" data-delay="1">
-      <span class="pt-step-no">01</span>
-      <div class="pt-card">
-        <h3>Tiếp nhận yêu cầu</h3>
-        <p>Lắng nghe mục tiêu, quy mô và mong đợi của khách hàng.</p>
-      </div>
-    </li>
-    <li class="process-timeline-step reveal" data-delay="2">
-      <span class="pt-step-no">02</span>
-      <div class="pt-card">
-        <h3>Tư vấn &amp; đề xuất ý tưởng</h3>
-        <p>Đề xuất concept, định hướng kịch bản và trải nghiệm phù hợp.</p>
-      </div>
-    </li>
-    <li class="process-timeline-step reveal" data-delay="3">
-      <span class="pt-step-no">03</span>
-      <div class="pt-card">
-        <h3>Lập kế hoạch &amp; báo giá</h3>
-        <p>Timeline rõ ràng, báo giá minh bạch theo từng hạng mục.</p>
-      </div>
-    </li>
-    <li class="process-timeline-step reveal" data-delay="4">
-      <span class="pt-step-no">04</span>
-      <div class="pt-card">
-        <h3>Thiết kế &amp; chuẩn bị</h3>
-        <p>Thiết kế sân khấu, thiết bị, nhân sự và đạo cụ trước giờ G.</p>
-      </div>
-    </li>
-    <li class="process-timeline-step reveal" data-delay="5">
-      <span class="pt-step-no">05</span>
-      <div class="pt-card">
-        <h3>Triển khai &amp; vận hành sự kiện</h3>
-        <p>Vận hành trọn quy trình, giám sát chất lượng hiện trường.</p>
-      </div>
-    </li>
-    <li class="process-timeline-step reveal" data-delay="6">
-      <span class="pt-step-no">06</span>
-      <div class="pt-card">
-        <h3>Nghiệm thu &amp; đánh giá</h3>
-        <p>Tổng kết, bàn giao và ghi nhận để hoàn thiện lần sau.</p>
-      </div>
-    </li>
-  </ol>
-</section>
 
 <!-- =====================================================================
      TEAM SECTION — premium cinematic layout
      ===================================================================== -->
-<section class="section team-section-premium" id="team" aria-label="Đội ngũ nhân sự">
-  <div class="team-premium-ambient" aria-hidden="true"></div>
-  <div class="team-premium-wrap">
-    <header class="section-head team-premium-head">
-      <span class="section-eyebrow reveal">Con người FT</span>
-      <h2 class="section-title reveal" data-delay="1">
-        Đội ngũ <span class="accent">nhân sự</span>
-      </h2>
-      <p class="section-lede reveal" data-delay="2">
-        Đội ngũ gắn bó, chuyên nghiệp và minh bạch — từ điều hành đến hiện trường, chúng tôi đặt uy tín và trải nghiệm khách hàng làm trọng tâm trong mỗi chương trình.
-      </p>
-    </header>
+<!--<section class="section team-section-premium" id="team" aria-label="Đội ngũ nhân sự">-->
+<!--  <div class="team-premium-ambient" aria-hidden="true"></div>-->
+<!--  <div class="team-premium-wrap">-->
+<!--    <header class="section-head team-premium-head">-->
+<!--      <span class="section-eyebrow reveal">Con người FT</span>-->
+<!--      <h2 class="section-title reveal" data-delay="1">-->
+<!--        Đội ngũ <span class="accent">nhân sự</span>-->
+<!--      </h2>-->
+<!--      <p class="section-lede reveal" data-delay="2">-->
+<!--        Đội ngũ gắn bó, chuyên nghiệp và minh bạch — từ điều hành đến hiện trường, chúng tôi đặt uy tín và trải nghiệm khách hàng làm trọng tâm trong mỗi chương trình.-->
+<!--      </p>-->
+<!--    </header>-->
 
-    <!-- 1. Founder / CEO -->
-    <article class="team-founder-feature reveal" data-delay="1">
-      <div class="team-founder-visual">
-        <div class="team-founder-frame">
-          <img
-            class="team-founder-img"
-            src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=900&q=80"
-            alt="Mr. Xuân Bốn — Founder, CEO FT GROUP E&amp;E"
-            width="720"
-            height="900"
-            loading="lazy"
-            data-fallback>
-        </div>
-        <div class="team-founder-glow" aria-hidden="true"></div>
-      </div>
-      <div class="team-founder-panel">
-        <span class="team-founder-badge">Founder · CEO</span>
-        <h3 class="team-founder-title">
-          <span class="team-founder-prefix">Mr.</span>
-          <span class="team-founder-name accent">Xuân Bốn</span>
-        </h3>
-        <blockquote class="team-founder-quote">
-          <p>“Với định hướng phát triển bền vững, công ty chúng tôi không ngừng đổi mới, nâng cao chất lượng dịch vụ, đầu tư vào con người và công nghệ nhằm mang đến những giải pháp tổ chức sự kiện chuyên nghiệp, sáng tạo và hiệu quả. Chúng tôi tự hào khi được đồng hành cùng nhiều đối tác trong việc kiến tạo nên những chương trình thành công và giàu cảm xúc.”</p>
-        </blockquote>
-      </div>
-    </article>
+<!--    &lt;!&ndash; 1. Founder / CEO &ndash;&gt;-->
+<!--    <article class="team-founder-feature reveal" data-delay="1">-->
+<!--      <div class="team-founder-visual">-->
+<!--        <div class="team-founder-frame">-->
+<!--          <img-->
+<!--            class="team-founder-img"-->
+<!--            src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=900&q=80"-->
+<!--            alt="Mr. Xuân Bốn — Founder, CEO FT GROUP E&amp;E"-->
+<!--            width="720"-->
+<!--            height="900"-->
+<!--            loading="lazy"-->
+<!--            data-fallback>-->
+<!--        </div>-->
+<!--        <div class="team-founder-glow" aria-hidden="true"></div>-->
+<!--      </div>-->
+<!--      <div class="team-founder-panel">-->
+<!--        <span class="team-founder-badge">Founder · CEO</span>-->
+<!--        <h3 class="team-founder-title">-->
+<!--          <span class="team-founder-prefix">Mr.</span>-->
+<!--          <span class="team-founder-name accent">Xuân Bốn</span>-->
+<!--        </h3>-->
+<!--        <blockquote class="team-founder-quote">-->
+<!--          <p>“Với định hướng phát triển bền vững, công ty chúng tôi không ngừng đổi mới, nâng cao chất lượng dịch vụ, đầu tư vào con người và công nghệ nhằm mang đến những giải pháp tổ chức sự kiện chuyên nghiệp, sáng tạo và hiệu quả. Chúng tôi tự hào khi được đồng hành cùng nhiều đối tác trong việc kiến tạo nên những chương trình thành công và giàu cảm xúc.”</p>-->
+<!--        </blockquote>-->
+<!--      </div>-->
+<!--    </article>-->
 
-    <!-- 2. Management -->
-    <div class="team-subsection" id="team-management">
-      <h3 class="team-subsection-title reveal">Ban điều hành</h3>
-      <div class="team-premium-grid team-premium-grid--mgmt">
-        <article class="team-premium-card reveal" data-delay="1">
-          <div class="team-premium-card-photo">
-            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=560&q=80" alt="Phan Dũng — Giám đốc điều hành" width="400" height="480" loading="lazy" data-fallback>
-          </div>
-          <div class="team-premium-card-body">
-            <h4 class="team-premium-card-name">Phan Dũng</h4>
-            <p class="team-premium-card-role">Giám đốc điều hành</p>
-          </div>
-        </article>
-        <article class="team-premium-card reveal" data-delay="2">
-          <div class="team-premium-card-photo">
-            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=560&q=80" alt="Đức Hà — Giám đốc nhân sự" width="400" height="480" loading="lazy" data-fallback>
-          </div>
-          <div class="team-premium-card-body">
-            <h4 class="team-premium-card-name">Đức Hà</h4>
-            <p class="team-premium-card-role">Giám đốc nhân sự</p>
-          </div>
-        </article>
-        <article class="team-premium-card reveal" data-delay="3">
-          <div class="team-premium-card-photo">
-            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=560&q=80" alt="Hà Thu — Kế toán trưởng" width="400" height="480" loading="lazy" data-fallback>
-          </div>
-          <div class="team-premium-card-body">
-            <h4 class="team-premium-card-name">Hà Thu</h4>
-            <p class="team-premium-card-role">Kế toán trưởng</p>
-          </div>
-        </article>
-        <article class="team-premium-card reveal" data-delay="4">
-          <div class="team-premium-card-photo">
-            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=560&q=80" alt="Hà Nam — Event manager" width="400" height="480" loading="lazy" data-fallback>
-          </div>
-          <div class="team-premium-card-body">
-            <h4 class="team-premium-card-name">Hà Nam</h4>
-            <p class="team-premium-card-role">Event manager</p>
-          </div>
-        </article>
-        <article class="team-premium-card reveal" data-delay="5">
-          <div class="team-premium-card-photo">
-            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=560&q=80" alt="Sơn Lâm — Design manager" width="400" height="480" loading="lazy" data-fallback>
-          </div>
-          <div class="team-premium-card-body">
-            <h4 class="team-premium-card-name">Sơn Lâm</h4>
-            <p class="team-premium-card-role">Design manager</p>
-          </div>
-        </article>
-      </div>
-    </div>
+<!--    &lt;!&ndash; 2. Management &ndash;&gt;-->
+<!--    <div class="team-subsection" id="team-management">-->
+<!--      <h3 class="team-subsection-title reveal">Ban điều hành</h3>-->
+<!--      <div class="team-premium-grid team-premium-grid&#45;&#45;mgmt">-->
+<!--        <article class="team-premium-card reveal" data-delay="1">-->
+<!--          <div class="team-premium-card-photo">-->
+<!--            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=560&q=80" alt="Phan Dũng — Giám đốc điều hành" width="400" height="480" loading="lazy" data-fallback>-->
+<!--          </div>-->
+<!--          <div class="team-premium-card-body">-->
+<!--            <h4 class="team-premium-card-name">Phan Dũng</h4>-->
+<!--            <p class="team-premium-card-role">Giám đốc điều hành</p>-->
+<!--          </div>-->
+<!--        </article>-->
+<!--        <article class="team-premium-card reveal" data-delay="2">-->
+<!--          <div class="team-premium-card-photo">-->
+<!--            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=560&q=80" alt="Đức Hà — Giám đốc nhân sự" width="400" height="480" loading="lazy" data-fallback>-->
+<!--          </div>-->
+<!--          <div class="team-premium-card-body">-->
+<!--            <h4 class="team-premium-card-name">Đức Hà</h4>-->
+<!--            <p class="team-premium-card-role">Giám đốc nhân sự</p>-->
+<!--          </div>-->
+<!--        </article>-->
+<!--        <article class="team-premium-card reveal" data-delay="3">-->
+<!--          <div class="team-premium-card-photo">-->
+<!--            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=560&q=80" alt="Hà Thu — Kế toán trưởng" width="400" height="480" loading="lazy" data-fallback>-->
+<!--          </div>-->
+<!--          <div class="team-premium-card-body">-->
+<!--            <h4 class="team-premium-card-name">Hà Thu</h4>-->
+<!--            <p class="team-premium-card-role">Kế toán trưởng</p>-->
+<!--          </div>-->
+<!--        </article>-->
+<!--        <article class="team-premium-card reveal" data-delay="4">-->
+<!--          <div class="team-premium-card-photo">-->
+<!--            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=560&q=80" alt="Hà Nam — Event manager" width="400" height="480" loading="lazy" data-fallback>-->
+<!--          </div>-->
+<!--          <div class="team-premium-card-body">-->
+<!--            <h4 class="team-premium-card-name">Hà Nam</h4>-->
+<!--            <p class="team-premium-card-role">Event manager</p>-->
+<!--          </div>-->
+<!--        </article>-->
+<!--        <article class="team-premium-card reveal" data-delay="5">-->
+<!--          <div class="team-premium-card-photo">-->
+<!--            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=560&q=80" alt="Sơn Lâm — Design manager" width="400" height="480" loading="lazy" data-fallback>-->
+<!--          </div>-->
+<!--          <div class="team-premium-card-body">-->
+<!--            <h4 class="team-premium-card-name">Sơn Lâm</h4>-->
+<!--            <p class="team-premium-card-role">Design manager</p>-->
+<!--          </div>-->
+<!--        </article>-->
+<!--      </div>-->
+<!--    </div>-->
 
-    <!-- 3. Event staff -->
-    <div class="team-subsection" id="team-event-staff">
-      <h3 class="team-subsection-title reveal">Đội ngũ sự kiện</h3>
-      <div class="team-premium-grid team-premium-grid--staff">
-        <article class="team-premium-card team-premium-card--compact reveal" data-delay="1">
-          <div class="team-premium-card-photo">
-            <img src="https://images.unsplash.com/photo-1507591064344-4c6ce963b9c8?auto=format&fit=crop&w=480&q=80" alt="Đỗ Trường — Event staff" width="360" height="420" loading="lazy" data-fallback>
-          </div>
-          <div class="team-premium-card-body">
-            <h4 class="team-premium-card-name">Đỗ Trường</h4>
-            <p class="team-premium-card-role">Event staff</p>
-          </div>
-        </article>
-        <article class="team-premium-card team-premium-card--compact reveal" data-delay="2">
-          <div class="team-premium-card-photo">
-            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=480&q=80" alt="Trọng Phú — Event staff" width="360" height="420" loading="lazy" data-fallback>
-          </div>
-          <div class="team-premium-card-body">
-            <h4 class="team-premium-card-name">Trọng Phú</h4>
-            <p class="team-premium-card-role">Event staff</p>
-          </div>
-        </article>
-        <article class="team-premium-card team-premium-card--compact reveal" data-delay="3">
-          <div class="team-premium-card-photo">
-            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=480&q=80" alt="Mạnh Hoàng — Event staff" width="360" height="420" loading="lazy" data-fallback>
-          </div>
-          <div class="team-premium-card-body">
-            <h4 class="team-premium-card-name">Mạnh Hoàng</h4>
-            <p class="team-premium-card-role">Event staff</p>
-          </div>
-        </article>
-        <article class="team-premium-card team-premium-card--compact reveal" data-delay="4">
-          <div class="team-premium-card-photo">
-            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=480&q=80" alt="Kiên Bùi — Event staff" width="360" height="420" loading="lazy" data-fallback>
-          </div>
-          <div class="team-premium-card-body">
-            <h4 class="team-premium-card-name">Kiên Bùi</h4>
-            <p class="team-premium-card-role">Event staff</p>
-          </div>
-        </article>
-      </div>
-    </div>
+<!--    &lt;!&ndash; 3. Event staff &ndash;&gt;-->
+<!--    <div class="team-subsection" id="team-event-staff">-->
+<!--      <h3 class="team-subsection-title reveal">Đội ngũ sự kiện</h3>-->
+<!--      <div class="team-premium-grid team-premium-grid&#45;&#45;staff">-->
+<!--        <article class="team-premium-card team-premium-card&#45;&#45;compact reveal" data-delay="1">-->
+<!--          <div class="team-premium-card-photo">-->
+<!--            <img src="https://images.unsplash.com/photo-1507591064344-4c6ce963b9c8?auto=format&fit=crop&w=480&q=80" alt="Đỗ Trường — Event staff" width="360" height="420" loading="lazy" data-fallback>-->
+<!--          </div>-->
+<!--          <div class="team-premium-card-body">-->
+<!--            <h4 class="team-premium-card-name">Đỗ Trường</h4>-->
+<!--            <p class="team-premium-card-role">Event staff</p>-->
+<!--          </div>-->
+<!--        </article>-->
+<!--        <article class="team-premium-card team-premium-card&#45;&#45;compact reveal" data-delay="2">-->
+<!--          <div class="team-premium-card-photo">-->
+<!--            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=480&q=80" alt="Trọng Phú — Event staff" width="360" height="420" loading="lazy" data-fallback>-->
+<!--          </div>-->
+<!--          <div class="team-premium-card-body">-->
+<!--            <h4 class="team-premium-card-name">Trọng Phú</h4>-->
+<!--            <p class="team-premium-card-role">Event staff</p>-->
+<!--          </div>-->
+<!--        </article>-->
+<!--        <article class="team-premium-card team-premium-card&#45;&#45;compact reveal" data-delay="3">-->
+<!--          <div class="team-premium-card-photo">-->
+<!--            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=480&q=80" alt="Mạnh Hoàng — Event staff" width="360" height="420" loading="lazy" data-fallback>-->
+<!--          </div>-->
+<!--          <div class="team-premium-card-body">-->
+<!--            <h4 class="team-premium-card-name">Mạnh Hoàng</h4>-->
+<!--            <p class="team-premium-card-role">Event staff</p>-->
+<!--          </div>-->
+<!--        </article>-->
+<!--        <article class="team-premium-card team-premium-card&#45;&#45;compact reveal" data-delay="4">-->
+<!--          <div class="team-premium-card-photo">-->
+<!--            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=480&q=80" alt="Kiên Bùi — Event staff" width="360" height="420" loading="lazy" data-fallback>-->
+<!--          </div>-->
+<!--          <div class="team-premium-card-body">-->
+<!--            <h4 class="team-premium-card-name">Kiên Bùi</h4>-->
+<!--            <p class="team-premium-card-role">Event staff</p>-->
+<!--          </div>-->
+<!--        </article>-->
+<!--      </div>-->
+<!--    </div>-->
 
-    <!-- 4. MC team -->
-    <div class="team-subsection" id="team-mc">
-      <h3 class="team-subsection-title reveal">Đội MC</h3>
-      <div class="team-premium-grid team-premium-grid--mc">
-        <article class="team-premium-card team-premium-card--mc reveal" data-delay="1">
-          <div class="team-premium-card-photo">
-            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=480&q=80" alt="Đình Dương — MC Event" width="360" height="420" loading="lazy" data-fallback>
-          </div>
-          <div class="team-premium-card-body">
-            <h4 class="team-premium-card-name">Đình Dương</h4>
-            <p class="team-premium-card-role">MC Event</p>
-          </div>
-        </article>
-        <article class="team-premium-card team-premium-card--mc reveal" data-delay="2">
-          <div class="team-premium-card-photo">
-            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=480&q=80" alt="Hùng Vũ — MC Event" width="360" height="420" loading="lazy" data-fallback>
-          </div>
-          <div class="team-premium-card-body">
-            <h4 class="team-premium-card-name">Hùng Vũ</h4>
-            <p class="team-premium-card-role">MC Event</p>
-          </div>
-        </article>
-        <article class="team-premium-card team-premium-card--mc reveal" data-delay="3">
-          <div class="team-premium-card-photo">
-            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=480&q=80" alt="Doãn Toàn — MC Event" width="360" height="420" loading="lazy" data-fallback>
-          </div>
-          <div class="team-premium-card-body">
-            <h4 class="team-premium-card-name">Doãn Toàn</h4>
-            <p class="team-premium-card-role">MC Event</p>
-          </div>
-        </article>
-        <article class="team-premium-card team-premium-card--mc reveal" data-delay="4">
-          <div class="team-premium-card-photo">
-            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=480&q=80" alt="Ngọc Hà — MC" width="360" height="420" loading="lazy" data-fallback>
-          </div>
-          <div class="team-premium-card-body">
-            <h4 class="team-premium-card-name">Ngọc Hà</h4>
-            <p class="team-premium-card-role">MC</p>
-          </div>
-        </article>
-        <article class="team-premium-card team-premium-card--mc reveal" data-delay="5">
-          <div class="team-premium-card-photo">
-            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=480&q=80" alt="Viết Hưng — MC" width="360" height="420" loading="lazy" data-fallback>
-          </div>
-          <div class="team-premium-card-body">
-            <h4 class="team-premium-card-name">Viết Hưng</h4>
-            <p class="team-premium-card-role">MC</p>
-          </div>
-        </article>
-        <article class="team-premium-card team-premium-card--mc reveal" data-delay="6">
-          <div class="team-premium-card-photo">
-            <img src="https://images.unsplash.com/photo-1521572163474-6864f8cf14ac?auto=format&fit=crop&w=480&q=80" alt="Minh Đức — MC" width="360" height="420" loading="lazy" data-fallback>
-          </div>
-          <div class="team-premium-card-body">
-            <h4 class="team-premium-card-name">Minh Đức</h4>
-            <p class="team-premium-card-role">MC</p>
-          </div>
-        </article>
-        <article class="team-premium-card team-premium-card--mc reveal" data-delay="1">
-          <div class="team-premium-card-photo">
-            <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=480&q=80" alt="Quang Lâm — MC" width="360" height="420" loading="lazy" data-fallback>
-          </div>
-          <div class="team-premium-card-body">
-            <h4 class="team-premium-card-name">Quang Lâm</h4>
-            <p class="team-premium-card-role">MC</p>
-          </div>
-        </article>
-        <article class="team-premium-card team-premium-card--mc reveal" data-delay="2">
-          <div class="team-premium-card-photo">
-            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=480&q=80" alt="Quang Thạch — MC" width="360" height="420" loading="lazy" data-fallback>
-          </div>
-          <div class="team-premium-card-body">
-            <h4 class="team-premium-card-name">Quang Thạch</h4>
-            <p class="team-premium-card-role">MC</p>
-          </div>
-        </article>
-        <article class="team-premium-card team-premium-card--mc reveal" data-delay="3">
-          <div class="team-premium-card-photo">
-            <img src="https://images.unsplash.com/photo-1504257438929-7247af4802fc?auto=format&fit=crop&w=480&q=80" alt="Nguyễn Quyền — MC" width="360" height="420" loading="lazy" data-fallback>
-          </div>
-          <div class="team-premium-card-body">
-            <h4 class="team-premium-card-name">Nguyễn Quyền</h4>
-            <p class="team-premium-card-role">MC</p>
-          </div>
-        </article>
-      </div>
-    </div>
+<!--    &lt;!&ndash; 4. MC team &ndash;&gt;-->
+<!--    <div class="team-subsection" id="team-mc">-->
+<!--      <h3 class="team-subsection-title reveal">Đội MC</h3>-->
+<!--      <div class="team-premium-grid team-premium-grid&#45;&#45;mc">-->
+<!--        <article class="team-premium-card team-premium-card&#45;&#45;mc reveal" data-delay="1">-->
+<!--          <div class="team-premium-card-photo">-->
+<!--            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=480&q=80" alt="Đình Dương — MC Event" width="360" height="420" loading="lazy" data-fallback>-->
+<!--          </div>-->
+<!--          <div class="team-premium-card-body">-->
+<!--            <h4 class="team-premium-card-name">Đình Dương</h4>-->
+<!--            <p class="team-premium-card-role">MC Event</p>-->
+<!--          </div>-->
+<!--        </article>-->
+<!--        <article class="team-premium-card team-premium-card&#45;&#45;mc reveal" data-delay="2">-->
+<!--          <div class="team-premium-card-photo">-->
+<!--            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=480&q=80" alt="Hùng Vũ — MC Event" width="360" height="420" loading="lazy" data-fallback>-->
+<!--          </div>-->
+<!--          <div class="team-premium-card-body">-->
+<!--            <h4 class="team-premium-card-name">Hùng Vũ</h4>-->
+<!--            <p class="team-premium-card-role">MC Event</p>-->
+<!--          </div>-->
+<!--        </article>-->
+<!--        <article class="team-premium-card team-premium-card&#45;&#45;mc reveal" data-delay="3">-->
+<!--          <div class="team-premium-card-photo">-->
+<!--            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=480&q=80" alt="Doãn Toàn — MC Event" width="360" height="420" loading="lazy" data-fallback>-->
+<!--          </div>-->
+<!--          <div class="team-premium-card-body">-->
+<!--            <h4 class="team-premium-card-name">Doãn Toàn</h4>-->
+<!--            <p class="team-premium-card-role">MC Event</p>-->
+<!--          </div>-->
+<!--        </article>-->
+<!--        <article class="team-premium-card team-premium-card&#45;&#45;mc reveal" data-delay="4">-->
+<!--          <div class="team-premium-card-photo">-->
+<!--            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=480&q=80" alt="Ngọc Hà — MC" width="360" height="420" loading="lazy" data-fallback>-->
+<!--          </div>-->
+<!--          <div class="team-premium-card-body">-->
+<!--            <h4 class="team-premium-card-name">Ngọc Hà</h4>-->
+<!--            <p class="team-premium-card-role">MC</p>-->
+<!--          </div>-->
+<!--        </article>-->
+<!--        <article class="team-premium-card team-premium-card&#45;&#45;mc reveal" data-delay="5">-->
+<!--          <div class="team-premium-card-photo">-->
+<!--            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=480&q=80" alt="Viết Hưng — MC" width="360" height="420" loading="lazy" data-fallback>-->
+<!--          </div>-->
+<!--          <div class="team-premium-card-body">-->
+<!--            <h4 class="team-premium-card-name">Viết Hưng</h4>-->
+<!--            <p class="team-premium-card-role">MC</p>-->
+<!--          </div>-->
+<!--        </article>-->
+<!--        <article class="team-premium-card team-premium-card&#45;&#45;mc reveal" data-delay="6">-->
+<!--          <div class="team-premium-card-photo">-->
+<!--            <img src="https://images.unsplash.com/photo-1521572163474-6864f8cf14ac?auto=format&fit=crop&w=480&q=80" alt="Minh Đức — MC" width="360" height="420" loading="lazy" data-fallback>-->
+<!--          </div>-->
+<!--          <div class="team-premium-card-body">-->
+<!--            <h4 class="team-premium-card-name">Minh Đức</h4>-->
+<!--            <p class="team-premium-card-role">MC</p>-->
+<!--          </div>-->
+<!--        </article>-->
+<!--        <article class="team-premium-card team-premium-card&#45;&#45;mc reveal" data-delay="1">-->
+<!--          <div class="team-premium-card-photo">-->
+<!--            <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=480&q=80" alt="Quang Lâm — MC" width="360" height="420" loading="lazy" data-fallback>-->
+<!--          </div>-->
+<!--          <div class="team-premium-card-body">-->
+<!--            <h4 class="team-premium-card-name">Quang Lâm</h4>-->
+<!--            <p class="team-premium-card-role">MC</p>-->
+<!--          </div>-->
+<!--        </article>-->
+<!--        <article class="team-premium-card team-premium-card&#45;&#45;mc reveal" data-delay="2">-->
+<!--          <div class="team-premium-card-photo">-->
+<!--            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=480&q=80" alt="Quang Thạch — MC" width="360" height="420" loading="lazy" data-fallback>-->
+<!--          </div>-->
+<!--          <div class="team-premium-card-body">-->
+<!--            <h4 class="team-premium-card-name">Quang Thạch</h4>-->
+<!--            <p class="team-premium-card-role">MC</p>-->
+<!--          </div>-->
+<!--        </article>-->
+<!--        <article class="team-premium-card team-premium-card&#45;&#45;mc reveal" data-delay="3">-->
+<!--          <div class="team-premium-card-photo">-->
+<!--            <img src="https://images.unsplash.com/photo-1504257438929-7247af4802fc?auto=format&fit=crop&w=480&q=80" alt="Nguyễn Quyền — MC" width="360" height="420" loading="lazy" data-fallback>-->
+<!--          </div>-->
+<!--          <div class="team-premium-card-body">-->
+<!--            <h4 class="team-premium-card-name">Nguyễn Quyền</h4>-->
+<!--            <p class="team-premium-card-role">MC</p>-->
+<!--          </div>-->
+<!--        </article>-->
+<!--      </div>-->
+<!--    </div>-->
 
-    <!-- 5. Technical -->
-    <div class="team-subsection team-subsection--last" id="team-technical">
-      <h3 class="team-subsection-title reveal">Đội kỹ thuật</h3>
-      <div class="team-premium-grid team-premium-grid--tech">
-        <article class="team-premium-card reveal" data-delay="1">
-          <div class="team-premium-card-photo">
-            <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=560&q=80" alt="Trần Trường — Kỹ thuật" width="400" height="480" loading="lazy" data-fallback>
-          </div>
-          <div class="team-premium-card-body">
-            <h4 class="team-premium-card-name">Trần Trường</h4>
-            <p class="team-premium-card-role">Kỹ thuật</p>
-          </div>
-        </article>
-        <article class="team-premium-card reveal" data-delay="2">
-          <div class="team-premium-card-photo">
-            <img src="https://images.unsplash.com/photo-1524504388940-bb7efe878907?auto=format&fit=crop&w=560&q=80" alt="Mai Dũng — Kỹ thuật" width="400" height="480" loading="lazy" data-fallback>
-          </div>
-          <div class="team-premium-card-body">
-            <h4 class="team-premium-card-name">Mai Dũng</h4>
-            <p class="team-premium-card-role">Kỹ thuật</p>
-          </div>
-        </article>
-      </div>
-    </div>
-  </div>
-</section>
+<!--    &lt;!&ndash; 5. Technical &ndash;&gt;-->
+<!--    <div class="team-subsection team-subsection&#45;&#45;last" id="team-technical">-->
+<!--      <h3 class="team-subsection-title reveal">Đội kỹ thuật</h3>-->
+<!--      <div class="team-premium-grid team-premium-grid&#45;&#45;tech">-->
+<!--        <article class="team-premium-card reveal" data-delay="1">-->
+<!--          <div class="team-premium-card-photo">-->
+<!--            <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=560&q=80" alt="Trần Trường — Kỹ thuật" width="400" height="480" loading="lazy" data-fallback>-->
+<!--          </div>-->
+<!--          <div class="team-premium-card-body">-->
+<!--            <h4 class="team-premium-card-name">Trần Trường</h4>-->
+<!--            <p class="team-premium-card-role">Kỹ thuật</p>-->
+<!--          </div>-->
+<!--        </article>-->
+<!--        <article class="team-premium-card reveal" data-delay="2">-->
+<!--          <div class="team-premium-card-photo">-->
+<!--            <img src="https://images.unsplash.com/photo-1524504388940-bb7efe878907?auto=format&fit=crop&w=560&q=80" alt="Mai Dũng — Kỹ thuật" width="400" height="480" loading="lazy" data-fallback>-->
+<!--          </div>-->
+<!--          <div class="team-premium-card-body">-->
+<!--            <h4 class="team-premium-card-name">Mai Dũng</h4>-->
+<!--            <p class="team-premium-card-role">Kỹ thuật</p>-->
+<!--          </div>-->
+<!--        </article>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
 
 <!-- =====================================================================
      TESTIMONIALS
@@ -1042,8 +1144,8 @@
 <footer class="site-footer" id="contact">
   <div class="footer-grid">
     <div class="footer-brand">
-      <a href="#home" class="brand brand-with-logo brand-footer">
-        <img class="brand-logo" src="assets/images/logo.jpg" width="160" height="48" alt="Logo FT GROUP E&amp;E" loading="lazy">
+      <a href="index.html#home" class="brand brand-with-logo brand-footer">
+        <img class="brand-logo" src="assets/images/logo.png" width="160" height="48" alt="Logo FT GROUP E&amp;E" loading="lazy">
         <span class="brand-name">FT GROUP <span class="accent">E&amp;E</span></span>
       </a>
       <p><strong>Công ty TNHH Du lịch Sự kiện và Giáo dục trải nghiệm FT Group</strong> — giáo dục trải nghiệm, tổ chức sự kiện trọn gói và thiết bị sân khấu. <strong>MST:</strong> 0110845698</p>
@@ -1059,24 +1161,22 @@
     </div>
 
     <div class="footer-col">
-      <h4>Khám phá</h4>
+      <h4>Liên kết</h4>
       <ul>
-        <li><a href="#gallery">Dự Án Tiêu Biểu</a></li>
-        <li><a href="#company-intro">Giới Thiệu</a></li>
-        <li><a href="#service-highlight">Dịch Vụ</a></li>
-        <li><a href="#vision-mission">Tầm Nhìn &amp; Sứ Mệnh</a></li>
-        <li><a href="#core-values">Giá Trị</a></li>
-        <li><a href="#fields">Lĩnh Vực</a></li>
-        <li><a href="#process">Quy Trình</a></li>
+        <li><a href="index.html#home">Trang chủ</a></li>
+        <li><a href="index.html#company-intro">Giới thiệu</a></li>
+        <li><a href="index.html#service-highlight">Dịch vụ</a></li>
+        <li><a href="du-an.html">Dự án</a></li>
+        <li><a href="index.html#contact">Liên hệ</a></li>
       </ul>
     </div>
 
     <div class="footer-col">
-      <h4>Thông tin</h4>
+      <h4>Nội dung</h4>
       <ul>
-        <li><a href="#team">Đội Ngũ</a></li>
-        <li><a href="#testimonials">Phản Hồi</a></li>
-        <li><a href="#contact">Liên Hệ</a></li>
+        <li><a href="index.html#vision-mission">Tầm nhìn</a></li>
+        <li><a href="index.html#testimonials">Phản hồi</a></li>
+        <li><a href="index.html#process">Quy trình</a></li>
       </ul>
     </div>
 
@@ -1150,7 +1250,7 @@
      SCRIPTS — split, deferred for performance
      ===================================================================== -->
 <script src="js/navbar.js" defer></script>
-<script src="js/gallery.js" defer></script>
+<script src="js/home-showcase.js" defer></script>
 <script src="js/main.js" defer></script>
 
 </body>

@@ -1,15 +1,14 @@
 /* =====================================================================
-   NAVBAR — sticky scroll state + mobile menu toggle
+   NAVBAR — sticky scroll + mobile menu + smooth scroll (same document)
    ===================================================================== */
 (function () {
   'use strict';
 
-  const header  = document.querySelector('.site-header');
-  const toggle  = document.querySelector('.nav-toggle');
-  const menu    = document.querySelector('.mobile-menu');
-  const menuLinks = document.querySelectorAll('.mobile-menu a');
+  const header = document.querySelector('.site-header');
+  const toggle = document.querySelector('.nav-toggle');
+  const menu = document.querySelector('.mobile-menu');
+  const menuLinks = menu ? menu.querySelectorAll('a') : [];
 
-  // Sticky header background on scroll
   if (header) {
     let ticking = false;
     const onScroll = () => {
@@ -25,7 +24,6 @@
     onScroll();
   }
 
-  // Mobile menu open/close
   function setMenu(open) {
     if (!menu || !toggle) return;
     menu.classList.toggle('is-open', open);
@@ -34,20 +32,62 @@
     document.body.style.overflow = open ? 'hidden' : '';
   }
   if (toggle) toggle.addEventListener('click', () => setMenu(!menu.classList.contains('is-open')));
-  menuLinks.forEach(a => a.addEventListener('click', () => setMenu(false)));
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
+  menuLinks.forEach((a) => a.addEventListener('click', () => setMenu(false)));
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') setMenu(false);
+  });
 
-  // Smooth scroll with header offset
   const navH = () => (header ? header.offsetHeight : 72);
-  document.querySelectorAll('a[href^="#"]').forEach(link => {
-    link.addEventListener('click', e => {
-      const id = link.getAttribute('href');
-      if (id.length < 2) return;
-      const target = document.querySelector(id);
+
+  function scrollToHash(hash) {
+    if (!hash || hash.length < 2) return;
+    const target = document.querySelector(hash);
+    if (!target) return;
+    const top = target.getBoundingClientRect().top + window.scrollY - navH() + 4;
+    window.scrollTo({ top, behavior: 'smooth' });
+  }
+
+  window.addEventListener(
+    'DOMContentLoaded',
+    () => {
+      if (window.location.hash && document.querySelector(window.location.hash)) {
+        requestAnimationFrame(() => scrollToHash(window.location.hash));
+      }
+    },
+    { once: true }
+  );
+
+  function sameDocument(url, here) {
+    const a = url.pathname;
+    const b = here.pathname;
+    const rootA = a === '/' || a === '' || /index\.html$/i.test(a);
+    const rootB = b === '/' || b === '' || /index\.html$/i.test(b);
+    if (rootA && rootB) return true;
+    return a === b;
+  }
+
+  document.querySelectorAll('a[href]').forEach((link) => {
+    link.addEventListener('click', (e) => {
+      const href = link.getAttribute('href');
+      if (!href || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('javascript:')) return;
+
+      let url;
+      try {
+        url = new URL(href, window.location.href);
+      } catch (_) {
+        return;
+      }
+
+      const here = new URL(window.location.href);
+      if (url.origin !== here.origin) return;
+      if (!sameDocument(url, here)) return;
+      if (!url.hash) return;
+
+      const target = document.querySelector(url.hash);
       if (!target) return;
+
       e.preventDefault();
-      const top = target.getBoundingClientRect().top + window.scrollY - navH() + 4;
-      window.scrollTo({ top, behavior: 'smooth' });
+      scrollToHash(url.hash);
     });
   });
 })();
