@@ -10,6 +10,7 @@ import {
   SERVICE_PAGE_SCRIPTS,
 } from './service-shared.mjs';
 import { getServiceHeroImage } from './service-images.mjs';
+import { toAbsoluteSeoImage } from './seo-url.mjs';
 import {
   renderSiteNav,
   renderSiteFooter,
@@ -560,6 +561,7 @@ function renderPage(s) {
   const breadcrumbParent = s.breadcrumbParent || 'Dịch vụ';
   const breadcrumbAnchor = s.breadcrumbAnchor || '#service-highlight';
   const heroImg = getServiceHeroImage(s.id) || s.heroImg;
+  const seoImage = toAbsoluteSeoImage(heroImg);
   const galleryHtml = renderMasonryGallery(s.id, h1Plain);
   const glanceHtml = renderBenefitsStrip(s.benefits);
   const contactHtml = renderContactCta(h1Plain);
@@ -607,7 +609,7 @@ function renderPage(s) {
   <meta property="og:url" content="${canonical}">
   <meta property="og:title" content="${esc(titlePlain)}">
   <meta property="og:description" content="${esc(descPlain)}">
-  <meta property="og:image" content="${esc(s.heroImg)}">
+  <meta property="og:image" content="${esc(seoImage)}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://images.unsplash.com" crossorigin>

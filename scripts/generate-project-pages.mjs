@@ -1,6 +1,7 @@
 import { writeFileSync, mkdirSync } from 'fs';
 import { PROJECTS, PROJECT_GALLERY_COUNT } from './projects-data.mjs';
 import { relatedCardThumb } from './project-related.mjs';
+import { toAbsoluteSeoImage } from './seo-url.mjs';
 import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
 import {
@@ -73,6 +74,7 @@ function renderPage(p) {
   var descPlain = t(p.descPlain);
   var kwPlain = t(p.keywords);
   var h1Plain = stripTags(p.h1);
+  var seoImage = toAbsoluteSeoImage(p.hero);
 
   var galleryHtml = p.gallery
     .slice(0, PROJECT_GALLERY_COUNT)
@@ -186,7 +188,7 @@ function renderPage(p) {
   <link rel="canonical" href="${canonical}">
   <meta property="og:title" content="${esc(titlePlain)}">
   <meta property="og:description" content="${esc(descPlain)}">
-  <meta property="og:image" content="${esc(p.hero)}">
+  <meta property="og:image" content="${esc(seoImage)}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
