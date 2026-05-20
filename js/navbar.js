@@ -66,6 +66,34 @@
     return a === b;
   }
 
+  function navKeyFromLocation() {
+    const path = window.location.pathname.replace(/\\/g, '/');
+    const file = path.split('/').pop() || 'index.html';
+    if (path.includes('/projects/') || file === 'du-an.html') return 'projects';
+    if (path.includes('/services/')) return 'services';
+    if (file === 'index.html' || file === '' || !/\.html$/i.test(file)) {
+      const hash = window.location.hash;
+      if (hash === '#service-highlight') return 'services';
+      if (hash === '#contact') return 'contact';
+      if (hash === '#company-intro') return 'intro';
+      return 'home';
+    }
+    return null;
+  }
+
+  function applyActiveNav(key) {
+    if (!key) return;
+    document.querySelectorAll('.nav-links [data-nav], .mobile-menu [data-nav]').forEach((link) => {
+      const on = link.getAttribute('data-nav') === key;
+      link.classList.toggle('nav-link--active', on);
+      if (on) link.setAttribute('aria-current', 'page');
+      else link.removeAttribute('aria-current');
+    });
+  }
+
+  applyActiveNav(navKeyFromLocation());
+  window.addEventListener('hashchange', () => applyActiveNav(navKeyFromLocation()));
+
   document.querySelectorAll('a[href]').forEach((link) => {
     link.addEventListener('click', (e) => {
       const href = link.getAttribute('href');

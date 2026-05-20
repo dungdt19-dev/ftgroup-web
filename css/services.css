@@ -235,9 +235,22 @@
   background: var(--color-black);
 }
 
+/* Shared content column — headings, copy, gallery share one edge */
+.srv-page article > .srv-glance,
+.srv-page article > .srv-gallery-section,
+.srv-page article > .srv-section,
+.srv-page article > .srv-more,
+.srv-page article > .srv-cta {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
 .srv-hero {
   position: relative;
-  min-height: min(48vh, 420px);
+  min-height: min(36vh, 320px);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -760,7 +773,7 @@
 .srv-cta {
   margin: var(--space-xl) auto;
   padding: var(--space-lg) var(--space-md);
-  max-width: 1100px;
+  max-width: 1200px;
   border-radius: var(--radius-xl);
   background:
     linear-gradient(135deg, rgba(122, 31, 43, 0.35) 0%, rgba(15, 15, 16, 0.95) 55%),

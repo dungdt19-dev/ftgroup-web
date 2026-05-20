@@ -57,11 +57,11 @@
   </a>
   <nav aria-label="Main navigation">
     <ul class="nav-links">
-      <li><a href="../index.html#home">Trang chủ</a></li>
-      <li><a href="../index.html#company-intro">Giới thiệu</a></li>
-      <li><a href="../index.html#service-highlight" class="nav-link--active">Dịch vụ</a></li>
-      <li><a href="../du-an.html">Dự án</a></li>
-      <li><a href="../index.html#contact">Liên hệ</a></li>
+      <li><a href="../index.html#home" data-nav="home">Trang chủ</a></li>
+      <li><a href="../index.html#company-intro" data-nav="intro">Giới thiệu</a></li>
+      <li><a href="../index.html#service-highlight" data-nav="services" class="nav-link--active" aria-current="page">Dịch vụ</a></li>
+      <li><a href="../du-an.html" data-nav="projects">Dự án</a></li>
+      <li><a href="../index.html#contact" data-nav="contact">Liên hệ</a></li>
     </ul>
   </nav>
   <a href="tel:+84964236197" class="nav-cta">Gọi Ngay</a>
@@ -70,17 +70,17 @@
   </button>
 </header>
 <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Mobile menu">
-  <a href="../index.html#home">Trang chủ</a>
-  <a href="../index.html#company-intro">Giới thiệu</a>
-  <a href="../index.html#service-highlight">Dịch vụ</a>
-  <a href="../du-an.html">Dự án</a>
-  <a href="../index.html#contact">Liên hệ</a>
+  <a href="../index.html#home" data-nav="home">Trang chủ</a>
+  <a href="../index.html#company-intro" data-nav="intro">Giới thiệu</a>
+  <a href="../index.html#service-highlight" data-nav="services" class="nav-link--active" aria-current="page">Dịch vụ</a>
+  <a href="../du-an.html" data-nav="projects">Dự án</a>
+  <a href="../index.html#contact" data-nav="contact">Liên hệ</a>
 </div>
 
 <main class="srv-page">
   <article>
     <header class="srv-hero">
-      <div class="srv-hero__bg" style="background-image:url('https://images.unsplash.com/photo-1598653222000-6b7b7f552368?auto=format&amp;fit=crop&amp;w=1920&amp;q=80');" role="presentation"></div>
+      <div class="srv-hero__bg" style="background-image:url('../assets/images/dich-vu/thiet-bi-san-khau/thiet-bi-san-khau-1.jpg');" role="presentation"></div>
       <div class="srv-hero__tint" aria-hidden="true"></div>
       <div class="srv-hero__content">
         <nav class="srv-breadcrumb" aria-label="Breadcrumb">
@@ -121,68 +121,62 @@
       </ul>
     </section>
 
-    <section class="srv-gallery-section srv-gallery-section--prominent" aria-labelledby="srv-gallery-heading" data-srv-gallery-masonry>
+    <section class="srv-gallery-section srv-gallery-section--prominent" aria-labelledby="srv-gallery-heading" data-srv-gallery-grid>
       <div class="srv-section-head srv-section-head--compact">
         <span class="srv-section-eyebrow">Thư viện hình ảnh</span>
         <h2 id="srv-gallery-heading">Hình ảnh triển khai</h2>
       </div>
-      <div class="srv-gallery-masonry">
-        <a class="srv-gl-item srv-gl-item--featured" href="https://images.unsplash.com/photo-1598653222000-6b7b7f552368?auto=format&amp;fit=crop&amp;w=1920&amp;q=82" data-srv-lightbox>
-          <img src="https://images.unsplash.com/photo-1598653222000-6b7b7f552368?auto=format&amp;fit=crop&amp;w=1200&amp;q=78" alt="Cho thuê thiết bị sự kiện — hình 1" width="900" height="1200" loading="lazy" decoding="async">
+      <div class="srv-gallery-grid">
+        <a class="srv-gl-item" href="../assets/images/dich-vu/thiet-bi-san-khau/thiet-bi-san-khau-1.jpg" data-srv-lightbox>
+          <img src="../assets/images/dich-vu/thiet-bi-san-khau/thiet-bi-san-khau-1.jpg" alt="Cho thuê thiết bị sự kiện — hình 1" loading="lazy" decoding="async">
           <span class="srv-gl-item__overlay" aria-hidden="true">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 3h6v6M14 10l6.1-6.1M9 21H3v-6M10 14l-6.1 6.1"/></svg>
           </span>
         </a>
-        <a class="srv-gl-item" href="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&amp;fit=crop&amp;w=1920&amp;q=82" data-srv-lightbox>
-          <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&amp;fit=crop&amp;w=1200&amp;q=78" alt="Cho thuê thiết bị sự kiện — hình 2" width="900" height="1200" loading="lazy" decoding="async">
+        <a class="srv-gl-item" href="../assets/images/dich-vu/thiet-bi-san-khau/thiet-bi-san-khau-2.jpg" data-srv-lightbox>
+          <img src="../assets/images/dich-vu/thiet-bi-san-khau/thiet-bi-san-khau-2.jpg" alt="Cho thuê thiết bị sự kiện — hình 2" loading="lazy" decoding="async">
           <span class="srv-gl-item__overlay" aria-hidden="true">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 3h6v6M14 10l6.1-6.1M9 21H3v-6M10 14l-6.1 6.1"/></svg>
           </span>
         </a>
-        <a class="srv-gl-item" href="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&amp;fit=crop&amp;w=1920&amp;q=82" data-srv-lightbox>
-          <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&amp;fit=crop&amp;w=1200&amp;q=78" alt="Cho thuê thiết bị sự kiện — hình 3" width="900" height="1200" loading="lazy" decoding="async">
+        <a class="srv-gl-item" href="../assets/images/dich-vu/thiet-bi-san-khau/thiet-bi-san-khau-3.jpg" data-srv-lightbox>
+          <img src="../assets/images/dich-vu/thiet-bi-san-khau/thiet-bi-san-khau-3.jpg" alt="Cho thuê thiết bị sự kiện — hình 3" loading="lazy" decoding="async">
           <span class="srv-gl-item__overlay" aria-hidden="true">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 3h6v6M14 10l6.1-6.1M9 21H3v-6M10 14l-6.1 6.1"/></svg>
           </span>
         </a>
-        <a class="srv-gl-item srv-gl-item--wide" href="https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&amp;fit=crop&amp;w=1920&amp;q=82" data-srv-lightbox>
-          <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&amp;fit=crop&amp;w=1200&amp;q=78" alt="Cho thuê thiết bị sự kiện — hình 4" width="900" height="1200" loading="lazy" decoding="async">
+        <a class="srv-gl-item" href="../assets/images/dich-vu/thiet-bi-san-khau/thiet-bi-san-khau-4.jpg" data-srv-lightbox>
+          <img src="../assets/images/dich-vu/thiet-bi-san-khau/thiet-bi-san-khau-4.jpg" alt="Cho thuê thiết bị sự kiện — hình 4" loading="lazy" decoding="async">
           <span class="srv-gl-item__overlay" aria-hidden="true">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 3h6v6M14 10l6.1-6.1M9 21H3v-6M10 14l-6.1 6.1"/></svg>
           </span>
         </a>
-        <a class="srv-gl-item" href="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&amp;fit=crop&amp;w=1920&amp;q=82" data-srv-lightbox>
-          <img src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&amp;fit=crop&amp;w=1200&amp;q=78" alt="Cho thuê thiết bị sự kiện — hình 5" width="900" height="1200" loading="lazy" decoding="async">
+        <a class="srv-gl-item" href="../assets/images/dich-vu/thiet-bi-san-khau/thiet-bi-san-khau-5.jpg" data-srv-lightbox>
+          <img src="../assets/images/dich-vu/thiet-bi-san-khau/thiet-bi-san-khau-5.jpg" alt="Cho thuê thiết bị sự kiện — hình 5" loading="lazy" decoding="async">
           <span class="srv-gl-item__overlay" aria-hidden="true">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 3h6v6M14 10l6.1-6.1M9 21H3v-6M10 14l-6.1 6.1"/></svg>
           </span>
         </a>
-        <a class="srv-gl-item" href="https://images.unsplash.com/photo-1544531586-fde5298cef13?auto=format&amp;fit=crop&amp;w=1920&amp;q=82" data-srv-lightbox>
-          <img src="https://images.unsplash.com/photo-1544531586-fde5298cef13?auto=format&amp;fit=crop&amp;w=1200&amp;q=78" alt="Cho thuê thiết bị sự kiện — hình 6" width="900" height="1200" loading="lazy" decoding="async">
+        <a class="srv-gl-item" href="../assets/images/dich-vu/thiet-bi-san-khau/thiet-bi-san-khau-6.jpg" data-srv-lightbox>
+          <img src="../assets/images/dich-vu/thiet-bi-san-khau/thiet-bi-san-khau-6.jpg" alt="Cho thuê thiết bị sự kiện — hình 6" loading="lazy" decoding="async">
           <span class="srv-gl-item__overlay" aria-hidden="true">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 3h6v6M14 10l6.1-6.1M9 21H3v-6M10 14l-6.1 6.1"/></svg>
           </span>
         </a>
-        <a class="srv-gl-item" href="https://images.unsplash.com/photo-1598387993441-a364f854c3e1?auto=format&amp;fit=crop&amp;w=1920&amp;q=82" data-srv-lightbox>
-          <img src="https://images.unsplash.com/photo-1598387993441-a364f854c3e1?auto=format&amp;fit=crop&amp;w=1200&amp;q=78" alt="Cho thuê thiết bị sự kiện — hình 7" width="900" height="1200" loading="lazy" decoding="async">
+        <a class="srv-gl-item" href="../assets/images/dich-vu/thiet-bi-san-khau/thiet-bi-san-khau-7.jpg" data-srv-lightbox>
+          <img src="../assets/images/dich-vu/thiet-bi-san-khau/thiet-bi-san-khau-7.jpg" alt="Cho thuê thiết bị sự kiện — hình 7" loading="lazy" decoding="async">
           <span class="srv-gl-item__overlay" aria-hidden="true">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 3h6v6M14 10l6.1-6.1M9 21H3v-6M10 14l-6.1 6.1"/></svg>
           </span>
         </a>
-        <a class="srv-gl-item" href="https://images.unsplash.com/photo-1505236858219-8359eb29e329?auto=format&amp;fit=crop&amp;w=1920&amp;q=82" data-srv-lightbox>
-          <img src="https://images.unsplash.com/photo-1505236858219-8359eb29e329?auto=format&amp;fit=crop&amp;w=1200&amp;q=78" alt="Cho thuê thiết bị sự kiện — hình 8" width="900" height="1200" loading="lazy" decoding="async">
+        <a class="srv-gl-item" href="../assets/images/dich-vu/thiet-bi-san-khau/thiet-bi-san-khau-8.jpg" data-srv-lightbox>
+          <img src="../assets/images/dich-vu/thiet-bi-san-khau/thiet-bi-san-khau-8.jpg" alt="Cho thuê thiết bị sự kiện — hình 8" loading="lazy" decoding="async">
           <span class="srv-gl-item__overlay" aria-hidden="true">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 3h6v6M14 10l6.1-6.1M9 21H3v-6M10 14l-6.1 6.1"/></svg>
           </span>
         </a>
-        <a class="srv-gl-item" href="https://images.unsplash.com/photo-1560439514-4e9645039924?auto=format&amp;fit=crop&amp;w=1920&amp;q=82" data-srv-lightbox>
-          <img src="https://images.unsplash.com/photo-1560439514-4e9645039924?auto=format&amp;fit=crop&amp;w=1200&amp;q=78" alt="Cho thuê thiết bị sự kiện — hình 9" width="900" height="1200" loading="lazy" decoding="async">
-          <span class="srv-gl-item__overlay" aria-hidden="true">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 3h6v6M14 10l6.1-6.1M9 21H3v-6M10 14l-6.1 6.1"/></svg>
-          </span>
-        </a>
-        <a class="srv-gl-item" href="https://images.unsplash.com/photo-1559329007-40df8a9345d8?auto=format&amp;fit=crop&amp;w=1920&amp;q=82" data-srv-lightbox>
-          <img src="https://images.unsplash.com/photo-1559329007-40df8a9345d8?auto=format&amp;fit=crop&amp;w=1200&amp;q=78" alt="Cho thuê thiết bị sự kiện — hình 10" width="900" height="1200" loading="lazy" decoding="async">
+        <a class="srv-gl-item" href="../assets/images/dich-vu/thiet-bi-san-khau/thiet-bi-san-khau-9.jpg" data-srv-lightbox>
+          <img src="../assets/images/dich-vu/thiet-bi-san-khau/thiet-bi-san-khau-9.jpg" alt="Cho thuê thiết bị sự kiện — hình 9" loading="lazy" decoding="async">
           <span class="srv-gl-item__overlay" aria-hidden="true">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 3h6v6M14 10l6.1-6.1M9 21H3v-6M10 14l-6.1 6.1"/></svg>
           </span>

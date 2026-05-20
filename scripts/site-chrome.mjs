@@ -18,7 +18,8 @@ export function renderZaloIcon(depth = 0, { className = 'zalo-icon', size = 20 }
 }
 
 function navActive(active, key) {
-  return active === key ? ' class="nav-link--active"' : '';
+  if (active !== key) return '';
+  return ' class="nav-link--active" aria-current="page"';
 }
 
 export function renderSiteNav({ depth = 0, activeNav = null } = {}) {
@@ -33,11 +34,11 @@ export function renderSiteNav({ depth = 0, activeNav = null } = {}) {
   </a>
   <nav aria-label="Main navigation">
     <ul class="nav-links">
-      <li><a href="${index}#home"${navActive(activeNav, 'home')}>Trang chủ</a></li>
-      <li><a href="${index}#company-intro">Giới thiệu</a></li>
-      <li><a href="${index}#service-highlight"${navActive(activeNav, 'services')}>Dịch vụ</a></li>
-      <li><a href="${duAn}"${navActive(activeNav, 'projects')}>Dự án</a></li>
-      <li><a href="${index}#contact">Liên hệ</a></li>
+      <li><a href="${index}#home" data-nav="home"${navActive(activeNav, 'home')}>Trang chủ</a></li>
+      <li><a href="${index}#company-intro" data-nav="intro">Giới thiệu</a></li>
+      <li><a href="${index}#service-highlight" data-nav="services"${navActive(activeNav, 'services')}>Dịch vụ</a></li>
+      <li><a href="${duAn}" data-nav="projects"${navActive(activeNav, 'projects')}>Dự án</a></li>
+      <li><a href="${index}#contact" data-nav="contact">Liên hệ</a></li>
     </ul>
   </nav>
   <a href="tel:+84964236197" class="nav-cta">Gọi Ngay</a>
@@ -46,11 +47,11 @@ export function renderSiteNav({ depth = 0, activeNav = null } = {}) {
   </button>
 </header>
 <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Mobile menu">
-  <a href="${index}#home">Trang chủ</a>
-  <a href="${index}#company-intro">Giới thiệu</a>
-  <a href="${index}#service-highlight">Dịch vụ</a>
-  <a href="${duAn}"${navActive(activeNav, 'projects')}>Dự án</a>
-  <a href="${index}#contact">Liên hệ</a>
+  <a href="${index}#home" data-nav="home"${navActive(activeNav, 'home')}>Trang chủ</a>
+  <a href="${index}#company-intro" data-nav="intro">Giới thiệu</a>
+  <a href="${index}#service-highlight" data-nav="services"${navActive(activeNav, 'services')}>Dịch vụ</a>
+  <a href="${duAn}" data-nav="projects"${navActive(activeNav, 'projects')}>Dự án</a>
+  <a href="${index}#contact" data-nav="contact">Liên hệ</a>
 </div>`;
 }
 

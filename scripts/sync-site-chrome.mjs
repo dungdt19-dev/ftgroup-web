@@ -47,7 +47,7 @@ function patchFile(filePath, depth, activeNav) {
 }
 
 const rootPages = [
-  { file: 'index.html', activeNav: null },
+  { file: 'index.html', activeNav: 'home' },
   { file: 'du-an.html', activeNav: 'projects' },
 ];
 

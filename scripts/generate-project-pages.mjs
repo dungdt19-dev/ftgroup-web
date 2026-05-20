@@ -8,6 +8,7 @@ import {
   renderFloatStack,
   renderChromeStyles,
 } from './site-chrome.mjs';
+import { decodeHtmlEntities } from './html-entities.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const outDir = join(__dirname, '..', 'projects');
@@ -20,22 +21,26 @@ function esc(s) {
     .replace(/"/g, '&quot;');
 }
 
-function decodeEnt(s) {
-  return String(s)
-    .replace(/&amp;/g, '&')
-    .replace(/&lt;/g, '<')
-    .replace(/&gt;/g, '>')
-    .replace(/&mdash;/g, '\u2014')
-    .replace(/&nbsp;/g, ' ')
-    .replace(/&quot;/g, '"');
+/** Plain text for HTML body (decoded UTF-8). */
+function t(s) {
+  return decodeHtmlEntities(String(s ?? ''));
+}
+
+/** Plain text safe for attributes. */
+function attr(s) {
+  return esc(t(s));
+}
+
+function stripTags(s) {
+  return t(String(s).replace(/<[^>]*>/g, ''));
 }
 
 const PROCESS = [
   { t: 'Hoạch định', d: 'Khảo sát địa điểm, bản vẽ sơ bộ và rundown với khách hàng.' },
-  { t: 'Lắp đặt', d: 'Truss, âm thanh, ánh sáng — kiểm tra tải điện &amp; an toàn.' },
-  { t: 'Duyệt chương trình', d: 'Dry-run MC, timing, cue ánh sáng &amp; video.' },
+  { t: 'Lắp đặt', d: 'Truss, âm thanh, ánh sáng — kiểm tra tải điện và an toàn.' },
+  { t: 'Duyệt chương trình', d: 'Dry-run MC, timing, cue ánh sáng và video.' },
   { t: 'Vận hành sự kiện', d: 'Điều phối tại sự kiện, xử lý linh hoạt tình huống.' },
-  { t: 'Bàn giao', d: 'Hạ hình, thu dọn, nghiệm thu &amp; ghi nhận phản hồi.' },
+  { t: 'Bàn giao', d: 'Hạ hình, thu dọn, nghiệm thu và ghi nhận phản hồi.' },
 ];
 
 const RELATED_META = Object.fromEntries(
@@ -56,16 +61,17 @@ function infoCard(svgInner, label, value) {
     label +
     '</h3>' +
     '<p class="pd-info-card__value">' +
-    esc(value) +
+    attr(value) +
     '</p></div></div>'
   );
 }
 
 function renderPage(p) {
   var canonical = 'https://ftgroup.vn/projects/' + p.file;
-  var titlePlain = decodeEnt(p.titlePlain);
-  var descPlain = decodeEnt(p.descPlain);
-  var kwPlain = decodeEnt(p.keywords);
+  var titlePlain = t(p.titlePlain);
+  var descPlain = t(p.descPlain);
+  var kwPlain = t(p.keywords);
+  var h1Plain = stripTags(p.h1);
 
   var galleryHtml = p.gallery
     .map(function (url, i) {
@@ -75,7 +81,7 @@ function renderPage(p) {
         '"><img src="' +
         esc(url) +
         '" alt="' +
-        esc(decodeEnt(p.h1.replace(/<[^>]*>/g, ''))) +
+        attr(h1Plain) +
         ' — hình ' +
         (i + 1) +
         '" width="900" height="1200" loading="lazy" decoding="async"></a>'
@@ -85,7 +91,7 @@ function renderPage(p) {
 
   var introHtml = p.intros
     .map(function (b) {
-      return '<h3>' + b.h + '</h3><p>' + b.p + '</p>';
+      return '<h3>' + t(b.h) + '</h3><p>' + t(b.p) + '</p>';
     })
     .join('\n');
 
@@ -96,15 +102,15 @@ function renderPage(p) {
       '"><div class="pd-step-card"><span class="pd-step-num">' +
       (i + 1) +
       '</span><h3>' +
-      st.t +
+      t(st.t) +
       '</h3><p>' +
-      st.d +
+      t(st.d) +
       '</p></div></div>'
     );
   }).join('\n');
 
-  var resultsLi = p.results.map(function (t) {
-    return '<li>' + t + '</li>';
+  var resultsLi = p.results.map(function (item) {
+    return '<li>' + t(item) + '</li>';
   }).join('');
 
   var expParts = [];
@@ -112,15 +118,15 @@ function renderPage(p) {
     expParts.push(
       '<ul class="pd-experience-list">' +
         p.experienceBullets
-          .map(function (t) {
-            return '<li>' + t + '</li>';
+          .map(function (item) {
+            return '<li>' + t(item) + '</li>';
           })
           .join('') +
         '</ul>'
     );
   }
   if (p.experienceQuote) {
-    expParts.push('<blockquote class="pd-quote pd-quote--experience">' + p.experienceQuote + '</blockquote>');
+    expParts.push('<blockquote class="pd-quote pd-quote--experience">' + t(p.experienceQuote) + '</blockquote>');
   }
   var experienceHtml =
     expParts.length > 0
@@ -143,11 +149,11 @@ function renderPage(p) {
         '"><img src="' +
         esc(m.thumb) +
         '" alt="' +
-        esc(m.title) +
+        attr(m.title) +
         '" width="340" height="160" loading="lazy"><div class="pd-related-card__body"><span>' +
-        esc(m.cat) +
+        attr(m.cat) +
         '</span><strong>' +
-        esc(m.title) +
+        attr(m.title) +
         '</strong></div></a>'
       );
     })
@@ -191,7 +197,7 @@ ${renderChromeStyles(1)}
     {
       '@context': 'https://schema.org',
       '@type': 'CreativeWork',
-      name: decodeEnt(p.h1.replace(/<[^>]*>/g, '')),
+      name: h1Plain,
       description: descPlain,
       url: canonical,
       creator: {
@@ -214,12 +220,12 @@ ${renderSiteNav({ depth: 1, activeNav: 'projects' })}
     <div class="pd-hero__tint" aria-hidden="true"></div>
     <div class="pd-hero__inner">
       <nav class="pd-breadcrumb" aria-label="Breadcrumb">
-        <a href="../index.html#home">Trang chủ</a> · <a href="../du-an.html">Dự án tiêu biểu</a> · <span aria-current="page">${esc(decodeEnt(p.h1.replace(/<[^>]*>/g, '')))}</span>
+        <a href="../index.html#home">Trang chủ</a> · <a href="../du-an.html">Dự án tiêu biểu</a> · <span aria-current="page">${attr(h1Plain)}</span>
       </nav>
-      <p class="pd-hero__cat">${p.cat}</p>
-      <h1>${p.h1}</h1>
+      <p class="pd-hero__cat">${t(p.cat)}</p>
+      <h1>${t(p.h1)}</h1>
       <p class="pd-hero__sub">
-        <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>${p.loc}</span>
+        <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>${t(p.loc)}</span>
       </p>
     </div>
   </header>
@@ -242,7 +248,7 @@ ${renderSiteNav({ depth: 1, activeNav: 'projects' })}
     <div class="pd-intro-grid">
       <div class="pd-intro-col">${introHtml}</div>
       <aside>
-        <blockquote class="pd-quote">${p.quote}<cite>${p.cite}</cite></blockquote>
+        <blockquote class="pd-quote">${t(p.quote)}<cite>${t(p.cite)}</cite></blockquote>
       </aside>
     </div>
   </section>
@@ -278,7 +284,7 @@ ${renderSiteNav({ depth: 1, activeNav: 'projects' })}
       </div>
       <div class="pd-result-panel">
         <h3>Cảm nhận khách hàng</h3>
-        <p style="margin:0;color:var(--color-white-dim);line-height:1.7;">${p.feedback}</p>
+        <p style="margin:0;color:var(--color-white-dim);line-height:1.7;">${t(p.feedback)}</p>
       </div>
     </div>
   </section>

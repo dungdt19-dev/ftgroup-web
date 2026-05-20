@@ -57,11 +57,11 @@
   </a>
   <nav aria-label="Main navigation">
     <ul class="nav-links">
-      <li><a href="../index.html#home">Trang chủ</a></li>
-      <li><a href="../index.html#company-intro">Giới thiệu</a></li>
-      <li><a href="../index.html#service-highlight" class="nav-link--active">Dịch vụ</a></li>
-      <li><a href="../du-an.html">Dự án</a></li>
-      <li><a href="../index.html#contact">Liên hệ</a></li>
+      <li><a href="../index.html#home" data-nav="home">Trang chủ</a></li>
+      <li><a href="../index.html#company-intro" data-nav="intro">Giới thiệu</a></li>
+      <li><a href="../index.html#service-highlight" data-nav="services" class="nav-link--active" aria-current="page">Dịch vụ</a></li>
+      <li><a href="../du-an.html" data-nav="projects">Dự án</a></li>
+      <li><a href="../index.html#contact" data-nav="contact">Liên hệ</a></li>
     </ul>
   </nav>
   <a href="tel:+84964236197" class="nav-cta">Gọi Ngay</a>
@@ -70,17 +70,17 @@
   </button>
 </header>
 <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Mobile menu">
-  <a href="../index.html#home">Trang chủ</a>
-  <a href="../index.html#company-intro">Giới thiệu</a>
-  <a href="../index.html#service-highlight">Dịch vụ</a>
-  <a href="../du-an.html">Dự án</a>
-  <a href="../index.html#contact">Liên hệ</a>
+  <a href="../index.html#home" data-nav="home">Trang chủ</a>
+  <a href="../index.html#company-intro" data-nav="intro">Giới thiệu</a>
+  <a href="../index.html#service-highlight" data-nav="services" class="nav-link--active" aria-current="page">Dịch vụ</a>
+  <a href="../du-an.html" data-nav="projects">Dự án</a>
+  <a href="../index.html#contact" data-nav="contact">Liên hệ</a>
 </div>
 
 <main class="srv-page">
   <article>
     <header class="srv-hero">
-      <div class="srv-hero__bg" style="background-image:url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&amp;fit=crop&amp;w=1920&amp;q=80');" role="presentation"></div>
+      <div class="srv-hero__bg" style="background-image:url('../assets/images/dich-vu/to-chuc-su-kien/to-chuc-su-kien-1.jpg');" role="presentation"></div>
       <div class="srv-hero__tint" aria-hidden="true"></div>
       <div class="srv-hero__content">
         <nav class="srv-breadcrumb" aria-label="Breadcrumb">
@@ -121,68 +121,62 @@
       </ul>
     </section>
 
-    <section class="srv-gallery-section srv-gallery-section--prominent" aria-labelledby="srv-gallery-heading" data-srv-gallery-masonry>
+    <section class="srv-gallery-section srv-gallery-section--prominent" aria-labelledby="srv-gallery-heading" data-srv-gallery-grid>
       <div class="srv-section-head srv-section-head--compact">
         <span class="srv-section-eyebrow">Thư viện hình ảnh</span>
         <h2 id="srv-gallery-heading">Hình ảnh triển khai</h2>
       </div>
-      <div class="srv-gallery-masonry">
-        <a class="srv-gl-item srv-gl-item--featured" href="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&amp;fit=crop&amp;w=1920&amp;q=82" data-srv-lightbox>
-          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&amp;fit=crop&amp;w=1200&amp;q=78" alt="Cung cấp nhân sự sự kiện — hình 1" width="900" height="1200" loading="lazy" decoding="async">
+      <div class="srv-gallery-grid">
+        <a class="srv-gl-item" href="../assets/images/dich-vu/to-chuc-su-kien/to-chuc-su-kien-1.jpg" data-srv-lightbox>
+          <img src="../assets/images/dich-vu/to-chuc-su-kien/to-chuc-su-kien-1.jpg" alt="Cung cấp nhân sự sự kiện — hình 1" loading="lazy" decoding="async">
           <span class="srv-gl-item__overlay" aria-hidden="true">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 3h6v6M14 10l6.1-6.1M9 21H3v-6M10 14l-6.1 6.1"/></svg>
           </span>
         </a>
-        <a class="srv-gl-item" href="https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?auto=format&amp;fit=crop&amp;w=1920&amp;q=82" data-srv-lightbox>
-          <img src="https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?auto=format&amp;fit=crop&amp;w=1200&amp;q=78" alt="Cung cấp nhân sự sự kiện — hình 2" width="900" height="1200" loading="lazy" decoding="async">
+        <a class="srv-gl-item" href="../assets/images/dich-vu/to-chuc-su-kien/to-chuc-su-kien-2.jpg" data-srv-lightbox>
+          <img src="../assets/images/dich-vu/to-chuc-su-kien/to-chuc-su-kien-2.jpg" alt="Cung cấp nhân sự sự kiện — hình 2" loading="lazy" decoding="async">
           <span class="srv-gl-item__overlay" aria-hidden="true">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 3h6v6M14 10l6.1-6.1M9 21H3v-6M10 14l-6.1 6.1"/></svg>
           </span>
         </a>
-        <a class="srv-gl-item" href="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&amp;fit=crop&amp;w=1920&amp;q=82" data-srv-lightbox>
-          <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&amp;fit=crop&amp;w=1200&amp;q=78" alt="Cung cấp nhân sự sự kiện — hình 3" width="900" height="1200" loading="lazy" decoding="async">
+        <a class="srv-gl-item" href="../assets/images/dich-vu/to-chuc-su-kien/to-chuc-su-kien-3.jpg" data-srv-lightbox>
+          <img src="../assets/images/dich-vu/to-chuc-su-kien/to-chuc-su-kien-3.jpg" alt="Cung cấp nhân sự sự kiện — hình 3" loading="lazy" decoding="async">
           <span class="srv-gl-item__overlay" aria-hidden="true">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 3h6v6M14 10l6.1-6.1M9 21H3v-6M10 14l-6.1 6.1"/></svg>
           </span>
         </a>
-        <a class="srv-gl-item srv-gl-item--wide" href="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&amp;fit=crop&amp;w=1920&amp;q=82" data-srv-lightbox>
-          <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&amp;fit=crop&amp;w=1200&amp;q=78" alt="Cung cấp nhân sự sự kiện — hình 4" width="900" height="1200" loading="lazy" decoding="async">
+        <a class="srv-gl-item" href="../assets/images/dich-vu/to-chuc-su-kien/to-chuc-su-kien-4.jpg" data-srv-lightbox>
+          <img src="../assets/images/dich-vu/to-chuc-su-kien/to-chuc-su-kien-4.jpg" alt="Cung cấp nhân sự sự kiện — hình 4" loading="lazy" decoding="async">
           <span class="srv-gl-item__overlay" aria-hidden="true">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 3h6v6M14 10l6.1-6.1M9 21H3v-6M10 14l-6.1 6.1"/></svg>
           </span>
         </a>
-        <a class="srv-gl-item" href="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&amp;fit=crop&amp;w=1920&amp;q=82" data-srv-lightbox>
-          <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&amp;fit=crop&amp;w=1200&amp;q=78" alt="Cung cấp nhân sự sự kiện — hình 5" width="900" height="1200" loading="lazy" decoding="async">
+        <a class="srv-gl-item" href="../assets/images/dich-vu/to-chuc-su-kien/to-chuc-su-kien-5.jpg" data-srv-lightbox>
+          <img src="../assets/images/dich-vu/to-chuc-su-kien/to-chuc-su-kien-5.jpg" alt="Cung cấp nhân sự sự kiện — hình 5" loading="lazy" decoding="async">
           <span class="srv-gl-item__overlay" aria-hidden="true">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 3h6v6M14 10l6.1-6.1M9 21H3v-6M10 14l-6.1 6.1"/></svg>
           </span>
         </a>
-        <a class="srv-gl-item" href="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&amp;fit=crop&amp;w=1920&amp;q=82" data-srv-lightbox>
-          <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&amp;fit=crop&amp;w=1200&amp;q=78" alt="Cung cấp nhân sự sự kiện — hình 6" width="900" height="1200" loading="lazy" decoding="async">
+        <a class="srv-gl-item" href="../assets/images/dich-vu/to-chuc-su-kien/to-chuc-su-kien-6.jpg" data-srv-lightbox>
+          <img src="../assets/images/dich-vu/to-chuc-su-kien/to-chuc-su-kien-6.jpg" alt="Cung cấp nhân sự sự kiện — hình 6" loading="lazy" decoding="async">
           <span class="srv-gl-item__overlay" aria-hidden="true">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 3h6v6M14 10l6.1-6.1M9 21H3v-6M10 14l-6.1 6.1"/></svg>
           </span>
         </a>
-        <a class="srv-gl-item" href="https://images.unsplash.com/photo-1544531586-fde5298cef13?auto=format&amp;fit=crop&amp;w=1920&amp;q=82" data-srv-lightbox>
-          <img src="https://images.unsplash.com/photo-1544531586-fde5298cef13?auto=format&amp;fit=crop&amp;w=1200&amp;q=78" alt="Cung cấp nhân sự sự kiện — hình 7" width="900" height="1200" loading="lazy" decoding="async">
+        <a class="srv-gl-item" href="../assets/images/dich-vu/to-chuc-su-kien/to-chuc-su-kien-7.jpg" data-srv-lightbox>
+          <img src="../assets/images/dich-vu/to-chuc-su-kien/to-chuc-su-kien-7.jpg" alt="Cung cấp nhân sự sự kiện — hình 7" loading="lazy" decoding="async">
           <span class="srv-gl-item__overlay" aria-hidden="true">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 3h6v6M14 10l6.1-6.1M9 21H3v-6M10 14l-6.1 6.1"/></svg>
           </span>
         </a>
-        <a class="srv-gl-item" href="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&amp;fit=crop&amp;w=1920&amp;q=82" data-srv-lightbox>
-          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&amp;fit=crop&amp;w=1200&amp;q=78" alt="Cung cấp nhân sự sự kiện — hình 8" width="900" height="1200" loading="lazy" decoding="async">
+        <a class="srv-gl-item" href="../assets/images/dich-vu/to-chuc-su-kien/to-chuc-su-kien-8.jpg" data-srv-lightbox>
+          <img src="../assets/images/dich-vu/to-chuc-su-kien/to-chuc-su-kien-8.jpg" alt="Cung cấp nhân sự sự kiện — hình 8" loading="lazy" decoding="async">
           <span class="srv-gl-item__overlay" aria-hidden="true">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 3h6v6M14 10l6.1-6.1M9 21H3v-6M10 14l-6.1 6.1"/></svg>
           </span>
         </a>
-        <a class="srv-gl-item" href="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&amp;fit=crop&amp;w=1920&amp;q=82" data-srv-lightbox>
-          <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&amp;fit=crop&amp;w=1200&amp;q=78" alt="Cung cấp nhân sự sự kiện — hình 9" width="900" height="1200" loading="lazy" decoding="async">
-          <span class="srv-gl-item__overlay" aria-hidden="true">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 3h6v6M14 10l6.1-6.1M9 21H3v-6M10 14l-6.1 6.1"/></svg>
-          </span>
-        </a>
-        <a class="srv-gl-item" href="https://images.unsplash.com/photo-1528605105345-5344ea276eac?auto=format&amp;fit=crop&amp;w=1920&amp;q=82" data-srv-lightbox>
-          <img src="https://images.unsplash.com/photo-1528605105345-5344ea276eac?auto=format&amp;fit=crop&amp;w=1200&amp;q=78" alt="Cung cấp nhân sự sự kiện — hình 10" width="900" height="1200" loading="lazy" decoding="async">
+        <a class="srv-gl-item" href="../assets/images/dich-vu/to-chuc-su-kien/to-chuc-su-kien-9.jpg" data-srv-lightbox>
+          <img src="../assets/images/dich-vu/to-chuc-su-kien/to-chuc-su-kien-9.jpg" alt="Cung cấp nhân sự sự kiện — hình 9" loading="lazy" decoding="async">
           <span class="srv-gl-item__overlay" aria-hidden="true">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 3h6v6M14 10l6.1-6.1M9 21H3v-6M10 14l-6.1 6.1"/></svg>
           </span>

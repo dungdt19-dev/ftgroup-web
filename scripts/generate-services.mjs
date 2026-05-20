@@ -9,6 +9,7 @@ import {
   SERVICE_PAGE_ASSETS,
   SERVICE_PAGE_SCRIPTS,
 } from './service-shared.mjs';
+import { getServiceHeroImage } from './service-images.mjs';
 import {
   renderSiteNav,
   renderSiteFooter,
@@ -558,6 +559,7 @@ function renderPage(s) {
   const h1Plain = decodeEnt(s.h1.replace(/<[^>]+>/g, ''));
   const breadcrumbParent = s.breadcrumbParent || 'Dịch vụ';
   const breadcrumbAnchor = s.breadcrumbAnchor || '#service-highlight';
+  const heroImg = getServiceHeroImage(s.id) || s.heroImg;
   const galleryHtml = renderMasonryGallery(s.id, h1Plain);
   const glanceHtml = renderBenefitsStrip(s.benefits);
   const contactHtml = renderContactCta(h1Plain);
@@ -645,7 +647,7 @@ ${renderSiteNav({ depth: 1, activeNav: 'services' })}
 <main class="srv-page">
   <article>
     <header class="srv-hero">
-      <div class="srv-hero__bg" style="background-image:url('${esc(s.heroImg)}');" role="presentation"></div>
+      <div class="srv-hero__bg" style="background-image:url('${esc(heroImg)}');" role="presentation"></div>
       <div class="srv-hero__tint" aria-hidden="true"></div>
       <div class="srv-hero__content">
         <nav class="srv-breadcrumb" aria-label="Breadcrumb">

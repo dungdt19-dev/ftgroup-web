@@ -57,11 +57,11 @@
   </a>
   <nav aria-label="Main navigation">
     <ul class="nav-links">
-      <li><a href="../index.html#home">Trang chủ</a></li>
-      <li><a href="../index.html#company-intro">Giới thiệu</a></li>
-      <li><a href="../index.html#service-highlight" class="nav-link--active">Dịch vụ</a></li>
-      <li><a href="../du-an.html">Dự án</a></li>
-      <li><a href="../index.html#contact">Liên hệ</a></li>
+      <li><a href="../index.html#home" data-nav="home">Trang chủ</a></li>
+      <li><a href="../index.html#company-intro" data-nav="intro">Giới thiệu</a></li>
+      <li><a href="../index.html#service-highlight" data-nav="services" class="nav-link--active" aria-current="page">Dịch vụ</a></li>
+      <li><a href="../du-an.html" data-nav="projects">Dự án</a></li>
+      <li><a href="../index.html#contact" data-nav="contact">Liên hệ</a></li>
     </ul>
   </nav>
   <a href="tel:+84964236197" class="nav-cta">Gọi Ngay</a>
@@ -70,17 +70,17 @@
   </button>
 </header>
 <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Mobile menu">
-  <a href="../index.html#home">Trang chủ</a>
-  <a href="../index.html#company-intro">Giới thiệu</a>
-  <a href="../index.html#service-highlight">Dịch vụ</a>
-  <a href="../du-an.html">Dự án</a>
-  <a href="../index.html#contact">Liên hệ</a>
+  <a href="../index.html#home" data-nav="home">Trang chủ</a>
+  <a href="../index.html#company-intro" data-nav="intro">Giới thiệu</a>
+  <a href="../index.html#service-highlight" data-nav="services" class="nav-link--active" aria-current="page">Dịch vụ</a>
+  <a href="../du-an.html" data-nav="projects">Dự án</a>
+  <a href="../index.html#contact" data-nav="contact">Liên hệ</a>
 </div>
 
 <main class="srv-page">
   <article>
     <header class="srv-hero">
-      <div class="srv-hero__bg" style="background-image:url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&amp;fit=crop&amp;w=1920&amp;q=80');" role="presentation"></div>
+      <div class="srv-hero__bg" style="background-image:url('../assets/images/dich-vu/trai-nghiem-tai-truong/trai-nghiem-tai-truong-1.jpg');" role="presentation"></div>
       <div class="srv-hero__tint" aria-hidden="true"></div>
       <div class="srv-hero__content">
         <nav class="srv-breadcrumb" aria-label="Breadcrumb">
@@ -121,68 +121,62 @@
       </ul>
     </section>
 
-    <section class="srv-gallery-section srv-gallery-section--prominent" aria-labelledby="srv-gallery-heading" data-srv-gallery-masonry>
+    <section class="srv-gallery-section srv-gallery-section--prominent" aria-labelledby="srv-gallery-heading" data-srv-gallery-grid>
       <div class="srv-section-head srv-section-head--compact">
         <span class="srv-section-eyebrow">Thư viện hình ảnh</span>
         <h2 id="srv-gallery-heading">Hình ảnh triển khai</h2>
       </div>
-      <div class="srv-gallery-masonry">
-        <a class="srv-gl-item srv-gl-item--featured" href="https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&amp;fit=crop&amp;w=1920&amp;q=82" data-srv-lightbox>
-          <img src="https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&amp;fit=crop&amp;w=1200&amp;q=78" alt="Trải nghiệm tại trường — hình 1" width="900" height="1200" loading="lazy" decoding="async">
+      <div class="srv-gallery-grid">
+        <a class="srv-gl-item" href="../assets/images/dich-vu/trai-nghiem-tai-truong/trai-nghiem-tai-truong-1.jpg" data-srv-lightbox>
+          <img src="../assets/images/dich-vu/trai-nghiem-tai-truong/trai-nghiem-tai-truong-1.jpg" alt="Trải nghiệm tại trường — hình 1" loading="lazy" decoding="async">
           <span class="srv-gl-item__overlay" aria-hidden="true">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 3h6v6M14 10l6.1-6.1M9 21H3v-6M10 14l-6.1 6.1"/></svg>
           </span>
         </a>
-        <a class="srv-gl-item" href="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&amp;fit=crop&amp;w=1920&amp;q=82" data-srv-lightbox>
-          <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&amp;fit=crop&amp;w=1200&amp;q=78" alt="Trải nghiệm tại trường — hình 2" width="900" height="1200" loading="lazy" decoding="async">
+        <a class="srv-gl-item" href="../assets/images/dich-vu/trai-nghiem-tai-truong/trai-nghiem-tai-truong-2.jpg" data-srv-lightbox>
+          <img src="../assets/images/dich-vu/trai-nghiem-tai-truong/trai-nghiem-tai-truong-2.jpg" alt="Trải nghiệm tại trường — hình 2" loading="lazy" decoding="async">
           <span class="srv-gl-item__overlay" aria-hidden="true">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 3h6v6M14 10l6.1-6.1M9 21H3v-6M10 14l-6.1 6.1"/></svg>
           </span>
         </a>
-        <a class="srv-gl-item" href="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&amp;fit=crop&amp;w=1920&amp;q=82" data-srv-lightbox>
-          <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&amp;fit=crop&amp;w=1200&amp;q=78" alt="Trải nghiệm tại trường — hình 3" width="900" height="1200" loading="lazy" decoding="async">
+        <a class="srv-gl-item" href="../assets/images/dich-vu/trai-nghiem-tai-truong/trai-nghiem-tai-truong-3.jpg" data-srv-lightbox>
+          <img src="../assets/images/dich-vu/trai-nghiem-tai-truong/trai-nghiem-tai-truong-3.jpg" alt="Trải nghiệm tại trường — hình 3" loading="lazy" decoding="async">
           <span class="srv-gl-item__overlay" aria-hidden="true">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 3h6v6M14 10l6.1-6.1M9 21H3v-6M10 14l-6.1 6.1"/></svg>
           </span>
         </a>
-        <a class="srv-gl-item srv-gl-item--wide" href="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&amp;fit=crop&amp;w=1920&amp;q=82" data-srv-lightbox>
-          <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&amp;fit=crop&amp;w=1200&amp;q=78" alt="Trải nghiệm tại trường — hình 4" width="900" height="1200" loading="lazy" decoding="async">
+        <a class="srv-gl-item" href="../assets/images/dich-vu/trai-nghiem-tai-truong/trai-nghiem-tai-truong-4.jpg" data-srv-lightbox>
+          <img src="../assets/images/dich-vu/trai-nghiem-tai-truong/trai-nghiem-tai-truong-4.jpg" alt="Trải nghiệm tại trường — hình 4" loading="lazy" decoding="async">
           <span class="srv-gl-item__overlay" aria-hidden="true">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 3h6v6M14 10l6.1-6.1M9 21H3v-6M10 14l-6.1 6.1"/></svg>
           </span>
         </a>
-        <a class="srv-gl-item" href="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&amp;fit=crop&amp;w=1920&amp;q=82" data-srv-lightbox>
-          <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&amp;fit=crop&amp;w=1200&amp;q=78" alt="Trải nghiệm tại trường — hình 5" width="900" height="1200" loading="lazy" decoding="async">
+        <a class="srv-gl-item" href="../assets/images/dich-vu/trai-nghiem-tai-truong/trai-nghiem-tai-truong-5.jpg" data-srv-lightbox>
+          <img src="../assets/images/dich-vu/trai-nghiem-tai-truong/trai-nghiem-tai-truong-5.jpg" alt="Trải nghiệm tại trường — hình 5" loading="lazy" decoding="async">
           <span class="srv-gl-item__overlay" aria-hidden="true">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 3h6v6M14 10l6.1-6.1M9 21H3v-6M10 14l-6.1 6.1"/></svg>
           </span>
         </a>
-        <a class="srv-gl-item" href="https://images.unsplash.com/photo-1580582932707-520aed937d7f?auto=format&amp;fit=crop&amp;w=1920&amp;q=82" data-srv-lightbox>
-          <img src="https://images.unsplash.com/photo-1580582932707-520aed937d7f?auto=format&amp;fit=crop&amp;w=1200&amp;q=78" alt="Trải nghiệm tại trường — hình 6" width="900" height="1200" loading="lazy" decoding="async">
+        <a class="srv-gl-item" href="../assets/images/dich-vu/trai-nghiem-tai-truong/trai-nghiem-tai-truong-6.jpg" data-srv-lightbox>
+          <img src="../assets/images/dich-vu/trai-nghiem-tai-truong/trai-nghiem-tai-truong-6.jpg" alt="Trải nghiệm tại trường — hình 6" loading="lazy" decoding="async">
           <span class="srv-gl-item__overlay" aria-hidden="true">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 3h6v6M14 10l6.1-6.1M9 21H3v-6M10 14l-6.1 6.1"/></svg>
           </span>
         </a>
-        <a class="srv-gl-item" href="https://images.unsplash.com/photo-1606761568499-6d2451b23c66?auto=format&amp;fit=crop&amp;w=1920&amp;q=82" data-srv-lightbox>
-          <img src="https://images.unsplash.com/photo-1606761568499-6d2451b23c66?auto=format&amp;fit=crop&amp;w=1200&amp;q=78" alt="Trải nghiệm tại trường — hình 7" width="900" height="1200" loading="lazy" decoding="async">
+        <a class="srv-gl-item" href="../assets/images/dich-vu/trai-nghiem-tai-truong/trai-nghiem-tai-truong-7.jpg" data-srv-lightbox>
+          <img src="../assets/images/dich-vu/trai-nghiem-tai-truong/trai-nghiem-tai-truong-7.jpg" alt="Trải nghiệm tại trường — hình 7" loading="lazy" decoding="async">
           <span class="srv-gl-item__overlay" aria-hidden="true">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 3h6v6M14 10l6.1-6.1M9 21H3v-6M10 14l-6.1 6.1"/></svg>
           </span>
         </a>
-        <a class="srv-gl-item" href="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&amp;fit=crop&amp;w=1920&amp;q=82" data-srv-lightbox>
-          <img src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&amp;fit=crop&amp;w=1200&amp;q=78" alt="Trải nghiệm tại trường — hình 8" width="900" height="1200" loading="lazy" decoding="async">
+        <a class="srv-gl-item" href="../assets/images/dich-vu/trai-nghiem-tai-truong/trai-nghiem-tai-truong-8.jpg" data-srv-lightbox>
+          <img src="../assets/images/dich-vu/trai-nghiem-tai-truong/trai-nghiem-tai-truong-8.jpg" alt="Trải nghiệm tại trường — hình 8" loading="lazy" decoding="async">
           <span class="srv-gl-item__overlay" aria-hidden="true">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 3h6v6M14 10l6.1-6.1M9 21H3v-6M10 14l-6.1 6.1"/></svg>
           </span>
         </a>
-        <a class="srv-gl-item" href="https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&amp;fit=crop&amp;w=1920&amp;q=82" data-srv-lightbox>
-          <img src="https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&amp;fit=crop&amp;w=1200&amp;q=78" alt="Trải nghiệm tại trường — hình 9" width="900" height="1200" loading="lazy" decoding="async">
-          <span class="srv-gl-item__overlay" aria-hidden="true">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 3h6v6M14 10l6.1-6.1M9 21H3v-6M10 14l-6.1 6.1"/></svg>
-          </span>
-        </a>
-        <a class="srv-gl-item" href="https://images.unsplash.com/photo-1516534775068-ba3e7458af70?auto=format&amp;fit=crop&amp;w=1920&amp;q=82" data-srv-lightbox>
-          <img src="https://images.unsplash.com/photo-1516534775068-ba3e7458af70?auto=format&amp;fit=crop&amp;w=1200&amp;q=78" alt="Trải nghiệm tại trường — hình 10" width="900" height="1200" loading="lazy" decoding="async">
+        <a class="srv-gl-item" href="../assets/images/dich-vu/trai-nghiem-tai-truong/trai-nghiem-tai-truong-9.jpg" data-srv-lightbox>
+          <img src="../assets/images/dich-vu/trai-nghiem-tai-truong/trai-nghiem-tai-truong-9.jpg" alt="Trải nghiệm tại trường — hình 9" loading="lazy" decoding="async">
           <span class="srv-gl-item__overlay" aria-hidden="true">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 3h6v6M14 10l6.1-6.1M9 21H3v-6M10 14l-6.1 6.1"/></svg>
           </span>
