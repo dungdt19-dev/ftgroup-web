@@ -20,6 +20,14 @@
 
   function applyFilter(filter) {
     items.forEach((item) => {
+      if (
+        item.hasAttribute('data-no-photos') ||
+        (typeof window.FT_PROJECT_IS_NO_PHOTOS === 'function' &&
+          window.FT_PROJECT_IS_NO_PHOTOS(item.getAttribute('href')))
+      ) {
+        item.classList.add('is-hidden');
+        return;
+      }
       const cats = (item.dataset.cat || '').split(/\s+/);
       const match = filter === 'all' || cats.includes(filter);
       item.classList.toggle('is-hidden', !match);

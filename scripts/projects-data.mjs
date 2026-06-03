@@ -74,6 +74,7 @@ const PROJECT_LIST = [
   P({
     file: 'dem-hoi-chao-tan-sinh-vien-khoa-du-lich.html',
     pool: 'concert',
+    noPhotos: true,
     titlePlain: 'Đêm hội chào tân sinh viên Khoa Du lịch — HVNN Việt Nam | FT GROUP E&E',
     descPlain: 'Chương trình chào tân Khoa Du lịch; Học viện Nông nghiệp Việt Nam. Tổ chức FT GROUP E&E.',
     keywords: 'chào tân sinh viên, Khoa Du lịch, HVNN, FT GROUP E&E',
@@ -172,6 +173,7 @@ const PROJECT_LIST = [
 
   P({
     file: 'dem-nhac-gieo-yeu-thuong.html',
+    noPhotos: true,
     pool: 'charity',
     titlePlain: 'Đêm nhạc Gieo yêu thương — thiện nguyện | FT GROUP E&E',
     descPlain: 'Đêm nhạc thiện nguyện — hơn 1000 khách; EDISO Ecopark; đấu giá tranh; góp xây điểm trường Lai Châu.',
@@ -470,6 +472,7 @@ const PROJECT_LIST = [
 
   P({
     file: 'chuyen-de-phong-chay-chua-chay.html',
+    noPhotos: true,
     pool: 'elementary',
     titlePlain: 'Chuyên đề phòng cháy chữa cháy — tiểu học | FT GROUP E&E',
     descPlain: 'Chuyên đề an toàn PCCC cho tiểu học — mô hình, hướng dẫn, minh họa.',
@@ -536,6 +539,7 @@ const PROJECT_LIST = [
 
   P({
     file: 'chuyen-de-khoa-hoc-dieu-ki-a.html',
+    noPhotos: true,
     pool: 'elementary',
     titlePlain: 'Chuyên đề Khoa học diệu kì — tiểu học (lớp 1) | FT GROUP E&E',
     descPlain: 'Chuyên đề STEM nhẹ — quan sát, thí nghiệm demo an toàn cho tiểu học.',
@@ -569,6 +573,7 @@ const PROJECT_LIST = [
 
   P({
     file: 'chuyen-de-khoa-hoc-dieu-ki-b.html',
+    noPhotos: true,
     pool: 'elementary',
     titlePlain: 'Chuyên đề Khoa học diệu kì — tiểu học (lớp 2) | FT GROUP E&E',
     descPlain: 'Phiên bản triển khai thứ hai — nội dung mở rộng theo độ tuổi.',
@@ -667,8 +672,43 @@ const PROJECT_LIST = [
   }),
 
   P({
+    file: 'teambuilding-abbott-viet-nam-sport-day-2025.html',
+    pool: 'team',
+    titlePlain: 'Abbott Việt Nam Sport Day 2025 | FT GROUP E&E',
+    descPlain:
+      'Ngày hội thể thao doanh nghiệp Abbott Việt Nam 2025 — trò chơi đồng đội, sân chơi và gắn kết nhân viên.',
+    keywords: 'Abbott Việt Nam, sport day, team building, FT GROUP E&E',
+    filters: ['team-building'],
+    cardTitle: 'Abbott Sport Day 2025',
+    cardCat: 'Team Building',
+    cardDesc: 'Sport Day — tinh thần đồng đội & năng lượng tích cực.',
+    cat: 'Team Building doanh nghiệp',
+    loc: 'Hà Nội',
+    h1: 'Abbott Việt Nam Sport Day 2025',
+    overview: {
+      name: 'Abbott Sport Day 2025',
+      client: 'Abbott Việt Nam',
+      place: 'Địa điểm outdoor theo hợp đồng',
+      time: '2025',
+      scale: 'Toàn thể nhân viên Abbott Việt Nam',
+      services: 'Kịch bản Sport Day, facilitator, trò chơi thể thao, âm thanh sân, MC, branding sân',
+    },
+    intros: [
+      { h: 'Mục tiêu', p: 'Khơi dậy tinh thần đồng đội và năng lượng tích cực sau giờ làm.' },
+      { h: 'Hoạt động', p: 'Mở màn, các môn thể thao đồng đội, mini game và lễ trao giải vui.' },
+      { h: 'Logistics', p: 'Sân chơi an toàn, y tế sơ cấp, nước uống, âm thanh ngoài trời và che nắng.' },
+    ],
+    quote: 'Cả công ty như một đội — vui, khỏe và gắn kết.',
+    cite: 'BTC nội bộ',
+    results: ['Tham gia cao', 'An toàn suốt chương trình', 'Phản hồi tích cực từ nhân viên'],
+    experienceBullets: ['Không khí sôi động như giải công ty', 'Ảnh tập thể đẹp'],
+    feedback: 'Abbott Việt Nam hài lòng với luồng chương trình và vận hành sân.',
+  }),
+
+  P({
     file: 'teambuilding-vietinbank-bac-giang.html',
     pool: 'team',
+    noPhotos: true,
     titlePlain: 'Teambuilding Vietinbank Bắc Giang | FT GROUP E&E',
     descPlain: 'Outdoor team building — cán bộ CNV Vietinbank Bắc Giang; trò chơi nhóm, gắn kết.',
     keywords: 'teambuilding, Vietinbank, Bắc Giang, FT GROUP E&E',
@@ -702,6 +742,7 @@ const PROJECT_LIST = [
   P({
     file: 'teambuilding-nha-khoa-nhu-ngoc.html',
     pool: 'team',
+    noPhotos: true,
     titlePlain: 'Teambuilding Nha khoa Như Ngọc | FT GROUP E&E',
     descPlain: 'Teambuilding nội bộ phòng khám — chuyên nghiệp, gọn, đúng timeline.',
     keywords: 'teambuilding nha khoa, FT GROUP E&E',

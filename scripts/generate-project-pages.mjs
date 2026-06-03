@@ -328,6 +328,7 @@ ${renderSiteFooter({ depth: 1 })}
 ${renderFloatStack({ depth: 1 })}
 
 <script src="../js/navbar.js" defer></script>
+<script src="../js/project-no-photos.js" defer></script>
 <script src="../js/project-detail.js" defer></script>
 <script src="../js/main.js" defer></script>
 </body>

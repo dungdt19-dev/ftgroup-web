@@ -47,9 +47,13 @@ const cardsHtml = PROJECTS.map((p) => {
   i += 1;
   const dataCat = (p.filters || []).join(' ');
   const src = String(p.thumb).replace(/&/g, '&amp;');
-  return `    <a href="projects/${escAttr(p.file)}" class="project-card-featured reveal" data-cat="${escAttr(
+  const linkClass = p.noPhotos
+    ? 'project-card-featured reveal is-hidden'
+    : 'project-card-featured reveal';
+  const linkExtra = p.noPhotos ? ' data-no-photos hidden' : '';
+  return `    <a href="projects/${escAttr(p.file)}" class="${linkClass}" data-cat="${escAttr(
     dataCat
-  )}" data-delay="${delay}">
+  )}" data-delay="${delay}"${linkExtra}>
       <div class="project-card-featured__media">
         <img src="${src}" alt="${escAttr(p.cardTitle)}" width="1400" height="900" loading="lazy" decoding="async">
         <div class="project-card-featured__scrim" aria-hidden="true"></div>

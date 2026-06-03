@@ -15,6 +15,11 @@
   display: none !important;
 }
 
+.pd-related-card[hidden],
+.pd-related[hidden] {
+  display: none !important;
+}
+
 /* =====================================================================
    FEATURED PROJECT SHOWCASE (homepage #gallery)
    + PROJECT DETAIL PAGES (.pd-*)
