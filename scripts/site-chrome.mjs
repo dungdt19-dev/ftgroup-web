@@ -10,10 +10,18 @@ export function assetPrefix(depth = 0) {
 }
 
 const ZALO_ICON = 'assets/images/chung/zalo.webp';
+const FB_ICON = 'assets/images/chung/fb.png';
+const FB_URL = 'https://www.facebook.com/profile.php?id=61570255771094';
 
 /** Official Zalo mark — footer social & floating button */
 export function renderZaloIcon(depth = 0, { className = 'zalo-icon', size = 20 } = {}) {
   const src = `${assetPrefix(depth)}${ZALO_ICON}`;
+  return `<img class="${className}" src="${src}" width="${size}" height="${size}" alt="" aria-hidden="true" loading="lazy" decoding="async">`;
+}
+
+/** Facebook page icon — footer social */
+export function renderFacebookIcon(depth = 0, { className = 'social-icon', size = 22 } = {}) {
+  const src = `${assetPrefix(depth)}${FB_ICON}`;
   return `<img class="${className}" src="${src}" width="${size}" height="${size}" alt="" aria-hidden="true" loading="lazy" decoding="async">`;
 }
 
@@ -74,6 +82,9 @@ export function renderSiteFooter({ depth = 0 } = {}) {
         </a>
         <a href="https://zalo.me/0964236197" class="social-btn social-btn--zalo" aria-label="Zalo" target="_blank" rel="noopener">
           ${renderZaloIcon(depth, { size: 22 })}
+        </a>
+        <a href="${FB_URL}" class="social-btn social-btn--facebook" aria-label="Facebook" target="_blank" rel="noopener">
+          ${renderFacebookIcon(depth, { size: 22 })}
         </a>
       </div>
     </div>
