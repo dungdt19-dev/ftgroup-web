@@ -30,6 +30,135 @@ function P(x) {
 
 const PROJECT_LIST = [
   P({
+    file: 'long-mach-na-hang.html',
+    pool: 'concert',
+    titlePlain: 'Long mạch Nà Hang – Huyền thoại trên mặt nước | FT GROUP E&E',
+    descPlain:
+      'Show nghệ thuật thực cảnh trên hồ Nà Hang, Tuyên Quang — âm nhạc, ánh sáng, laser, mapping và nhạc nước; FT GROUP E&E cung cấp âm thanh – ánh sáng đồng bộ.',
+    keywords: 'Long mạch Nà Hang, show thực cảnh, Tuyên Quang, âm thanh ánh sáng, FT GROUP E&E',
+    filters: ['dai-nhac-hoi', 'thiet-bi-su-kien'],
+    cardTitle: 'Long mạch Nà Hang',
+    cardCat: 'Show thực cảnh · Âm thanh ánh sáng',
+    cardDesc: 'Huyền thoại trên mặt nước — laser, mapping & nhạc nước.',
+    cat: 'Show nghệ thuật thực cảnh',
+    loc: 'Hồ Nà Hang, Tuyên Quang',
+    h1: 'Long mạch Nà Hang – Huyền thoại trên mặt nước',
+    overview: {
+      name: 'Long mạch Nà Hang',
+      client: 'Chương trình quảng bá văn hóa Nà Hang',
+      place: 'Hồ Nà Hang, Tuyên Quang',
+      time: 'Theo lịch chương trình',
+      scale: 'Show thực cảnh quy mô lớn trên mặt nước',
+      services: 'Hệ thống âm thanh – ánh sáng chuyên nghiệp, giải pháp kỹ thuật đồng bộ cho show thực cảnh',
+    },
+    intros: [
+      {
+        h: 'Mục tiêu chương trình',
+        p: 'Quảng bá hình ảnh, văn hóa và vẻ đẹp Nà Hang thông qua chương trình nghệ thuật thực cảnh quy mô lớn trên mặt nước.',
+      },
+      {
+        h: 'Nội dung nổi bật',
+        p: 'Kết hợp âm nhạc, ánh sáng, laser, mapping, nhạc nước và biểu diễn trên mặt hồ — khai thác hình tượng Rồng thiêng và văn hóa bản địa.',
+      },
+      {
+        h: 'Phía FT GROUP E&E',
+        p: 'Cung cấp hệ thống âm thanh – ánh sáng chuyên nghiệp, giải pháp kỹ thuật đồng bộ cho quy mô chương trình thực cảnh.',
+      },
+    ],
+    quote: 'Ánh sáng và âm thanh đồng bộ — cảm xúc lan tỏa trên mặt hồ.',
+    cite: 'Ban tổ chức',
+    results: ['Kỹ thuật vận hành ổn định', 'Đồng bộ cue show thực cảnh', 'Khán giả ấn tượng với không khí sự kiện'],
+    experienceBullets: ['Laser và mapping hòa cùng nhạc nước', 'Không gian Rồng thiêng trên mặt nước'],
+    feedback: 'BTC đánh giá cao giải pháp kỹ thuật đồng bộ của FT GROUP E&E.',
+  }),
+
+  P({
+    file: 'meey-group.html',
+    pool: 'team',
+    titlePlain: 'Sync Hết Cỡ – Meey Rực Rỡ | Kick-off Meey Group 2026 | FT GROUP E&E',
+    descPlain:
+      'Kick-off Team Building Meey Group 2026 kết hợp Meey Sync Tech 2026 — FT GROUP E&E cung cấp âm thanh, ánh sáng và photobooth check-in.',
+    keywords: 'Meey Group, team building, kick-off 2026, photobooth, FT GROUP E&E',
+    filters: ['team-building', 'thiet-bi-su-kien'],
+    cardTitle: 'Meey Group Kick-off 2026',
+    cardCat: 'Team Building · Sự kiện công ty',
+    cardDesc: 'Sync Hết Cỡ – Meey Rực Rỡ · TB & Sync Tech 2026.',
+    cat: 'Team Building doanh nghiệp',
+    loc: 'Theo hợp đồng (cuối 7 – đầu 8.2026)',
+    h1: 'Sync Hết Cỡ – Meey Rực Rỡ',
+    overview: {
+      name: 'Meey Group Kick-off 2026',
+      client: 'Meey Group',
+      place: 'Theo địa điểm chương trình',
+      time: 'Cuối tháng 7 – đầu tháng 8.2026',
+      scale: 'Toàn thể nhân sự Meey Group',
+      services: 'Âm thanh – ánh sáng, giải pháp kỹ thuật đồng bộ, photobooth check-in',
+    },
+    intros: [
+      {
+        h: 'Mục tiêu chương trình',
+        p: 'Khởi động Team Building Meey Group 2026, kết nối đội ngũ và lan tỏa tinh thần “Sync Hết Cỡ – Meey Rực Rỡ”.',
+      },
+      {
+        h: 'Nội dung nổi bật',
+        p: 'Kết hợp Team Building và sự kiện Meey Sync Tech 2026 với nhiều hoạt động sôi động, gắn kết.',
+      },
+      {
+        h: 'Phía FT GROUP E&E',
+        p: 'Cung cấp thiết bị âm thanh – ánh sáng, giải pháp kỹ thuật đồng bộ; triển khai photobooth độc lạ, tạo điểm nhấn check-in.',
+      },
+    ],
+    quote: 'Đội ngũ sync hết cỡ — photobooth và sân khấu tạo vibe rực rỡ.',
+    cite: 'BTC Meey Group',
+    results: ['Check-in photobooth thu hút nhân viên', 'Kỹ thuật đồng bộ suốt chương trình', 'Không khí kick-off sôi động'],
+    experienceBullets: ['Photobooth tạo ảnh kỷ niệm nhanh', 'Năng lượng “Sync” lan tỏa khắp sân'],
+    feedback: 'Meey Group hài lòng với điểm nhấn photobooth và vận hành kỹ thuật.',
+  }),
+
+  P({
+    file: 'le-quan-thay-gioi-tre-giao-phong.html',
+    pool: 'concert',
+    titlePlain: 'Lễ Quan Thầy Giới Trẻ Giáo phận 2026 | FT GROUP E&E',
+    descPlain:
+      'Lễ Quan Thầy giới trẻ Giáo phận 2026 — hoan ca, Thánh lễ và giao lưu; FT GROUP E&E cung cấp âm thanh – ánh sáng sân khấu hoành tráng.',
+    keywords: 'Lễ Quan Thầy, giới trẻ giáo phận, âm thanh ánh sáng, FT GROUP E&E',
+    filters: ['su-kien-truong-hoc', 'thiet-bi-su-kien'],
+    cardTitle: 'Lễ Quan Thầy GTGP 2026',
+    cardCat: 'Sự kiện giới trẻ · Lễ hội',
+    cardDesc: 'Gặp gỡ giới trẻ — sân khấu hoành tráng, Thánh lễ & hoan ca.',
+    cat: 'Sự kiện giới trẻ · Giáo phận',
+    loc: 'Giáo Phòng · Giáo hạt Đại Đồng',
+    h1: 'Lễ Quan Thầy Giới Trẻ Giáo phận 2026',
+    overview: {
+      name: 'Lễ Quan Thầy GTGP 2026',
+      client: 'Giới trẻ Giáo phận',
+      place: 'Giáo Phòng · Giáo hạt Đại Đồng',
+      time: '2026',
+      scale: 'Quy tụ đông đảo giới trẻ Giáo Phòng và Giáo hạt Đại Đồng',
+      services: 'Hệ thống âm thanh – ánh sáng chuyên nghiệp, giải pháp kỹ thuật đồng bộ sân khấu',
+    },
+    intros: [
+      {
+        h: 'Mục tiêu chương trình',
+        p: 'Tổ chức lễ Quan Thầy, tạo không gian gặp gỡ, giao lưu và gắn kết giới trẻ, cùng hướng về Đức Mẹ Hằng Cứu Giúp.',
+      },
+      {
+        h: 'Nội dung nổi bật',
+        p: 'Hoan ca văn nghệ, dâng hoa, Thánh lễ Quan Thầy và Thánh lễ tạ ơn — quy tụ đông đảo giới trẻ.',
+      },
+      {
+        h: 'Phía FT GROUP E&E',
+        p: 'Cung cấp hệ thống âm thanh – ánh sáng chuyên nghiệp, giải pháp kỹ thuật đồng bộ, góp phần tạo sân khấu hoành tráng.',
+      },
+    ],
+    quote: 'Không gian lễ hội trang nghiêm mà sôi động — giới trẻ hòa cùng hoan ca.',
+    cite: 'Ban phụ trách giới trẻ',
+    results: ['Sân khấu ổn định suốt Thánh lễ', 'Âm thanh rõ cho hoan ca & MC', 'Không khí gặp gỡ ấm áp'],
+    experienceBullets: ['Dâng hoa và văn nghệ trên nền ánh sáng đẹp', 'Hàng ngàn bạn trẻ quy tụ cùng nhau'],
+    feedback: 'BTC ghi nhận chất lượng kỹ thuật và sự phối hợp linh hoạt của FT.',
+  }),
+
+  P({
     file: 'dem-hoi-chao-tan-sinh-vien-k69.html',
     pool: 'concert',
     titlePlain: 'Đêm hội chào tân sinh viên K69 — Học viện Nông nghiệp | FT GROUP E&E',

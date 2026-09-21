@@ -429,12 +429,22 @@ const SERVICES = [
     ],
     benefits: [
       { t: 'In ấn OOH &amp; POSM', d: 'Standee, phông nền, banner lối vào, tờ rơi chương trình.' },
-      { t: 'Gia công CNC', d: 'Chữ nổi, logo khối, decor acrylic/MDF theo thiết kế.' },
+      {
+        t: 'Gia công CNC',
+        d: 'Chữ nổi, logo khối, decor acrylic/MDF theo thiết kế.',
+        link: 'https://cnc.ftgroup.vn/',
+        linkLabel: 'Xưởng In CNC →',
+      },
       { t: 'Tiến độ', d: 'Đối soát proof và giao hàng trước ngày setup.' },
     ],
     features: [
       { t: 'Backdrop &amp; banner', d: 'Khổ lớn, treo hoặc khung — indoor/outdoor.' },
-      { t: 'CNC chữ &amp; logo', d: 'Cắt khắc chính xác, đèn LED, lắp ráp tại chỗ.' },
+      {
+        t: 'CNC chữ &amp; logo',
+        d: 'Cắt khắc chính xác, đèn LED, lắp ráp tại chỗ.',
+        link: 'https://cnc.ftgroup.vn/',
+        linkLabel: 'Bảng giá &amp; dịch vụ CNC →',
+      },
       { t: 'POSM &amp; quà tặng', d: 'Túi, thẻ, voucher in theo chiến dịch.' },
       { t: 'Duyệt mẫu', d: 'Proof màu &amp; mẫu CNC trước chạy số lượng.' },
       { t: 'Giao hàng', d: 'Đóng gói, giao venue hoặc kho tập kết.' },
@@ -574,14 +584,17 @@ function renderPage(s) {
     .join('\n');
 
   const featuresHtml = s.features
-    .map(
-      (f, i) => `
+    .map((f, i) => {
+      const desc = f.link
+        ? `${f.d} <a class="srv-ext-link" href="${esc(f.link)}" target="_blank" rel="noopener">${f.linkLabel || 'Xem thêm'}</a>`
+        : f.d;
+      return `
         <article class="srv-feature-card reveal" data-delay="${(i % 3) + 1}">
           <div class="srv-feature-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2l3 7 7 .5-5 5 1 7-6-3.5L6 21.5l1-7-5-5 7-.5L12 2z"/></svg></div>
           <h3>${f.t}</h3>
-          <p>${f.d}</p>
-        </article>`
-    )
+          <p>${desc}</p>
+        </article>`;
+    })
     .join('');
 
   const processHtml = PROCESS.map(

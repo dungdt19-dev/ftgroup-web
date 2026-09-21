@@ -74,15 +74,18 @@ ${items}
 /** Scannable benefit chips — right below hero */
 export function renderBenefitsStrip(benefits) {
   const items = benefits
-    .map(
-      (b) => `        <li class="srv-glance-card">
+    .map((b) => {
+      const desc = b.link
+        ? `${b.d} <a class="srv-ext-link" href="${escHtml(b.link)}" target="_blank" rel="noopener">${escHtml(b.linkLabel || 'Xem thêm')}</a>`
+        : b.d;
+      return `        <li class="srv-glance-card">
           <span class="srv-glance-card__icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg></span>
           <div>
             <strong>${b.t}</strong>
-            <p>${b.d}</p>
+            <p>${desc}</p>
           </div>
-        </li>`
-    )
+        </li>`;
+    })
     .join('\n');
 
   return `    <section class="srv-glance" aria-label="Giá trị cốt lõi">
